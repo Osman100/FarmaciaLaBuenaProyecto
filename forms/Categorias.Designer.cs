@@ -36,8 +36,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NombreCategorias = new System.Windows.Forms.TextBox();
+            this.IDCategorias = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -59,8 +59,8 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.NombreCategorias);
+            this.panel1.Controls.Add(this.IDCategorias);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(123, 0);
@@ -120,7 +120,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.Location = new System.Drawing.Point(229, 367);
+            this.button6.Location = new System.Drawing.Point(229, 256);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(84, 28);
             this.button6.TabIndex = 12;
@@ -133,7 +133,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button5.Location = new System.Drawing.Point(125, 367);
+            this.button5.Location = new System.Drawing.Point(127, 256);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 28);
             this.button5.TabIndex = 11;
@@ -146,30 +146,31 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.Location = new System.Drawing.Point(17, 367);
+            this.button4.Location = new System.Drawing.Point(17, 256);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 28);
             this.button4.TabIndex = 10;
             this.button4.Text = "Añadir";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox2
+            // NombreCategorias
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox2.Location = new System.Drawing.Point(105, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 26);
-            this.textBox2.TabIndex = 6;
+            this.NombreCategorias.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreCategorias.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.NombreCategorias.Location = new System.Drawing.Point(105, 169);
+            this.NombreCategorias.Name = "NombreCategorias";
+            this.NombreCategorias.Size = new System.Drawing.Size(208, 26);
+            this.NombreCategorias.TabIndex = 6;
             // 
-            // textBox1
+            // IDCategorias
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(105, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 26);
-            this.textBox1.TabIndex = 5;
+            this.IDCategorias.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDCategorias.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDCategorias.Location = new System.Drawing.Point(105, 124);
+            this.IDCategorias.Name = "IDCategorias";
+            this.IDCategorias.Size = new System.Drawing.Size(208, 26);
+            this.IDCategorias.TabIndex = 5;
             // 
             // label2
             // 
@@ -291,8 +292,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NombreCategorias;
+        private System.Windows.Forms.TextBox IDCategorias;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;

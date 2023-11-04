@@ -36,11 +36,11 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CategoriaProductos = new System.Windows.Forms.ComboBox();
+            this.PrecioProducto = new System.Windows.Forms.TextBox();
+            this.StockProductos = new System.Windows.Forms.TextBox();
+            this.NombreProductos = new System.Windows.Forms.TextBox();
+            this.IDProductos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,11 +65,11 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.CategoriaProductos);
+            this.panel1.Controls.Add(this.PrecioProducto);
+            this.panel1.Controls.Add(this.StockProductos);
+            this.panel1.Controls.Add(this.NombreProductos);
+            this.panel1.Controls.Add(this.IDProductos);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -164,52 +164,52 @@
             this.button4.Text = "Añadir";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // CategoriaProductos
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 313);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 26);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "Seleccione una categoría";
+            this.CategoriaProductos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoriaProductos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.CategoriaProductos.FormattingEnabled = true;
+            this.CategoriaProductos.Location = new System.Drawing.Point(107, 313);
+            this.CategoriaProductos.Name = "CategoriaProductos";
+            this.CategoriaProductos.Size = new System.Drawing.Size(206, 26);
+            this.CategoriaProductos.TabIndex = 9;
+            this.CategoriaProductos.Text = "Seleccione una categoría";
             // 
-            // textBox4
+            // PrecioProducto
             // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox4.Location = new System.Drawing.Point(106, 263);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 26);
-            this.textBox4.TabIndex = 8;
+            this.PrecioProducto.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioProducto.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.PrecioProducto.Location = new System.Drawing.Point(106, 263);
+            this.PrecioProducto.Name = "PrecioProducto";
+            this.PrecioProducto.Size = new System.Drawing.Size(207, 26);
+            this.PrecioProducto.TabIndex = 8;
             // 
-            // textBox3
+            // StockProductos
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox3.Location = new System.Drawing.Point(105, 216);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 26);
-            this.textBox3.TabIndex = 7;
+            this.StockProductos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockProductos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.StockProductos.Location = new System.Drawing.Point(105, 216);
+            this.StockProductos.Name = "StockProductos";
+            this.StockProductos.Size = new System.Drawing.Size(208, 26);
+            this.StockProductos.TabIndex = 7;
             // 
-            // textBox2
+            // NombreProductos
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox2.Location = new System.Drawing.Point(105, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 26);
-            this.textBox2.TabIndex = 6;
+            this.NombreProductos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreProductos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.NombreProductos.Location = new System.Drawing.Point(105, 169);
+            this.NombreProductos.Name = "NombreProductos";
+            this.NombreProductos.Size = new System.Drawing.Size(208, 26);
+            this.NombreProductos.TabIndex = 6;
             // 
-            // textBox1
+            // IDProductos
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(105, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 26);
-            this.textBox1.TabIndex = 5;
+            this.IDProductos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDProductos.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDProductos.Location = new System.Drawing.Point(105, 124);
+            this.IDProductos.Name = "IDProductos";
+            this.IDProductos.Size = new System.Drawing.Size(208, 26);
+            this.IDProductos.TabIndex = 5;
             // 
             // label5
             // 
@@ -366,15 +366,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PrecioProducto;
+        private System.Windows.Forms.TextBox StockProductos;
+        private System.Windows.Forms.TextBox NombreProductos;
+        private System.Windows.Forms.TextBox IDProductos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CategoriaProductos;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;

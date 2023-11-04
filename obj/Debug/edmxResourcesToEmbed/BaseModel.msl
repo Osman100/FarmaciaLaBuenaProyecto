@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FARMACIA_BUENA__SALUDModelStoreContainer" CdmEntityContainer="FARMACIA_BUENA__SALUDEntities2">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="númeroTelefónico" ColumnName="númeroTelefónico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="tipoCompra" ColumnName="tipoCompra" />
+          <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+          <ScalarProperty Name="totalCompra" ColumnName="totalCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCompra">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.DetalleCompra">
+        <MappingFragment StoreEntitySet="DetalleCompra">
+          <ScalarProperty Name="idDetalleCompra" ColumnName="idDetalleCompra" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="cantidadProducto" ColumnName="cantidadProducto" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVenta">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="idDetalle" ColumnName="idDetalle" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="cantidadProducto" ColumnName="cantidadProducto" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
+          <ScalarProperty Name="estadoLaboral" ColumnName="estadoLaboral" />
+          <ScalarProperty Name="salario" ColumnName="salario" />
+          <ScalarProperty Name="empleadoPassword" ColumnName="empleadoPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="CantidadStock" ColumnName="CantidadStock" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="precioProducto" ColumnName="precioProducto" />
+          <ScalarProperty Name="existenciaProducto" ColumnName="existenciaProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="nombreProveedor" ColumnName="nombreProveedor" />
+          <ScalarProperty Name="telefonoProveedor" ColumnName="telefonoProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TarjetaCredito">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.TarjetaCredito">
+        <MappingFragment StoreEntitySet="TarjetaCredito">
+          <ScalarProperty Name="idTarjeta" ColumnName="idTarjeta" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="numeroTarjeta" ColumnName="numeroTarjeta" />
+          <ScalarProperty Name="nombrePropietario" ColumnName="nombrePropietario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="tipoVenta" ColumnName="tipoVenta" />
+          <ScalarProperty Name="fechaVenta" ColumnName="fechaVenta" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

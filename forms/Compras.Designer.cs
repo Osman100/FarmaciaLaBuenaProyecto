@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TotalCompras = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.FechaCompras = new System.Windows.Forms.DateTimePicker();
+            this.tipoCompras = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,8 +40,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ProveedorCompras = new System.Windows.Forms.TextBox();
+            this.IDCompras = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,10 +58,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.TotalCompras);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.FechaCompras);
+            this.panel1.Controls.Add(this.tipoCompras);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label6);
@@ -69,8 +69,8 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.ProveedorCompras);
+            this.panel1.Controls.Add(this.IDCompras);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -80,14 +80,14 @@
             this.panel1.Size = new System.Drawing.Size(677, 452);
             this.panel1.TabIndex = 3;
             // 
-            // textBox4
+            // TotalCompras
             // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox4.Location = new System.Drawing.Point(105, 305);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 26);
-            this.textBox4.TabIndex = 20;
+            this.TotalCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TotalCompras.Location = new System.Drawing.Point(105, 305);
+            this.TotalCompras.Name = "TotalCompras";
+            this.TotalCompras.Size = new System.Drawing.Size(208, 26);
+            this.TotalCompras.TabIndex = 20;
             // 
             // label7
             // 
@@ -101,28 +101,28 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Total";
             // 
-            // dateTimePicker1
+            // FechaCompras
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(106, 262);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 21);
-            this.dateTimePicker1.TabIndex = 18;
+            this.FechaCompras.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaCompras.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FechaCompras.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FechaCompras.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaCompras.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaCompras.Location = new System.Drawing.Point(106, 262);
+            this.FechaCompras.Name = "FechaCompras";
+            this.FechaCompras.Size = new System.Drawing.Size(207, 21);
+            this.FechaCompras.TabIndex = 18;
             // 
-            // comboBox3
+            // tipoCompras
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(105, 215);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(206, 26);
-            this.comboBox3.TabIndex = 17;
-            this.comboBox3.Text = "Seleccione una categoría";
+            this.tipoCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.tipoCompras.FormattingEnabled = true;
+            this.tipoCompras.Location = new System.Drawing.Point(105, 215);
+            this.tipoCompras.Name = "tipoCompras";
+            this.tipoCompras.Size = new System.Drawing.Size(206, 26);
+            this.tipoCompras.TabIndex = 17;
+            this.tipoCompras.Text = "Seleccione una categoría";
             // 
             // button7
             // 
@@ -208,23 +208,23 @@
             this.button4.Text = "Añadir";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // ProveedorCompras
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox2.Location = new System.Drawing.Point(105, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 26);
-            this.textBox2.TabIndex = 6;
+            this.ProveedorCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedorCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ProveedorCompras.Location = new System.Drawing.Point(105, 169);
+            this.ProveedorCompras.Name = "ProveedorCompras";
+            this.ProveedorCompras.Size = new System.Drawing.Size(208, 26);
+            this.ProveedorCompras.TabIndex = 6;
             // 
-            // textBox1
+            // IDCompras
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(105, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 26);
-            this.textBox1.TabIndex = 5;
+            this.IDCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDCompras.Location = new System.Drawing.Point(105, 124);
+            this.IDCompras.Name = "IDCompras";
+            this.IDCompras.Size = new System.Drawing.Size(208, 26);
+            this.IDCompras.TabIndex = 5;
             // 
             // label5
             // 
@@ -364,10 +364,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TotalCompras;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DateTimePicker FechaCompras;
+        private System.Windows.Forms.ComboBox tipoCompras;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
@@ -375,8 +375,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ProveedorCompras;
+        private System.Windows.Forms.TextBox IDCompras;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

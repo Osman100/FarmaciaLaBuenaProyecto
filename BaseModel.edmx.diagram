@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e3eaa9b70b214dbebbd77deffb2cf316" Name="Diagram1">
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Categoria" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Cliente" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Compra" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.DetalleCompra" Width="1.5" PointX="10.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.DetalleVenta" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Empleado" Width="1.5" PointX="3.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Producto" Width="1.5" PointX="6" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Proveedor" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Rol" Width="1.5" PointX="1.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.TarjetaCredito" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Venta" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Producto__idCate__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__TarjetaCr__idCli__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Venta__idCliente__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Compra__idProvee__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__DetalleCo__idCom__2180FB33" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__DetalleCo__idPro__22751F6C" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__DetalleVe__idPro__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__DetalleVe__idVen__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Empleado__idRol__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Venta__idEmplead__339FAB6E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

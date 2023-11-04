@@ -21,5 +21,10 @@ namespace La_Buena_Farmacia.forms
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

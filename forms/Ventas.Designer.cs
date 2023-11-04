@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TotalVentas = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.FechaVentas = new System.Windows.Forms.DateTimePicker();
+            this.TipoVentas = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -36,18 +40,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.VendedorVentas = new System.Windows.Forms.TextBox();
+            this.ClienteVentas = new System.Windows.Forms.TextBox();
+            this.IDVentas = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,10 +60,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.TotalVentas);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.FechaVentas);
+            this.panel1.Controls.Add(this.TipoVentas);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label6);
@@ -71,9 +71,9 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.VendedorVentas);
+            this.panel1.Controls.Add(this.ClienteVentas);
+            this.panel1.Controls.Add(this.IDVentas);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -83,6 +83,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 452);
             this.panel1.TabIndex = 2;
+            // 
+            // TotalVentas
+            // 
+            this.TotalVentas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalVentas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TotalVentas.Location = new System.Drawing.Point(105, 357);
+            this.TotalVentas.Name = "TotalVentas";
+            this.TotalVentas.Size = new System.Drawing.Size(208, 26);
+            this.TotalVentas.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label7.Location = new System.Drawing.Point(14, 360);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 18);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Total";
+            // 
+            // FechaVentas
+            // 
+            this.FechaVentas.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaVentas.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FechaVentas.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FechaVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaVentas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaVentas.Location = new System.Drawing.Point(106, 316);
+            this.FechaVentas.Name = "FechaVentas";
+            this.FechaVentas.Size = new System.Drawing.Size(207, 21);
+            this.FechaVentas.TabIndex = 18;
+            // 
+            // TipoVentas
+            // 
+            this.TipoVentas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipoVentas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TipoVentas.FormattingEnabled = true;
+            this.TipoVentas.Location = new System.Drawing.Point(106, 263);
+            this.TipoVentas.Name = "TipoVentas";
+            this.TipoVentas.Size = new System.Drawing.Size(206, 26);
+            this.TipoVentas.TabIndex = 17;
+            this.TipoVentas.Text = "Seleccione una categoría";
             // 
             // button7
             // 
@@ -168,32 +212,32 @@
             this.button4.Text = "Añadir";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // VendedorVentas
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox3.Location = new System.Drawing.Point(105, 216);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 26);
-            this.textBox3.TabIndex = 7;
+            this.VendedorVentas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VendedorVentas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.VendedorVentas.Location = new System.Drawing.Point(105, 216);
+            this.VendedorVentas.Name = "VendedorVentas";
+            this.VendedorVentas.Size = new System.Drawing.Size(208, 26);
+            this.VendedorVentas.TabIndex = 7;
             // 
-            // textBox2
+            // ClienteVentas
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox2.Location = new System.Drawing.Point(105, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 26);
-            this.textBox2.TabIndex = 6;
+            this.ClienteVentas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteVentas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ClienteVentas.Location = new System.Drawing.Point(105, 169);
+            this.ClienteVentas.Name = "ClienteVentas";
+            this.ClienteVentas.Size = new System.Drawing.Size(208, 26);
+            this.ClienteVentas.TabIndex = 6;
             // 
-            // textBox1
+            // IDVentas
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(105, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 26);
-            this.textBox1.TabIndex = 5;
+            this.IDVentas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDVentas.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDVentas.Location = new System.Drawing.Point(105, 124);
+            this.IDVentas.Name = "IDVentas";
+            this.IDVentas.Size = new System.Drawing.Size(208, 26);
+            this.IDVentas.TabIndex = 5;
             // 
             // label5
             // 
@@ -254,50 +298,6 @@
             this.label1.Size = new System.Drawing.Size(24, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(106, 263);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(206, 26);
-            this.comboBox3.TabIndex = 17;
-            this.comboBox3.Text = "Seleccione una categoría";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(106, 316);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 21);
-            this.dateTimePicker1.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label7.Location = new System.Drawing.Point(14, 360);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 18);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Total";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox4.Location = new System.Drawing.Point(105, 357);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 26);
-            this.textBox4.TabIndex = 20;
             // 
             // button3
             // 
@@ -395,17 +395,17 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox VendedorVentas;
+        private System.Windows.Forms.TextBox ClienteVentas;
+        private System.Windows.Forms.TextBox IDVentas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker FechaVentas;
+        private System.Windows.Forms.ComboBox TipoVentas;
+        private System.Windows.Forms.TextBox TotalVentas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;

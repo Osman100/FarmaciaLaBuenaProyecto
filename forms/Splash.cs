@@ -26,7 +26,7 @@ namespace La_Buena_Farmacia.forms
             {
                 metroProgressBar1.Value = 0;
                 timer1.Stop();
-                Form1 login = new Form1();
+                InicioSesion login = new InicioSesion();
                 this.Hide();
                 login.Show();
             }

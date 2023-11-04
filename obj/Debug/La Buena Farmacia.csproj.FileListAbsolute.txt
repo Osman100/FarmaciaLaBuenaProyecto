@@ -8,7 +8,6 @@ C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\EntityFramework.xml
 C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La Buena Farmacia.csproj.AssemblyReference.cache
-C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.Form1.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.Properties.Resources.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La Buena Farmacia.csproj.GenerateResource.cache
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La Buena Farmacia.csproj.CoreCompileInputs.cache
@@ -21,3 +20,6 @@ C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Ven
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Categorias.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Proveedores.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Ventas.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Compras.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.InicioSesion.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.MenuPrincipal.resources

@@ -36,9 +36,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TelefonoProveedores = new System.Windows.Forms.TextBox();
+            this.NombreProveedores = new System.Windows.Forms.TextBox();
+            this.IDProveedores = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.TelefonoProveedores);
+            this.panel1.Controls.Add(this.NombreProveedores);
+            this.panel1.Controls.Add(this.IDProveedores);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -116,6 +116,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(328, 292);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button6
             // 
@@ -156,32 +157,32 @@
             this.button4.Text = "Añadir";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // TelefonoProveedores
             // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox4.Location = new System.Drawing.Point(106, 218);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 26);
-            this.textBox4.TabIndex = 8;
+            this.TelefonoProveedores.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonoProveedores.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TelefonoProveedores.Location = new System.Drawing.Point(106, 218);
+            this.TelefonoProveedores.Name = "TelefonoProveedores";
+            this.TelefonoProveedores.Size = new System.Drawing.Size(207, 26);
+            this.TelefonoProveedores.TabIndex = 8;
             // 
-            // textBox2
+            // NombreProveedores
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox2.Location = new System.Drawing.Point(105, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 26);
-            this.textBox2.TabIndex = 6;
+            this.NombreProveedores.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreProveedores.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.NombreProveedores.Location = new System.Drawing.Point(105, 169);
+            this.NombreProveedores.Name = "NombreProveedores";
+            this.NombreProveedores.Size = new System.Drawing.Size(208, 26);
+            this.NombreProveedores.TabIndex = 6;
             // 
-            // textBox1
+            // IDProveedores
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(105, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 26);
-            this.textBox1.TabIndex = 5;
+            this.IDProveedores.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDProveedores.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDProveedores.Location = new System.Drawing.Point(105, 124);
+            this.IDProveedores.Name = "IDProveedores";
+            this.IDProveedores.Size = new System.Drawing.Size(208, 26);
+            this.IDProveedores.TabIndex = 5;
             // 
             // label4
             // 
@@ -315,9 +316,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TelefonoProveedores;
+        private System.Windows.Forms.TextBox NombreProveedores;
+        private System.Windows.Forms.TextBox IDProveedores;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
