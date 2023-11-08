@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FARMACIA_BUENA__SALUDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FARMACIA_BUENA__SALUDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="idCategoria" />
@@ -71,7 +71,6 @@
           <Property Name="CantidadStock" Type="int" Nullable="false" />
           <Property Name="idCategoria" Type="int" />
           <Property Name="precioProducto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="existenciaProducto" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Proveedor">
           <Key>
@@ -292,8 +291,7 @@
             <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FARMACIA_BUENA__SALUDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -374,7 +372,6 @@
           <Property Name="CantidadStock" Type="Int32" Nullable="false" />
           <Property Name="idCategoria" Type="Int32" />
           <Property Name="precioProducto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="existenciaProducto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__idCate__123EB7A3" FromRole="Producto" ToRole="Categoria" />
           <NavigationProperty Name="DetalleCompra" Relationship="Self.FK__DetalleCo__idPro__22751F6C" FromRole="Producto" ToRole="DetalleCompra" />
           <NavigationProperty Name="DetalleVenta" Relationship="Self.FK__DetalleVe__idPro__37703C52" FromRole="Producto" ToRole="DetalleVenta" />
@@ -681,7 +678,6 @@
                 <ScalarProperty Name="CantidadStock" ColumnName="CantidadStock" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
                 <ScalarProperty Name="precioProducto" ColumnName="precioProducto" />
-                <ScalarProperty Name="existenciaProducto" ColumnName="existenciaProducto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

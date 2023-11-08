@@ -26,7 +26,6 @@ namespace La_Buena_Farmacia
         public int CantidadStock { get; set; }
         public Nullable<int> idCategoria { get; set; }
         public decimal precioProducto { get; set; }
-        public int existenciaProducto { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

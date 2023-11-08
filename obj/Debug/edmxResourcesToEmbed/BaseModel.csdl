@@ -77,7 +77,6 @@
     <Property Name="CantidadStock" Type="Int32" Nullable="false" />
     <Property Name="idCategoria" Type="Int32" />
     <Property Name="precioProducto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="existenciaProducto" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__idCate__123EB7A3" FromRole="Producto" ToRole="Categoria" />
     <NavigationProperty Name="DetalleCompra" Relationship="Self.FK__DetalleCo__idPro__22751F6C" FromRole="Producto" ToRole="DetalleCompra" />
     <NavigationProperty Name="DetalleVenta" Relationship="Self.FK__DetalleVe__idPro__37703C52" FromRole="Producto" ToRole="DetalleVenta" />

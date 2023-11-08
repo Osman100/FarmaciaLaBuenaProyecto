@@ -87,7 +87,12 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="classes\BaseInterface.cs" />
+    <Compile Include="classes\RCategorias.cs" />
+    <Compile Include="classes\RCompras.cs" />
     <Compile Include="classes\REmpleado.cs" />
+    <Compile Include="classes\RProductos.cs" />
+    <Compile Include="classes\RProveedores.cs" />
+    <Compile Include="classes\RVentas.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>

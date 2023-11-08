@@ -72,7 +72,6 @@
           <ScalarProperty Name="CantidadStock" ColumnName="CantidadStock" />
           <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
           <ScalarProperty Name="precioProducto" ColumnName="precioProducto" />
-          <ScalarProperty Name="existenciaProducto" ColumnName="existenciaProducto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
