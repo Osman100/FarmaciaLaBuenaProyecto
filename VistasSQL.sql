@@ -34,6 +34,10 @@ INNER JOIN Empleado emp ON emp.idEmpleado = vv.idEmpleado);
 
 GO
 
+CREATE VIEW VistaProductos AS
+SELECT vp.idProducto AS 'ID', vp.nombreProducto AS 'Producto', ct.idCategoria AS 'Categoria', vp.CantidadStock AS 'Cantidad', vp.precioProducto AS 'Precio'
+FROM Producto vp 
+INNER JOIN Categoria ct ON ct.idCategoria = vp.idCategoria;
 
 
 
