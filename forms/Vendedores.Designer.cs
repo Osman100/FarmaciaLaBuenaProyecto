@@ -33,12 +33,11 @@ namespace La_Buena_Farmacia.forms
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.SalarioVendedores = new System.Windows.Forms.TextBox();
             this.PasswordVendedores = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.RolVendedores = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +66,6 @@ namespace La_Buena_Farmacia.forms
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.empleadoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadoTableAdapter();
-            this.button10 = new System.Windows.Forms.Button();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.RolTableAdapter();
             this.panel1.SuspendLayout();
@@ -88,8 +86,6 @@ namespace La_Buena_Farmacia.forms
             this.panel1.Controls.Add(this.PasswordVendedores);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.RolVendedores);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button6);
@@ -107,6 +103,20 @@ namespace La_Buena_Farmacia.forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(668, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Location = new System.Drawing.Point(103, 419);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(125, 28);
+            this.button10.TabIndex = 21;
+            this.button10.Text = "Deseleccionar";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // SalarioVendedores
             // 
@@ -147,30 +157,6 @@ namespace La_Buena_Farmacia.forms
             this.RolVendedores.Name = "RolVendedores";
             this.RolVendedores.Size = new System.Drawing.Size(206, 26);
             this.RolVendedores.TabIndex = 17;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(562, 74);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 28);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Refrescar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(337, 75);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(206, 26);
-            this.comboBox2.TabIndex = 15;
-            this.comboBox2.Text = "Seleccione una categoría";
             // 
             // label6
             // 
@@ -457,20 +443,6 @@ namespace La_Buena_Farmacia.forms
             // 
             this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.Menu;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Location = new System.Drawing.Point(103, 419);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(125, 28);
-            this.button10.TabIndex = 21;
-            this.button10.Text = "Deseleccionar";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // rolBindingSource
             // 
             this.rolBindingSource.DataMember = "Rol";
@@ -517,8 +489,6 @@ namespace La_Buena_Farmacia.forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button6;

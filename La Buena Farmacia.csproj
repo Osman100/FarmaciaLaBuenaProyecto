@@ -187,6 +187,18 @@
     <Compile Include="Venta.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaDetalleCompra.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaDetalleVenta.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEmpleados.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaProductos.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="forms\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>

@@ -12,9 +12,10 @@ namespace La_Buena_Farmacia.classes
         public int idCategoria { get; set; }
         public string nombreCategoria { get; set; }
 
-        List<Categoria> getAll()
+        public List<Categoria> getAll()
         {
             return db.Categoria.ToList();
+
         }
 
         public int create(Categoria model)

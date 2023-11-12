@@ -112,6 +112,68 @@
     <Property Name="fechaVenta" Type="date" Nullable="false" />
     <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaDetalleCompra">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaDetalleVenta">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaEmpleados">
+    <Key>
+      <PropertyRef Name="ID de empleado" />
+      <PropertyRef Name="Nombre completo" />
+      <PropertyRef Name="Rol" />
+      <PropertyRef Name="Estado" />
+      <PropertyRef Name="Salario" />
+      <PropertyRef Name="Contraseña" />
+    </Key>
+    <Property Name="ID de empleado" Type="int" Nullable="false" />
+    <Property Name="Nombre completo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Rol" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Salario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaProductos">
+    <Key>
+      <PropertyRef Name="ID del producto" />
+      <PropertyRef Name="Nombre del producto" />
+      <PropertyRef Name="Cantidad disponible" />
+      <PropertyRef Name="idCategoria" />
+      <PropertyRef Name="Precio" />
+    </Key>
+    <Property Name="ID del producto" Type="int" Nullable="false" />
+    <Property Name="Nombre del producto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Cantidad disponible" Type="int" Nullable="false" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
   <Association Name="FK__Compra__idProvee__1EA48E88">
     <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
     <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
@@ -245,6 +307,41 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TarjetaCredito" EntityType="Self.TarjetaCredito" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VistaDetalleCompra" EntityType="Self.VistaDetalleCompra" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaDetalleCompra].[ID] AS [ID], 
+    [VistaDetalleCompra].[Producto] AS [Producto], 
+    [VistaDetalleCompra].[Cantidad] AS [Cantidad], 
+    [VistaDetalleCompra].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleCompra] AS [VistaDetalleCompra]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaDetalleVenta" EntityType="Self.VistaDetalleVenta" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaDetalleVenta].[ID] AS [ID], 
+    [VistaDetalleVenta].[Producto] AS [Producto], 
+    [VistaDetalleVenta].[Cantidad] AS [Cantidad], 
+    [VistaDetalleVenta].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleVenta] AS [VistaDetalleVenta]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaEmpleados" EntityType="Self.VistaEmpleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaEmpleados].[ID de empleado] AS [ID de empleado], 
+    [VistaEmpleados].[Nombre completo] AS [Nombre completo], 
+    [VistaEmpleados].[Rol] AS [Rol], 
+    [VistaEmpleados].[Estado] AS [Estado], 
+    [VistaEmpleados].[Salario] AS [Salario], 
+    [VistaEmpleados].[Contraseña] AS [Contraseña]
+    FROM [dbo].[VistaEmpleados] AS [VistaEmpleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaProductos" EntityType="Self.VistaProductos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaProductos].[ID del producto] AS [ID del producto], 
+    [VistaProductos].[Nombre del producto] AS [Nombre del producto], 
+    [VistaProductos].[Cantidad disponible] AS [Cantidad disponible], 
+    [VistaProductos].[idCategoria] AS [idCategoria], 
+    [VistaProductos].[Precio] AS [Precio]
+    FROM [dbo].[VistaProductos] AS [VistaProductos]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__Compra__idProvee__1EA48E88" Association="Self.FK__Compra__idProvee__1EA48E88">
       <End Role="Proveedor" EntitySet="Proveedor" />
       <End Role="Compra" EntitySet="Compra" />

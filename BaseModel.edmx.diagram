@@ -27,6 +27,10 @@
         <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__DetalleVe__idVen__367C1819" ManuallyRouted="false" />
         <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Empleado__idRol__2FCF1A8A" ManuallyRouted="false" />
         <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.FK__Venta__idEmplead__339FAB6E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" Width="1.5" PointX="10.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

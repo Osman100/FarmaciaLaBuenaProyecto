@@ -37,5 +37,9 @@ namespace La_Buena_Farmacia
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TarjetaCredito> TarjetaCredito { get; set; }
         public virtual DbSet<Venta> Venta { get; set; }
+        public virtual DbSet<VistaDetalleVenta> VistaDetalleVenta { get; set; }
+        public virtual DbSet<VistaEmpleados> VistaEmpleados { get; set; }
+        public virtual DbSet<VistaProductos> VistaProductos { get; set; }
+        public virtual DbSet<VistaDetalleCompra> VistaDetalleCompra { get; set; }
     }
 }

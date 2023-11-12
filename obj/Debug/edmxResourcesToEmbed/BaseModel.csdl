@@ -305,5 +305,63 @@
       <End Role="Empleado" EntitySet="Empleado" />
       <End Role="Venta" EntitySet="Venta" />
     </AssociationSet>
+    <EntitySet Name="VistaDetalleVenta" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta" />
+    <EntitySet Name="VistaEmpleados" EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" />
+    <EntitySet Name="VistaProductos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" />
+    <EntitySet Name="VistaDetalleCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" />
   </EntityContainer>
+  <EntityType Name="VistaDetalleVenta">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaEmpleados">
+    <Key>
+      <PropertyRef Name="ID_de_empleado" />
+      <PropertyRef Name="Nombre_completo" />
+      <PropertyRef Name="Rol" />
+      <PropertyRef Name="Estado" />
+      <PropertyRef Name="Salario" />
+      <PropertyRef Name="Contraseña" />
+    </Key>
+    <Property Name="ID_de_empleado" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_completo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Rol" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Salario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Contraseña" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VistaProductos">
+    <Key>
+      <PropertyRef Name="ID_del_producto" />
+      <PropertyRef Name="Nombre_del_producto" />
+      <PropertyRef Name="Cantidad_disponible" />
+      <PropertyRef Name="idCategoria" />
+      <PropertyRef Name="Precio" />
+    </Key>
+    <Property Name="ID_del_producto" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_del_producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad_disponible" Type="Int32" Nullable="false" />
+    <Property Name="idCategoria" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaDetalleCompra">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
 </Schema>
