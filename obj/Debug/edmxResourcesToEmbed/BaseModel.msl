@@ -150,17 +150,18 @@
     <EntitySetMapping Name="VistaProductos">
       <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaProductos">
         <MappingFragment StoreEntitySet="VistaProductos">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
-          <ScalarProperty Name="Cantidad_disponible" ColumnName="Cantidad disponible" />
-          <ScalarProperty Name="Nombre_del_producto" ColumnName="Nombre del producto" />
-          <ScalarProperty Name="ID_del_producto" ColumnName="ID del producto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VistaDetalleCompra">
       <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra">
         <MappingFragment StoreEntitySet="VistaDetalleCompra">
+          <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Producto" ColumnName="Producto" />
@@ -168,5 +169,67 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VistaCompra">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaCompra">
+        <MappingFragment StoreEntitySet="VistaCompra">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaVenta">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta">
+        <MappingFragment StoreEntitySet="VistaVenta">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="decreaseStock" FunctionName="FARMACIA_BUENA__SALUDModel.Store.decreaseStock" />
+    <FunctionImportMapping FunctionImportName="increaseStock" FunctionName="FARMACIA_BUENA__SALUDModel.Store.increaseStock" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="VistaProductos1">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaProductos1">
+        <MappingFragment StoreEntitySet="VistaProductos1">
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AgregarCompraDetalleCompra" FunctionName="FARMACIA_BUENA__SALUDModel.Store.AgregarCompraDetalleCompra" />
+    <FunctionImportMapping FunctionImportName="CompraYDetalle" FunctionName="FARMACIA_BUENA__SALUDModel.Store.CompraYDetalle" />
   </EntityContainerMapping>
 </Mapping>

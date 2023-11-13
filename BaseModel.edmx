@@ -118,16 +118,34 @@
           <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaCompra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Proveedor" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Proveedor" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VistaDetalleCompra">
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="Producto" />
+            <PropertyRef Name="Precio unitario" />
             <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Total" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
@@ -167,17 +185,51 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaEmpleados' does not
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VistaProductos">
           <Key>
-            <PropertyRef Name="ID del producto" />
-            <PropertyRef Name="Nombre del producto" />
-            <PropertyRef Name="Cantidad disponible" />
-            <PropertyRef Name="idCategoria" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Categoria" />
+            <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Precio" />
           </Key>
-          <Property Name="ID del producto" Type="int" Nullable="false" />
-          <Property Name="Nombre del producto" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Cantidad disponible" Type="int" Nullable="false" />
-          <Property Name="idCategoria" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaProductos1">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Categoria" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaVenta">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Cliente" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Empleado" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <Association Name="FK__Compra__idProvee__1EA48E88">
           <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
@@ -299,6 +351,63 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AgregarCompraDetalleCompra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProveedorParam" Type="int" Mode="In" />
+          <Parameter Name="tipoCompraParam" Type="varchar" Mode="In" />
+          <Parameter Name="fechaCompraParam" Type="date" Mode="In" />
+          <Parameter Name="totalCompraParam" Type="decimal" Mode="In" />
+          <Parameter Name="idProductoParam" Type="int" Mode="In" />
+          <Parameter Name="cantidadProductoParam" Type="int" Mode="In" />
+          <Parameter Name="subtotalParam" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="CompraYDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProveedorParam" Type="int" Mode="In" />
+          <Parameter Name="tipoCompraParam" Type="varchar" Mode="In" />
+          <Parameter Name="fechaCompraParam" Type="date" Mode="In" />
+          <Parameter Name="totalCompraParam" Type="decimal" Mode="In" />
+          <Parameter Name="idProductoParam" Type="int" Mode="In" />
+          <Parameter Name="cantidadProductoParam" Type="int" Mode="In" />
+          <Parameter Name="subtotalParam" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="decreaseStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="increaseStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProducto" Type="int" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="FARMACIA_BUENA__SALUDModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
@@ -312,10 +421,20 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TarjetaCredito" EntityType="Self.TarjetaCredito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VistaCompra" EntityType="Self.VistaCompra" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaCompra].[ID] AS [ID], 
+    [VistaCompra].[Proveedor] AS [Proveedor], 
+    [VistaCompra].[Tipo] AS [Tipo], 
+    [VistaCompra].[Fecha] AS [Fecha], 
+    [VistaCompra].[Total] AS [Total]
+    FROM [dbo].[VistaCompra] AS [VistaCompra]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VistaDetalleCompra" EntityType="Self.VistaDetalleCompra" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VistaDetalleCompra].[ID] AS [ID], 
     [VistaDetalleCompra].[Producto] AS [Producto], 
+    [VistaDetalleCompra].[Precio unitario] AS [Precio unitario], 
     [VistaDetalleCompra].[Cantidad] AS [Cantidad], 
     [VistaDetalleCompra].[Total] AS [Total]
     FROM [dbo].[VistaDetalleCompra] AS [VistaDetalleCompra]</DefiningQuery>
@@ -340,12 +459,31 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
           </EntitySet>
           <EntitySet Name="VistaProductos" EntityType="Self.VistaProductos" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [VistaProductos].[ID del producto] AS [ID del producto], 
-    [VistaProductos].[Nombre del producto] AS [Nombre del producto], 
-    [VistaProductos].[Cantidad disponible] AS [Cantidad disponible], 
-    [VistaProductos].[idCategoria] AS [idCategoria], 
+    [VistaProductos].[ID] AS [ID], 
+    [VistaProductos].[Producto] AS [Producto], 
+    [VistaProductos].[Categoria] AS [Categoria], 
+    [VistaProductos].[Cantidad] AS [Cantidad], 
     [VistaProductos].[Precio] AS [Precio]
     FROM [dbo].[VistaProductos] AS [VistaProductos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaProductos1" EntityType="Self.VistaProductos1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaProductos1].[ID] AS [ID], 
+    [VistaProductos1].[Producto] AS [Producto], 
+    [VistaProductos1].[Categoria] AS [Categoria], 
+    [VistaProductos1].[Cantidad] AS [Cantidad], 
+    [VistaProductos1].[Precio] AS [Precio]
+    FROM [dbo].[VistaProductos1] AS [VistaProductos1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaVenta" EntityType="Self.VistaVenta" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaVenta].[ID] AS [ID], 
+    [VistaVenta].[Cliente] AS [Cliente], 
+    [VistaVenta].[Empleado] AS [Empleado], 
+    [VistaVenta].[Tipo] AS [Tipo], 
+    [VistaVenta].[Fecha] AS [Fecha], 
+    [VistaVenta].[Total] AS [Total]
+    FROM [dbo].[VistaVenta] AS [VistaVenta]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Compra__idProvee__1EA48E88" Association="Self.FK__Compra__idProvee__1EA48E88">
             <End Role="Proveedor" EntitySet="Proveedor" />
@@ -701,6 +839,65 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
           <EntitySet Name="VistaEmpleados" EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" />
           <EntitySet Name="VistaProductos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" />
           <EntitySet Name="VistaDetalleCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" />
+          <EntitySet Name="VistaCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" />
+          <EntitySet Name="VistaVenta" EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta" />
+          <FunctionImport Name="decreaseStock">
+            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="increaseStock">
+            <Parameter Name="idProducto" Mode="In" Type="Int32" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="VistaProductos1" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos1" />
+          <FunctionImport Name="AgregarCompraDetalleCompra">
+            <Parameter Name="idProveedorParam" Mode="In" Type="Int32" />
+            <Parameter Name="tipoCompraParam" Mode="In" Type="String" />
+            <Parameter Name="fechaCompraParam" Mode="In" Type="DateTime" />
+            <Parameter Name="totalCompraParam" Mode="In" Type="Decimal" />
+            <Parameter Name="idProductoParam" Mode="In" Type="Int32" />
+            <Parameter Name="cantidadProductoParam" Mode="In" Type="Int32" />
+            <Parameter Name="subtotalParam" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CompraYDetalle">
+            <Parameter Name="idProveedorParam" Mode="In" Type="Int32" />
+            <Parameter Name="tipoCompraParam" Mode="In" Type="String" />
+            <Parameter Name="fechaCompraParam" Mode="In" Type="DateTime" />
+            <Parameter Name="totalCompraParam" Mode="In" Type="Decimal" />
+            <Parameter Name="idProductoParam" Mode="In" Type="Int32" />
+            <Parameter Name="cantidadProductoParam" Mode="In" Type="Int32" />
+            <Parameter Name="subtotalParam" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="VistaDetalleVenta">
           <Key>
@@ -710,7 +907,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
             <PropertyRef Name="Total" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
         </EntityType>
@@ -732,17 +929,17 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
         </EntityType>
         <EntityType Name="VistaProductos">
           <Key>
-            <PropertyRef Name="ID_del_producto" />
-            <PropertyRef Name="Nombre_del_producto" />
-            <PropertyRef Name="Cantidad_disponible" />
-            <PropertyRef Name="idCategoria" />
             <PropertyRef Name="Precio" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Categoria" />
+            <PropertyRef Name="Cantidad" />
           </Key>
-          <Property Name="ID_del_producto" Type="Int32" Nullable="false" />
-          <Property Name="Nombre_del_producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Cantidad_disponible" Type="Int32" Nullable="false" />
-          <Property Name="idCategoria" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="VistaDetalleCompra">
           <Key>
@@ -750,11 +947,68 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
             <PropertyRef Name="Producto" />
             <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Total" />
+            <PropertyRef Name="Precio_unitario" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="VistaCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Proveedor" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Proveedor" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="VistaVenta">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Empleado" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="VistaProductos1">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Categoria" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Precio" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -911,17 +1165,18 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
           <EntitySetMapping Name="VistaProductos">
             <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaProductos">
               <MappingFragment StoreEntitySet="VistaProductos">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
-                <ScalarProperty Name="Cantidad_disponible" ColumnName="Cantidad disponible" />
-                <ScalarProperty Name="Nombre_del_producto" ColumnName="Nombre del producto" />
-                <ScalarProperty Name="ID_del_producto" ColumnName="ID del producto" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VistaDetalleCompra">
             <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra">
               <MappingFragment StoreEntitySet="VistaDetalleCompra">
+                <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Producto" ColumnName="Producto" />
@@ -929,6 +1184,68 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="VistaCompra">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaCompra">
+              <MappingFragment StoreEntitySet="VistaCompra">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaVenta">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta">
+              <MappingFragment StoreEntitySet="VistaVenta">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="decreaseStock" FunctionName="FARMACIA_BUENA__SALUDModel.Store.decreaseStock" />
+          <FunctionImportMapping FunctionImportName="increaseStock" FunctionName="FARMACIA_BUENA__SALUDModel.Store.increaseStock" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FARMACIA_BUENA__SALUDModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="VistaProductos1">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaProductos1">
+              <MappingFragment StoreEntitySet="VistaProductos1">
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AgregarCompraDetalleCompra" FunctionName="FARMACIA_BUENA__SALUDModel.Store.AgregarCompraDetalleCompra" />
+          <FunctionImportMapping FunctionImportName="CompraYDetalle" FunctionName="FARMACIA_BUENA__SALUDModel.Store.CompraYDetalle" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

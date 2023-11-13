@@ -31,6 +31,9 @@
         <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" Width="1.5" PointX="10.75" PointY="3.75" />
         <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" Width="1.5" PointX="12.75" PointY="3.75" />
         <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" Width="1.5" PointX="12.375" PointY="7.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta" Width="1.5" PointX="8.375" PointY="12.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos1" Width="1.5" PointX="12.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

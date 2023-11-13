@@ -14,10 +14,10 @@ namespace La_Buena_Farmacia
     
     public partial class VistaProductos
     {
-        public int ID_del_producto { get; set; }
-        public string Nombre_del_producto { get; set; }
-        public int Cantidad_disponible { get; set; }
-        public int idCategoria { get; set; }
+        public int ID { get; set; }
+        public string Producto { get; set; }
         public decimal Precio { get; set; }
+        public string Categoria { get; set; }
+        public int Cantidad { get; set; }
     }
 }

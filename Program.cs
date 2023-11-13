@@ -17,7 +17,7 @@ namespace La_Buena_Farmacia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Proveedores());
+            Application.Run(new Compras());
         }
     }
 }

@@ -154,5 +154,10 @@ namespace La_Buena_Farmacia.forms
             IDCategorias.Text = String.Empty;
             NombreCategorias.Text = String.Empty;
         }
+
+        private void IDCategorias_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

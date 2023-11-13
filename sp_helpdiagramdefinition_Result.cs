@@ -10,14 +10,10 @@
 namespace La_Buena_Farmacia
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class VistaDetalleCompra
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int ID { get; set; }
-        public string Producto { get; set; }
-        public int Cantidad { get; set; }
-        public decimal Total { get; set; }
-        public decimal Precio_unitario { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

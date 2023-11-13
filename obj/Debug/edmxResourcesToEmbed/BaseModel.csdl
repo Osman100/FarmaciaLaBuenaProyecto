@@ -309,6 +309,65 @@
     <EntitySet Name="VistaEmpleados" EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" />
     <EntitySet Name="VistaProductos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" />
     <EntitySet Name="VistaDetalleCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" />
+    <EntitySet Name="VistaCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" />
+    <EntitySet Name="VistaVenta" EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta" />
+    <FunctionImport Name="decreaseStock">
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="increaseStock">
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="VistaProductos1" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos1" />
+    <FunctionImport Name="AgregarCompraDetalleCompra">
+      <Parameter Name="idProveedorParam" Mode="In" Type="Int32" />
+      <Parameter Name="tipoCompraParam" Mode="In" Type="String" />
+      <Parameter Name="fechaCompraParam" Mode="In" Type="DateTime" />
+      <Parameter Name="totalCompraParam" Mode="In" Type="Decimal" />
+      <Parameter Name="idProductoParam" Mode="In" Type="Int32" />
+      <Parameter Name="cantidadProductoParam" Mode="In" Type="Int32" />
+      <Parameter Name="subtotalParam" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="CompraYDetalle">
+      <Parameter Name="idProveedorParam" Mode="In" Type="Int32" />
+      <Parameter Name="tipoCompraParam" Mode="In" Type="String" />
+      <Parameter Name="fechaCompraParam" Mode="In" Type="DateTime" />
+      <Parameter Name="totalCompraParam" Mode="In" Type="Decimal" />
+      <Parameter Name="idProductoParam" Mode="In" Type="Int32" />
+      <Parameter Name="cantidadProductoParam" Mode="In" Type="Int32" />
+      <Parameter Name="subtotalParam" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="VistaDetalleVenta">
     <Key>
@@ -318,7 +377,7 @@
       <PropertyRef Name="Total" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
@@ -340,17 +399,17 @@
   </EntityType>
   <EntityType Name="VistaProductos">
     <Key>
-      <PropertyRef Name="ID_del_producto" />
-      <PropertyRef Name="Nombre_del_producto" />
-      <PropertyRef Name="Cantidad_disponible" />
-      <PropertyRef Name="idCategoria" />
       <PropertyRef Name="Precio" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Cantidad" />
     </Key>
-    <Property Name="ID_del_producto" Type="Int32" Nullable="false" />
-    <Property Name="Nombre_del_producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Cantidad_disponible" Type="Int32" Nullable="false" />
-    <Property Name="idCategoria" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="VistaDetalleCompra">
     <Key>
@@ -358,10 +417,67 @@
       <PropertyRef Name="Producto" />
       <PropertyRef Name="Cantidad" />
       <PropertyRef Name="Total" />
+      <PropertyRef Name="Precio_unitario" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaCompra">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Proveedor" />
+      <PropertyRef Name="Tipo" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaVenta">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="Empleado" />
+      <PropertyRef Name="Tipo" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Cliente" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="VistaProductos1">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Precio" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
 </Schema>

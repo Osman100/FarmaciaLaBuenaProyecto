@@ -12,12 +12,13 @@ namespace La_Buena_Farmacia
     using System;
     using System.Collections.Generic;
     
-    public partial class VistaDetalleCompra
+    public partial class VistaVenta
     {
         public int ID { get; set; }
-        public string Producto { get; set; }
-        public int Cantidad { get; set; }
+        public string Cliente { get; set; }
+        public int Empleado { get; set; }
+        public string Tipo { get; set; }
+        public System.DateTime Fecha { get; set; }
         public decimal Total { get; set; }
-        public decimal Precio_unitario { get; set; }
     }
 }

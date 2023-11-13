@@ -87,6 +87,7 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="classes\BaseInterface.cs" />
+    <Compile Include="classes\RDetalleCompra.cs" />
     <Compile Include="classes\RCategorias.cs" />
     <Compile Include="classes\RCompras.cs" />
     <Compile Include="classes\REmpleado.cs" />
@@ -178,6 +179,12 @@
     <Compile Include="Rol.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -185,6 +192,9 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaCompra.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaDetalleCompra.cs">
@@ -197,6 +207,12 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaProductos.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaProductos1.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaVenta.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="forms\Compras.resx">

@@ -16,8 +16,15 @@ namespace La_Buena_Farmacia.forms
 
 
 
+      
         Producto producto = new Producto();
         classes.RProductos rProducto = new RProductos();
+        Compra compra = new Compra();
+        classes.RCompras rCompra = new classes.RCompras();
+        DetalleCompra detalleCompra = new DetalleCompra();
+        classes.RDetalleCompra rDetalleCompra = new RDetalleCompra();
+        private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
+
 
         public Compras()
         {
@@ -27,6 +34,8 @@ namespace La_Buena_Farmacia.forms
         
         private void Compras_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Proveedor' table. You can move, or remove it, as needed.
+            this.proveedorTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.Proveedor);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaCompra' table. You can move, or remove it, as needed.
             this.vistaCompraTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.VistaCompra);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaDetalleVenta' table. You can move, or remove it, as needed.
@@ -40,10 +49,59 @@ namespace La_Buena_Farmacia.forms
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.DetalleCompra' table. You can move, or remove it, as needed.
             this.detalleCompraTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.DetalleCompra);
 
+            comboBox3_SelectedIndexChanged(sender, e);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+
+         
+            int proveedorID = (int)comboBoxProveedor.SelectedValue;
+            DataRowView selectedRow = (DataRowView)comboBox3.SelectedItem;
+            int idCompra = Convert.ToInt32(selectedRow["ID"]);
+            string categoria = tipoCompras.Text;
+            DateTime fecha = DateTime.Parse(FechaCompras.Text);
+            string tipo = tipoCompras.Text;
+            Producto productoSeleccionado = (Producto)comboBox2.SelectedItem;
+            int idProducto = productoSeleccionado.idProducto;
+            decimal nuevoPrecio = decimal.Parse(textBoxPrecio.Text);
+            int nuevaCantidad = int.Parse(CantidadCompras.Text);
+            decimal subtotal = nuevaCantidad * nuevoPrecio;
+            
+
+            detalleCompra.idCompra = idCompra;
+            detalleCompra.idProducto = idProducto;
+            detalleCompra.cantidadProducto = nuevaCantidad;
+            detalleCompra.subtotal = subtotal;
+            
+
+            int resultado = rDetalleCompra.create(detalleCompra);
+
+
+            if (resultado != -1)
+            {
+
+                dataGridView2.DataSource = db.VistaDetalleCompra.ToList();
+                dataGridView1.DataSource = db.VistaCompra.ToList();
+                decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
+                rCompra.ActualizarTotalCompra(idCompra,totalCompra);
+
+                dataGridView1.DataSource = db.VistaCompra.ToList();
+
+                MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            else
+            {
+                // Ocurrió un error al agregar el empleado
+                MessageBox.Show("Ocurrió un error al agregar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
 
         }
 
@@ -60,6 +118,21 @@ namespace La_Buena_Farmacia.forms
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verifica si hay una fila seleccionada
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                // Muestra los valores en los TextBox
+
+                IDCategorias.Text = selectedRow.Cells["idCategoriaDataGridViewTextBoxColumn"].Value.ToString();
+                NombreCategorias.Text = selectedRow.Cells["nombreCategoriaDataGridViewTextBoxColumn"].Value.ToString();
+            }
         }
 
         private void tipoCompras_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,6 +176,47 @@ namespace La_Buena_Farmacia.forms
                 // Muestra el precio en el TextBox (o cualquier otro control que uses)
                 textBoxPrecio.Text = productoSeleccionado.precioProducto.ToString();
             }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            string nuevoID = IDCompras.Text;
+            int proveedorID = (int)comboBoxProveedor.SelectedValue;
+            string categoria = tipoCompras.Text;
+            DateTime fecha = DateTime.Parse(FechaCompras.Text);
+            string tipo = tipoCompras.Text;
+
+            compra.idCompra = int.Parse(nuevoID);
+            compra.idProveedor = proveedorID;
+            compra.tipoCompra = categoria;
+            compra.fechaCompra = fecha;
+            compra.totalCompra = 0;
+
+            int resultado = rCompra.create(compra);
+
+            if(resultado != -1)
+            {
+                dataGridView1.DataSource = rCompra.getAll();
+                MessageBox.Show(Text = "Compra agregada correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al agregar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            int idCompra = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idCompraSeleccionada = (int)comboBox3.SelectedValue;
+            List<VistaDetalleCompra> detalleCompra = db.VistaDetalleCompra.Where(c => c.ID == idCompraSeleccionada).ToList();
+            dataGridView2.DataSource = detalleCompra;
         }
     }
 }
