@@ -107,5 +107,12 @@ namespace La_Buena_Farmacia.forms
                 MessageBox.Show("Ocurrió un error al actualizar la categoría", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

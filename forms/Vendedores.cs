@@ -246,5 +246,12 @@ namespace La_Buena_Farmacia.forms
 
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

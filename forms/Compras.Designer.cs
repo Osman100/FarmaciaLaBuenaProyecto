@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.vistaCompraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIABUENASALUDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.comboBoxProveedor = new System.Windows.Forms.ComboBox();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -66,6 +71,7 @@
             this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
+            this.IDCompras = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,16 +91,12 @@
             this.vistaDetalleVentaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaDetalleVentaTableAdapter();
             this.vistaCompraTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaCompraTableAdapter();
             this.proveedorTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ProveedorTableAdapter();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.vistaCompraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button7 = new System.Windows.Forms.Button();
-            this.IDCompras = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
@@ -103,12 +105,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.label13);
@@ -145,6 +147,73 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button7.Location = new System.Drawing.Point(110, 459);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(84, 28);
+            this.button7.TabIndex = 41;
+            this.button7.Text = "Editar";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.vistaCompraBindingSource1;
+            this.comboBox3.DisplayMember = "ID";
+            this.comboBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(148, 248);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(119, 26);
+            this.comboBox3.TabIndex = 40;
+            this.comboBox3.ValueMember = "ID";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // vistaCompraBindingSource1
+            // 
+            this.vistaCompraBindingSource1.DataMember = "VistaCompra";
+            this.vistaCompraBindingSource1.DataSource = this.fARMACIABUENASALUDDataSetBindingSource;
+            // 
+            // fARMACIABUENASALUDDataSetBindingSource
+            // 
+            this.fARMACIABUENASALUDDataSetBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            this.fARMACIABUENASALUDDataSetBindingSource.Position = 0;
+            // 
+            // fARMACIA_BUENA__SALUDDataSet
+            // 
+            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
+            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label13.Location = new System.Drawing.Point(15, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 18);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "ID de Compra:";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.Menu;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button6.Location = new System.Drawing.Point(16, 156);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 28);
+            this.button6.TabIndex = 38;
+            this.button6.Text = "Añadir";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
             // comboBoxProveedor
             // 
             this.comboBoxProveedor.DataSource = this.proveedorBindingSource;
@@ -161,16 +230,6 @@
             // 
             this.proveedorBindingSource.DataMember = "Proveedor";
             this.proveedorBindingSource.DataSource = this.fARMACIABUENASALUDDataSetBindingSource;
-            // 
-            // fARMACIABUENASALUDDataSetBindingSource
-            // 
-            this.fARMACIABUENASALUDDataSetBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            this.fARMACIABUENASALUDDataSetBindingSource.Position = 0;
-            // 
-            // fARMACIA_BUENA__SALUDDataSet
-            // 
-            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
-            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button5
             // 
@@ -494,6 +553,15 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // IDCompras
+            // 
+            this.IDCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDCompras.Location = new System.Drawing.Point(58, 50);
+            this.IDCompras.Name = "IDCompras";
+            this.IDCompras.Size = new System.Drawing.Size(98, 26);
+            this.IDCompras.TabIndex = 5;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -650,71 +718,19 @@
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
-            // button6
+            // button13
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.Menu;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.Location = new System.Drawing.Point(16, 156);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 28);
-            this.button6.TabIndex = 38;
-            this.button6.Text = "Añadir";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label13.Location = new System.Drawing.Point(15, 251);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 18);
-            this.label13.TabIndex = 39;
-            this.label13.Text = "ID de Compra:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.vistaCompraBindingSource1;
-            this.comboBox3.DisplayMember = "ID";
-            this.comboBox3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(148, 248);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(119, 26);
-            this.comboBox3.TabIndex = 40;
-            this.comboBox3.ValueMember = "ID";
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // vistaCompraBindingSource1
-            // 
-            this.vistaCompraBindingSource1.DataMember = "VistaCompra";
-            this.vistaCompraBindingSource1.DataSource = this.fARMACIABUENASALUDDataSetBindingSource;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(110, 459);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 28);
-            this.button7.TabIndex = 41;
-            this.button7.Text = "Editar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // IDCompras
-            // 
-            this.IDCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.IDCompras.Location = new System.Drawing.Point(58, 50);
-            this.IDCompras.Name = "IDCompras";
-            this.IDCompras.Size = new System.Drawing.Size(98, 26);
-            this.IDCompras.TabIndex = 5;
+            this.button13.BackColor = System.Drawing.SystemColors.Menu;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button13.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button13.Location = new System.Drawing.Point(674, 8);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(84, 28);
+            this.button13.TabIndex = 43;
+            this.button13.Text = "Home";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Compras
             // 
@@ -733,9 +749,10 @@
             this.Load += new System.EventHandler(this.Compras_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
@@ -744,7 +761,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -813,5 +829,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox IDCompras;
+        private System.Windows.Forms.Button button13;
     }
 }

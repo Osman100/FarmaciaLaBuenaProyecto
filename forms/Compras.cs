@@ -123,16 +123,7 @@ namespace La_Buena_Farmacia.forms
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             // Verifica si hay una fila seleccionada
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Obtiene la fila seleccionada
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-                // Muestra los valores en los TextBox
-
-                IDCategorias.Text = selectedRow.Cells["idCategoriaDataGridViewTextBoxColumn"].Value.ToString();
-                NombreCategorias.Text = selectedRow.Cells["nombreCategoriaDataGridViewTextBoxColumn"].Value.ToString();
-            }
+            
         }
 
         private void tipoCompras_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,6 +208,13 @@ namespace La_Buena_Farmacia.forms
             int idCompraSeleccionada = (int)comboBox3.SelectedValue;
             List<VistaDetalleCompra> detalleCompra = db.VistaDetalleCompra.Where(c => c.ID == idCompraSeleccionada).ToList();
             dataGridView2.DataSource = detalleCompra;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
         }
     }
 }

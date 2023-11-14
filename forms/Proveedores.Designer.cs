@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +53,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ProveedorTableAdapter();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource1)).BeginInit();
@@ -65,8 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button6);
@@ -82,30 +80,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 452);
             this.panel1.TabIndex = 2;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(562, 74);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 28);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Refrescar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(337, 75);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(206, 26);
-            this.comboBox2.TabIndex = 15;
-            this.comboBox2.Text = "Seleccione una categoría";
             // 
             // label6
             // 
@@ -343,6 +317,20 @@
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Location = new System.Drawing.Point(17, 18);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(84, 28);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "Home";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,8 +358,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button6;
@@ -395,5 +381,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource proveedorBindingSource1;
+        private System.Windows.Forms.Button button10;
     }
 }

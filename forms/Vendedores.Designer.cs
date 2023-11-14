@@ -68,6 +68,7 @@ namespace La_Buena_Farmacia.forms
             this.empleadoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadoTableAdapter();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.RolTableAdapter();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
@@ -81,6 +82,7 @@ namespace La_Buena_Farmacia.forms
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.SalarioVendedores);
             this.panel1.Controls.Add(this.PasswordVendedores);
@@ -153,6 +155,9 @@ namespace La_Buena_Farmacia.forms
             this.RolVendedores.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RolVendedores.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.RolVendedores.FormattingEnabled = true;
+            this.RolVendedores.Items.AddRange(new object[] {
+            "1",
+            "2"});
             this.RolVendedores.Location = new System.Drawing.Point(112, 251);
             this.RolVendedores.Name = "RolVendedores";
             this.RolVendedores.Size = new System.Drawing.Size(206, 26);
@@ -452,6 +457,20 @@ namespace La_Buena_Farmacia.forms
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button7.Location = new System.Drawing.Point(15, 23);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(84, 28);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Home";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Vendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -524,5 +543,6 @@ namespace La_Buena_Farmacia.forms
         private Button button10;
         private BindingSource rolBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.RolTableAdapter rolTableAdapter;
+        private Button button7;
     }
 }
