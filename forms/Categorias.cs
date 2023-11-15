@@ -57,9 +57,10 @@ namespace La_Buena_Farmacia.forms
 
             if (resultado != -1)
             {
+
                 // La categoría se agregó correctamente
                 MessageBox.Show("Categoría agregada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                dataGridView1.DataSource = rCategoria.getAll();
                 // Puedes limpiar el TextBox si es necesario
                 NombreCategorias.Text = "";
             }
@@ -164,6 +165,41 @@ namespace La_Buena_Farmacia.forms
         {
             MenuPrincipal menuPrincipal = new MenuPrincipal();
             menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Vendedores vendedores = new Vendedores();
+            vendedores.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Proveedores proveedores = new Proveedores();
+            proveedores.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
             this.Hide();
         }
     }

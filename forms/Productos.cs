@@ -114,5 +114,43 @@ namespace La_Buena_Farmacia.forms
             menuPrincipal.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Vendedores vendedores = new Vendedores();
+            vendedores.Show();
+            this.Hide();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Categorias categorias  = new Categorias();  
+            categorias.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.Show();
+            this.Hide();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Proveedores proveedores = new Proveedores();
+            proveedores.Show();
+            this.Hide();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
+            this.Hide();
+        }
     }
 }

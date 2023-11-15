@@ -109,6 +109,9 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FARMACIA_BUENA__SALUDDataSet.cs">
+      <DependentUpon>FARMACIA_BUENA__SALUDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FARMACIA_BUENA__SALUDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +203,9 @@
     <Compile Include="VistaDetalleCompra.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaDetalleCompra2.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="VistaDetalleVenta.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -258,6 +264,7 @@
     <None Include="BaseModel.edmx.diagram">
       <DependentUpon>BaseModel.edmx</DependentUpon>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="FARMACIA_BUENA__SALUDDataSet.xsc">
       <DependentUpon>FARMACIA_BUENA__SALUDDataSet.xsd</DependentUpon>
     </None>

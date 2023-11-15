@@ -309,7 +309,6 @@
     <EntitySet Name="VistaEmpleados" EntityType="FARMACIA_BUENA__SALUDModel.VistaEmpleados" />
     <EntitySet Name="VistaProductos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductos" />
     <EntitySet Name="VistaDetalleCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra" />
-    <EntitySet Name="VistaCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" />
     <EntitySet Name="VistaVenta" EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta" />
     <FunctionImport Name="decreaseStock">
       <Parameter Name="idProducto" Mode="In" Type="Int32" />
@@ -368,6 +367,8 @@
       <Parameter Name="cantidadProductoParam" Mode="In" Type="Int32" />
       <Parameter Name="subtotalParam" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <EntitySet Name="VistaCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" />
+    <EntitySet Name="VistaDetalleCompra2" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra2" />
   </EntityContainer>
   <EntityType Name="VistaDetalleVenta">
     <Key>
@@ -425,20 +426,6 @@
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
     <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
-  <EntityType Name="VistaCompra">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="Proveedor" />
-      <PropertyRef Name="Tipo" />
-      <PropertyRef Name="Fecha" />
-      <PropertyRef Name="Total" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Proveedor" Type="Int32" Nullable="false" />
-    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-  </EntityType>
   <EntityType Name="VistaVenta">
     <Key>
       <PropertyRef Name="ID" />
@@ -479,5 +466,35 @@
     <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
     <Property Name="Precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaCompra">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Proveedor" />
+      <PropertyRef Name="Tipo" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="VistaDetalleCompra2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Precio_unitario" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
 </Schema>

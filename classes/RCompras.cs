@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace La_Buena_Farmacia.classes
 {
@@ -77,8 +78,15 @@ namespace La_Buena_Farmacia.classes
         {
             try
             {
-                Compra compra = db.Compra.Find(recordID);
+                // Eliminar detalles de compra asociados
+                var detalles = db.DetalleCompra.Where(detalle => detalle.idCompra == idCompra);
+                db.DetalleCompra.RemoveRange(detalles);
+
+                // Eliminar la compra
+                var compra = db.Compra.Find(idCompra);
                 db.Compra.Remove(compra);
+
+                // Guardar cambios en la base de datos
                 db.SaveChanges();
 
                 return compra.idCompra;
@@ -113,6 +121,14 @@ namespace La_Buena_Farmacia.classes
             }
         }
 
+        public int ObtenerIdProveedorPorNombre(string nombreProveedor)
+        {
+            // Realiza la consulta a la base de datos para obtener el ID del proveedor en base al nombre
+            Proveedor proveedor = db.Proveedor.FirstOrDefault(p => p.nombreProveedor == nombreProveedor);
+
+            // Devuelve el ID del proveedor si se encuentra, de lo contrario, devuelve -1
+            return proveedor != null ? proveedor.idProveedor : -1;
+        }
 
 
     }

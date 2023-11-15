@@ -123,7 +123,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaCompra' does not ha
       <PropertyRef Name="Total" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Proveedor" Type="int" Nullable="false" />
+    <Property Name="Proveedor" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Fecha" Type="date" Nullable="false" />
     <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -140,6 +140,24 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra' does
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaDetalleCompra2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Precio unitario" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
     <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -433,6 +451,16 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
     [VistaDetalleCompra].[Cantidad] AS [Cantidad], 
     [VistaDetalleCompra].[Total] AS [Total]
     FROM [dbo].[VistaDetalleCompra] AS [VistaDetalleCompra]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaDetalleCompra2" EntityType="Self.VistaDetalleCompra2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaDetalleCompra2].[ID] AS [ID], 
+    [VistaDetalleCompra2].[Producto] AS [Producto], 
+    [VistaDetalleCompra2].[Categoria] AS [Categoria], 
+    [VistaDetalleCompra2].[Precio unitario] AS [Precio unitario], 
+    [VistaDetalleCompra2].[Cantidad] AS [Cantidad], 
+    [VistaDetalleCompra2].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleCompra2] AS [VistaDetalleCompra2]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VistaDetalleVenta" EntityType="Self.VistaDetalleVenta" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

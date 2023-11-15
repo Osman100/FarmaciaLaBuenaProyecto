@@ -710,26 +710,6 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaCompraTableAdapter" GeneratorDataComponentClassName="VistaCompraTableAdapter" Name="VistaCompra" UserDataComponentName="VistaCompraTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaCompra" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Proveedor, Tipo, Fecha, Total FROM dbo.VistaCompra</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="Proveedor" DataSetColumn="Proveedor" />
-              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
-              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
-              <Mapping SourceColumn="Total" DataSetColumn="Total" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaVentaTableAdapter" GeneratorDataComponentClassName="VistaVentaTableAdapter" Name="VistaVenta" UserDataComponentName="VistaVentaTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaVenta" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -768,6 +748,67 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaCompraTableAdapter" GeneratorDataComponentClassName="VistaCompraTableAdapter" Name="VistaCompra" UserDataComponentName="VistaCompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaCompra" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Proveedor, Tipo, Fecha, Total FROM dbo.VistaCompra</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Proveedor" DataSetColumn="Proveedor" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaProductosTableAdapter" GeneratorDataComponentClassName="VistaProductosTableAdapter" Name="VistaProductos" UserDataComponentName="VistaProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaProductos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Producto, Categoria, Cantidad, Precio FROM dbo.VistaProductos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Producto" DataSetColumn="Producto" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaDetalleCompra2TableAdapter" GeneratorDataComponentClassName="VistaDetalleCompra2TableAdapter" Name="VistaDetalleCompra2" UserDataComponentName="VistaDetalleCompra2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Producto, Categoria, [Precio unitario], Cantidad, Total FROM dbo.VistaDetalleCompra2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Producto" DataSetColumn="Producto" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Precio unitario" DataSetColumn="Precio unitario" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1109,23 +1150,6 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaCompra" msprop:Generator_RowEvHandlerName="VistaCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaCompraRowDeleted" msprop:Generator_RowDeletingName="VistaCompraRowDeleting" msprop:Generator_RowEvArgName="VistaCompraRowChangeEvent" msprop:Generator_TablePropName="VistaCompra" msprop:Generator_RowChangedName="VistaCompraRowChanged" msprop:Generator_UserTableName="VistaCompra" msprop:Generator_RowChangingName="VistaCompraRowChanging" msprop:Generator_RowClassName="VistaCompraRow" msprop:Generator_TableClassName="VistaCompraDataTable" msprop:Generator_TableVarName="tableVistaCompra">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_UserColumnName="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" type="xs:int" />
-              <xs:element name="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
-              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="VistaVenta" msprop:Generator_RowEvHandlerName="VistaVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaVentaRowDeleted" msprop:Generator_RowDeletingName="VistaVentaRowDeleting" msprop:Generator_RowEvArgName="VistaVentaRowChangeEvent" msprop:Generator_TablePropName="VistaVenta" msprop:Generator_RowChangedName="VistaVentaRowChanged" msprop:Generator_UserTableName="VistaVenta" msprop:Generator_RowChangingName="VistaVentaRowChanging" msprop:Generator_RowClassName="VistaVentaRow" msprop:Generator_TableClassName="VistaVentaDataTable" msprop:Generator_TableVarName="tableVistaVenta">
           <xs:complexType>
             <xs:sequence>
@@ -1144,7 +1168,53 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaProductos1" msprop:Generator_RowClassName="VistaProductos1Row" msprop:Generator_RowEvHandlerName="VistaProductos1RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaProductos1RowDeleted" msprop:Generator_RowDeletingName="VistaProductos1RowDeleting" msprop:Generator_RowEvArgName="VistaProductos1RowChangeEvent" msprop:Generator_TablePropName="VistaProductos1" msprop:Generator_RowChangedName="VistaProductos1RowChanged" msprop:Generator_UserTableName="VistaProductos1" msprop:Generator_RowChangingName="VistaProductos1RowChanging" msprop:Generator_TableClassName="VistaProductos1DataTable" msprop:Generator_TableVarName="tableVistaProductos1">
+        <xs:element name="VistaProductos1" msprop:Generator_RowEvHandlerName="VistaProductos1RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaProductos1RowDeleted" msprop:Generator_RowDeletingName="VistaProductos1RowDeleting" msprop:Generator_RowEvArgName="VistaProductos1RowChangeEvent" msprop:Generator_TablePropName="VistaProductos1" msprop:Generator_RowChangedName="VistaProductos1RowChanged" msprop:Generator_UserTableName="VistaProductos1" msprop:Generator_RowChangingName="VistaProductos1RowChanging" msprop:Generator_RowClassName="VistaProductos1Row" msprop:Generator_TableClassName="VistaProductos1DataTable" msprop:Generator_TableVarName="tableVistaProductos1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
+              <xs:element name="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_UserColumnName="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VistaCompra" msprop:Generator_RowClassName="VistaCompraRow" msprop:Generator_RowEvHandlerName="VistaCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaCompraRowDeleted" msprop:Generator_RowDeletingName="VistaCompraRowDeleting" msprop:Generator_RowEvArgName="VistaCompraRowChangeEvent" msprop:Generator_TablePropName="VistaCompra" msprop:Generator_RowChangedName="VistaCompraRowChanged" msprop:Generator_UserTableName="VistaCompra" msprop:Generator_RowChangingName="VistaCompraRowChanging" msprop:Generator_TableClassName="VistaCompraDataTable" msprop:Generator_TableVarName="tableVistaCompra">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Proveedor" msprop:Generator_UserColumnName="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VistaProductos" msprop:Generator_RowClassName="VistaProductosRow" msprop:Generator_RowEvHandlerName="VistaProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaProductosRowDeleted" msprop:Generator_RowDeletingName="VistaProductosRowDeleting" msprop:Generator_RowEvArgName="VistaProductosRowChangeEvent" msprop:Generator_TablePropName="VistaProductos" msprop:Generator_RowChangedName="VistaProductosRowChanged" msprop:Generator_UserTableName="VistaProductos" msprop:Generator_RowChangingName="VistaProductosRowChanging" msprop:Generator_TableClassName="VistaProductosDataTable" msprop:Generator_TableVarName="tableVistaProductos">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
@@ -1164,6 +1234,30 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               </xs:element>
               <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
               <xs:element name="Precio" msprop:Generator_UserColumnName="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VistaDetalleCompra2" msprop:Generator_RowEvHandlerName="VistaDetalleCompra2RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleCompra2RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleCompra2RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleCompra2RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleCompra2" msprop:Generator_RowChangedName="VistaDetalleCompra2RowChanged" msprop:Generator_RowChangingName="VistaDetalleCompra2RowChanging" msprop:Generator_TableClassName="VistaDetalleCompra2DataTable" msprop:Generator_RowClassName="VistaDetalleCompra2Row" msprop:Generator_TableVarName="tableVistaDetalleCompra2" msprop:Generator_UserTableName="VistaDetalleCompra2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_UserColumnName="Producto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Categoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_UserColumnName="Categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio_x0020_unitario" msprop:Generator_ColumnPropNameInRow="Precio_unitario" msprop:Generator_ColumnPropNameInTable="Precio_unitarioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_unitario" msprop:Generator_UserColumnName="Precio unitario" type="xs:decimal" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1217,11 +1311,6 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
       <xs:selector xpath=".//mstns:VistaEmpleados" />
       <xs:field xpath="mstns:ID_x0020_de_x0020_empleado" />
     </xs:unique>
-    <xs:unique name="VistaCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:VistaCompra" />
-      <xs:field xpath="mstns:ID" />
-      <xs:field xpath="mstns:Proveedor" />
-    </xs:unique>
     <xs:unique name="VistaVenta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:VistaVenta" />
       <xs:field xpath="mstns:ID" />
@@ -1230,6 +1319,14 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
     </xs:unique>
     <xs:unique name="VistaProductos1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:VistaProductos1" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="VistaCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaCompra" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="VistaProductos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaProductos" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>

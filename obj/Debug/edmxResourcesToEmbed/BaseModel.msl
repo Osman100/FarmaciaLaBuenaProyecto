@@ -169,17 +169,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="VistaCompra">
-      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaCompra">
-        <MappingFragment StoreEntitySet="VistaCompra">
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VistaVenta">
       <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta">
         <MappingFragment StoreEntitySet="VistaVenta">
@@ -231,5 +220,28 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="AgregarCompraDetalleCompra" FunctionName="FARMACIA_BUENA__SALUDModel.Store.AgregarCompraDetalleCompra" />
     <FunctionImportMapping FunctionImportName="CompraYDetalle" FunctionName="FARMACIA_BUENA__SALUDModel.Store.CompraYDetalle" />
+    <EntitySetMapping Name="VistaCompra">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaCompra">
+        <MappingFragment StoreEntitySet="VistaCompra">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaDetalleCompra2">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra2">
+        <MappingFragment StoreEntitySet="VistaDetalleCompra2">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

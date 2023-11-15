@@ -25,6 +25,8 @@ namespace La_Buena_Farmacia.forms
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            
+
             if(dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
@@ -149,6 +151,41 @@ namespace La_Buena_Farmacia.forms
         {
             MenuPrincipal menuPrincipal = new MenuPrincipal();
             menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Productos productos  = new Productos();
+            productos.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Vendedores vendedores = new Vendedores();
+            vendedores.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Categorias categorias = new Categorias();
+            categorias.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
             this.Hide();
         }
     }
