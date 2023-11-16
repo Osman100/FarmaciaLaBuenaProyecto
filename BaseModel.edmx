@@ -154,6 +154,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2' doe
         <EntityType Name="VistaDetalleCompra2">
           <Key>
             <PropertyRef Name="ID" />
+            <PropertyRef Name="ID de Compra" />
             <PropertyRef Name="Producto" />
             <PropertyRef Name="Categoria" />
             <PropertyRef Name="Precio unitario" />
@@ -161,6 +162,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2' doe
             <PropertyRef Name="Total" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID de Compra" Type="int" Nullable="false" />
           <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -460,6 +462,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           <EntitySet Name="VistaDetalleCompra2" EntityType="Self.VistaDetalleCompra2" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VistaDetalleCompra2].[ID] AS [ID], 
+    [VistaDetalleCompra2].[ID de Compra] AS [ID de Compra], 
     [VistaDetalleCompra2].[Producto] AS [Producto], 
     [VistaDetalleCompra2].[Categoria] AS [Categoria], 
     [VistaDetalleCompra2].[Precio unitario] AS [Precio unitario], 
@@ -1047,6 +1050,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
             <PropertyRef Name="Precio_unitario" />
             <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Total" />
+            <PropertyRef Name="ID_de_Compra" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -1054,6 +1058,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="ID_de_Compra" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1294,6 +1299,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           <EntitySetMapping Name="VistaDetalleCompra2">
             <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra2">
               <MappingFragment StoreEntitySet="VistaDetalleCompra2">
+                <ScalarProperty Name="ID_de_Compra" ColumnName="ID de Compra" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />

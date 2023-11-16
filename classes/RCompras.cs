@@ -79,11 +79,11 @@ namespace La_Buena_Farmacia.classes
             try
             {
                 // Eliminar detalles de compra asociados
-                var detalles = db.DetalleCompra.Where(detalle => detalle.idCompra == idCompra);
+                var detalles = db.DetalleCompra.Where(detalle => detalle.idCompra == recordID);
                 db.DetalleCompra.RemoveRange(detalles);
 
                 // Eliminar la compra
-                var compra = db.Compra.Find(idCompra);
+                var compra = db.Compra.Find(recordID);
                 db.Compra.Remove(compra);
 
                 // Guardar cambios en la base de datos

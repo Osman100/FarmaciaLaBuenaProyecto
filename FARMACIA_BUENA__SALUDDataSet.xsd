@@ -796,7 +796,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Producto, Categoria, [Precio unitario], Cantidad, Total FROM dbo.VistaDetalleCompra2</CommandText>
+                    <CommandText>SELECT ID, Producto, Categoria, [Precio unitario], Cantidad, Total, [ID de Compra] FROM VistaDetalleCompra2</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -809,6 +809,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <Mapping SourceColumn="Precio unitario" DataSetColumn="Precio unitario" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="ID de Compra" DataSetColumn="ID de Compra" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1191,30 +1192,53 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaCompra" msprop:Generator_RowClassName="VistaCompraRow" msprop:Generator_RowEvHandlerName="VistaCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaCompraRowDeleted" msprop:Generator_RowDeletingName="VistaCompraRowDeleting" msprop:Generator_RowEvArgName="VistaCompraRowChangeEvent" msprop:Generator_TablePropName="VistaCompra" msprop:Generator_RowChangedName="VistaCompraRowChanged" msprop:Generator_UserTableName="VistaCompra" msprop:Generator_RowChangingName="VistaCompraRowChanging" msprop:Generator_TableClassName="VistaCompraDataTable" msprop:Generator_TableVarName="tableVistaCompra">
+        <xs:element name="VistaCompra" msprop:Generator_RowEvHandlerName="VistaCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaCompraRowDeleted" msprop:Generator_RowDeletingName="VistaCompraRowDeleting" msprop:Generator_RowEvArgName="VistaCompraRowChangeEvent" msprop:Generator_TablePropName="VistaCompra" msprop:Generator_RowChangedName="VistaCompraRowChanged" msprop:Generator_UserTableName="VistaCompra" msprop:Generator_RowChangingName="VistaCompraRowChanging" msprop:Generator_RowClassName="VistaCompraRow" msprop:Generator_TableClassName="VistaCompraDataTable" msprop:Generator_TableVarName="tableVistaCompra">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Proveedor" msprop:Generator_UserColumnName="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor">
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_UserColumnName="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
+              <xs:element name="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
-              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaProductos" msprop:Generator_RowClassName="VistaProductosRow" msprop:Generator_RowEvHandlerName="VistaProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaProductosRowDeleted" msprop:Generator_RowDeletingName="VistaProductosRowDeleting" msprop:Generator_RowEvArgName="VistaProductosRowChangeEvent" msprop:Generator_TablePropName="VistaProductos" msprop:Generator_RowChangedName="VistaProductosRowChanged" msprop:Generator_UserTableName="VistaProductos" msprop:Generator_RowChangingName="VistaProductosRowChanging" msprop:Generator_TableClassName="VistaProductosDataTable" msprop:Generator_TableVarName="tableVistaProductos">
+        <xs:element name="VistaProductos" msprop:Generator_RowEvHandlerName="VistaProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaProductosRowDeleted" msprop:Generator_RowDeletingName="VistaProductosRowDeleting" msprop:Generator_RowEvArgName="VistaProductosRowChangeEvent" msprop:Generator_TablePropName="VistaProductos" msprop:Generator_RowChangedName="VistaProductosRowChanged" msprop:Generator_UserTableName="VistaProductos" msprop:Generator_RowChangingName="VistaProductosRowChanging" msprop:Generator_RowClassName="VistaProductosRow" msprop:Generator_TableClassName="VistaProductosDataTable" msprop:Generator_TableVarName="tableVistaProductos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
+              <xs:element name="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_UserColumnName="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VistaDetalleCompra2" msprop:Generator_RowClassName="VistaDetalleCompra2Row" msprop:Generator_RowEvHandlerName="VistaDetalleCompra2RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleCompra2RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleCompra2RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleCompra2RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleCompra2" msprop:Generator_RowChangedName="VistaDetalleCompra2RowChanged" msprop:Generator_UserTableName="VistaDetalleCompra2" msprop:Generator_RowChangingName="VistaDetalleCompra2RowChanging" msprop:Generator_TableClassName="VistaDetalleCompra2DataTable" msprop:Generator_TableVarName="tableVistaDetalleCompra2">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
@@ -1232,32 +1256,10 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Precio_x0020_unitario" msprop:Generator_UserColumnName="Precio unitario" msprop:Generator_ColumnPropNameInTable="Precio_unitarioColumn" msprop:Generator_ColumnPropNameInRow="Precio_unitario" msprop:Generator_ColumnVarNameInTable="columnPrecio_unitario" type="xs:decimal" />
               <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
-              <xs:element name="Precio" msprop:Generator_UserColumnName="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" type="xs:decimal" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="VistaDetalleCompra2" msprop:Generator_RowEvHandlerName="VistaDetalleCompra2RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleCompra2RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleCompra2RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleCompra2RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleCompra2" msprop:Generator_RowChangedName="VistaDetalleCompra2RowChanged" msprop:Generator_RowChangingName="VistaDetalleCompra2RowChanging" msprop:Generator_TableClassName="VistaDetalleCompra2DataTable" msprop:Generator_RowClassName="VistaDetalleCompra2Row" msprop:Generator_TableVarName="tableVistaDetalleCompra2" msprop:Generator_UserTableName="VistaDetalleCompra2">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Producto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_UserColumnName="Producto">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Categoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_UserColumnName="Categoria">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Precio_x0020_unitario" msprop:Generator_ColumnPropNameInRow="Precio_unitario" msprop:Generator_ColumnPropNameInTable="Precio_unitarioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_unitario" msprop:Generator_UserColumnName="Precio unitario" type="xs:decimal" />
-              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
-              <xs:element name="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:decimal" />
+              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="ID_x0020_de_x0020_Compra" msprop:Generator_ColumnPropNameInRow="ID_de_Compra" msprop:Generator_ColumnPropNameInTable="ID_de_CompraColumn" msprop:Generator_ColumnVarNameInTable="columnID_de_Compra" msprop:Generator_UserColumnName="ID de Compra" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1329,19 +1331,23 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
       <xs:selector xpath=".//mstns:VistaProductos" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
+    <xs:unique name="VistaDetalleCompra2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaDetalleCompra2" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Compra__idProvee__1EA48E88" msdata:parent="Proveedor" msdata:child="Compra" msdata:parentkey="idProveedor" msdata:childkey="idProveedor" msprop:Generator_UserParentTable="Proveedor" msprop:Generator_UserChildTable="Compra" msprop:Generator_RelationVarName="relationFK__Compra__idProvee__1EA48E88" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_UserRelationName="FK__Compra__idProvee__1EA48E88" msprop:Generator_ParentPropName="ProveedorRow" />
-      <msdata:Relationship name="FK__DetalleCo__idCom__2180FB33" msdata:parent="Compra" msdata:child="DetalleCompra" msdata:parentkey="idCompra" msdata:childkey="idCompra" msprop:Generator_UserParentTable="Compra" msprop:Generator_UserChildTable="DetalleCompra" msprop:Generator_RelationVarName="relationFK__DetalleCo__idCom__2180FB33" msprop:Generator_ChildPropName="GetDetalleCompraRows" msprop:Generator_ParentPropName="CompraRow" msprop:Generator_UserRelationName="FK__DetalleCo__idCom__2180FB33" />
-      <msdata:Relationship name="FK__DetalleCo__idPro__22751F6C" msdata:parent="Producto" msdata:child="DetalleCompra" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="DetalleCompra" msprop:Generator_RelationVarName="relationFK__DetalleCo__idPro__22751F6C" msprop:Generator_ChildPropName="GetDetalleCompraRows" msprop:Generator_UserRelationName="FK__DetalleCo__idPro__22751F6C" msprop:Generator_ParentPropName="ProductoRow" />
-      <msdata:Relationship name="FK__DetalleVe__idPro__37703C52" msdata:parent="Producto" msdata:child="DetalleVenta" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__idPro__37703C52" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_UserRelationName="FK__DetalleVe__idPro__37703C52" msprop:Generator_ParentPropName="ProductoRow" />
-      <msdata:Relationship name="FK__DetalleVe__idVen__367C1819" msdata:parent="Venta" msdata:child="DetalleVenta" msdata:parentkey="idVenta" msdata:childkey="idVenta" msprop:Generator_UserParentTable="Venta" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__idVen__367C1819" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_UserRelationName="FK__DetalleVe__idVen__367C1819" msprop:Generator_ParentPropName="VentaRow" />
-      <msdata:Relationship name="FK__Empleado__idRol__2FCF1A8A" msdata:parent="Rol" msdata:child="Empleado" msdata:parentkey="idRol" msdata:childkey="idRol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationFK__Empleado__idRol__2FCF1A8A" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="FK__Empleado__idRol__2FCF1A8A" msprop:Generator_ParentPropName="RolRow" />
-      <msdata:Relationship name="FK__Producto__idCate__123EB7A3" msdata:parent="Categoria" msdata:child="Producto" msdata:parentkey="idCategoria" msdata:childkey="idCategoria" msprop:Generator_UserParentTable="Categoria" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationFK__Producto__idCate__123EB7A3" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_ParentPropName="CategoriaRow" msprop:Generator_UserRelationName="FK__Producto__idCate__123EB7A3" />
-      <msdata:Relationship name="FK__TarjetaCr__idCli__04E4BC85" msdata:parent="Cliente" msdata:child="TarjetaCredito" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="TarjetaCredito" msprop:Generator_RelationVarName="relationFK__TarjetaCr__idCli__04E4BC85" msprop:Generator_ChildPropName="GetTarjetaCreditoRows" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_UserRelationName="FK__TarjetaCr__idCli__04E4BC85" />
-      <msdata:Relationship name="FK__Venta__idCliente__32AB8735" msdata:parent="Cliente" msdata:child="Venta" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__idCliente__32AB8735" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_UserRelationName="FK__Venta__idCliente__32AB8735" />
-      <msdata:Relationship name="FK__Venta__idEmplead__339FAB6E" msdata:parent="Empleado" msdata:child="Venta" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__idEmplead__339FAB6E" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_UserRelationName="FK__Venta__idEmplead__339FAB6E" />
+      <msdata:Relationship name="FK__Compra__idProvee__1EA48E88" msdata:parent="Proveedor" msdata:child="Compra" msdata:parentkey="idProveedor" msdata:childkey="idProveedor" msprop:Generator_UserParentTable="Proveedor" msprop:Generator_UserChildTable="Compra" msprop:Generator_RelationVarName="relationFK__Compra__idProvee__1EA48E88" msprop:Generator_ChildPropName="GetCompraRows" msprop:Generator_ParentPropName="ProveedorRow" msprop:Generator_UserRelationName="FK__Compra__idProvee__1EA48E88" />
+      <msdata:Relationship name="FK__DetalleCo__idCom__2180FB33" msdata:parent="Compra" msdata:child="DetalleCompra" msdata:parentkey="idCompra" msdata:childkey="idCompra" msprop:Generator_UserParentTable="Compra" msprop:Generator_UserChildTable="DetalleCompra" msprop:Generator_RelationVarName="relationFK__DetalleCo__idCom__2180FB33" msprop:Generator_ChildPropName="GetDetalleCompraRows" msprop:Generator_UserRelationName="FK__DetalleCo__idCom__2180FB33" msprop:Generator_ParentPropName="CompraRow" />
+      <msdata:Relationship name="FK__DetalleCo__idPro__22751F6C" msdata:parent="Producto" msdata:child="DetalleCompra" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="DetalleCompra" msprop:Generator_RelationVarName="relationFK__DetalleCo__idPro__22751F6C" msprop:Generator_ChildPropName="GetDetalleCompraRows" msprop:Generator_ParentPropName="ProductoRow" msprop:Generator_UserRelationName="FK__DetalleCo__idPro__22751F6C" />
+      <msdata:Relationship name="FK__DetalleVe__idPro__37703C52" msdata:parent="Producto" msdata:child="DetalleVenta" msdata:parentkey="idProducto" msdata:childkey="idProducto" msprop:Generator_UserParentTable="Producto" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__idPro__37703C52" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_ParentPropName="ProductoRow" msprop:Generator_UserRelationName="FK__DetalleVe__idPro__37703C52" />
+      <msdata:Relationship name="FK__DetalleVe__idVen__367C1819" msdata:parent="Venta" msdata:child="DetalleVenta" msdata:parentkey="idVenta" msdata:childkey="idVenta" msprop:Generator_UserParentTable="Venta" msprop:Generator_UserChildTable="DetalleVenta" msprop:Generator_RelationVarName="relationFK__DetalleVe__idVen__367C1819" msprop:Generator_ChildPropName="GetDetalleVentaRows" msprop:Generator_ParentPropName="VentaRow" msprop:Generator_UserRelationName="FK__DetalleVe__idVen__367C1819" />
+      <msdata:Relationship name="FK__Empleado__idRol__2FCF1A8A" msdata:parent="Rol" msdata:child="Empleado" msdata:parentkey="idRol" msdata:childkey="idRol" msprop:Generator_UserParentTable="Rol" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationFK__Empleado__idRol__2FCF1A8A" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_ParentPropName="RolRow" msprop:Generator_UserRelationName="FK__Empleado__idRol__2FCF1A8A" />
+      <msdata:Relationship name="FK__Producto__idCate__123EB7A3" msdata:parent="Categoria" msdata:child="Producto" msdata:parentkey="idCategoria" msdata:childkey="idCategoria" msprop:Generator_UserParentTable="Categoria" msprop:Generator_UserChildTable="Producto" msprop:Generator_RelationVarName="relationFK__Producto__idCate__123EB7A3" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="FK__Producto__idCate__123EB7A3" msprop:Generator_ParentPropName="CategoriaRow" />
+      <msdata:Relationship name="FK__TarjetaCr__idCli__04E4BC85" msdata:parent="Cliente" msdata:child="TarjetaCredito" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="TarjetaCredito" msprop:Generator_RelationVarName="relationFK__TarjetaCr__idCli__04E4BC85" msprop:Generator_ChildPropName="GetTarjetaCreditoRows" msprop:Generator_UserRelationName="FK__TarjetaCr__idCli__04E4BC85" msprop:Generator_ParentPropName="ClienteRow" />
+      <msdata:Relationship name="FK__Venta__idCliente__32AB8735" msdata:parent="Cliente" msdata:child="Venta" msdata:parentkey="idCliente" msdata:childkey="idCliente" msprop:Generator_UserParentTable="Cliente" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__idCliente__32AB8735" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="FK__Venta__idCliente__32AB8735" msprop:Generator_ParentPropName="ClienteRow" />
+      <msdata:Relationship name="FK__Venta__idEmplead__339FAB6E" msdata:parent="Empleado" msdata:child="Venta" msdata:parentkey="idEmpleado" msdata:childkey="idEmpleado" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="Venta" msprop:Generator_RelationVarName="relationFK__Venta__idEmplead__339FAB6E" msprop:Generator_ChildPropName="GetVentaRows" msprop:Generator_UserRelationName="FK__Venta__idEmplead__339FAB6E" msprop:Generator_ParentPropName="EmpleadoRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

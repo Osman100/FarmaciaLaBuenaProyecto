@@ -489,6 +489,7 @@
       <PropertyRef Name="Precio_unitario" />
       <PropertyRef Name="Cantidad" />
       <PropertyRef Name="Total" />
+      <PropertyRef Name="ID_de_Compra" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -496,5 +497,6 @@
     <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="ID_de_Compra" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

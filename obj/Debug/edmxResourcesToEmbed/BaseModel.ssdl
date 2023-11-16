@@ -149,6 +149,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2' doe
   <EntityType Name="VistaDetalleCompra2">
     <Key>
       <PropertyRef Name="ID" />
+      <PropertyRef Name="ID de Compra" />
       <PropertyRef Name="Producto" />
       <PropertyRef Name="Categoria" />
       <PropertyRef Name="Precio unitario" />
@@ -156,6 +157,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleCompra2' doe
       <PropertyRef Name="Total" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID de Compra" Type="int" Nullable="false" />
     <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -455,6 +457,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
     <EntitySet Name="VistaDetalleCompra2" EntityType="Self.VistaDetalleCompra2" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [VistaDetalleCompra2].[ID] AS [ID], 
+    [VistaDetalleCompra2].[ID de Compra] AS [ID de Compra], 
     [VistaDetalleCompra2].[Producto] AS [Producto], 
     [VistaDetalleCompra2].[Categoria] AS [Categoria], 
     [VistaDetalleCompra2].[Precio unitario] AS [Precio unitario], 

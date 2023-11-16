@@ -234,6 +234,7 @@
     <EntitySetMapping Name="VistaDetalleCompra2">
       <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra2">
         <MappingFragment StoreEntitySet="VistaDetalleCompra2">
+          <ScalarProperty Name="ID_de_Compra" ColumnName="ID de Compra" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />

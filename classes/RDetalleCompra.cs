@@ -52,6 +52,7 @@ namespace La_Buena_Farmacia.classes
             try
             {
                 DetalleCompra detalleCompra = db.DetalleCompra.Find(model.idDetalleCompra);
+                detalleCompra.idDetalleCompra = model.idDetalleCompra;
                 detalleCompra.idCompra = model.idCompra;
                 detalleCompra.idProducto = model.idProducto;
                 detalleCompra.cantidadProducto = model.cantidadProducto;

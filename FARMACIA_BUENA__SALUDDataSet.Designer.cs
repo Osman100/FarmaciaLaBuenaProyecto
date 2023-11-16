@@ -6679,6 +6679,8 @@ namespace La_Buena_Farmacia {
             
             private global::System.Data.DataColumn columnTotal;
             
+            private global::System.Data.DataColumn columnID_de_Compra;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public VistaDetalleCompra2DataTable() {
@@ -6762,6 +6764,14 @@ namespace La_Buena_Farmacia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_de_CompraColumn {
+                get {
+                    return this.columnID_de_Compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6797,7 +6807,7 @@ namespace La_Buena_Farmacia {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VistaDetalleCompra2Row AddVistaDetalleCompra2Row(int ID, string Producto, string Categoria, decimal Precio_unitario, int Cantidad, decimal Total) {
+            public VistaDetalleCompra2Row AddVistaDetalleCompra2Row(int ID, string Producto, string Categoria, decimal Precio_unitario, int Cantidad, decimal Total, int ID_de_Compra) {
                 VistaDetalleCompra2Row rowVistaDetalleCompra2Row = ((VistaDetalleCompra2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -6805,10 +6815,18 @@ namespace La_Buena_Farmacia {
                         Categoria,
                         Precio_unitario,
                         Cantidad,
-                        Total};
+                        Total,
+                        ID_de_Compra};
                 rowVistaDetalleCompra2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVistaDetalleCompra2Row);
                 return rowVistaDetalleCompra2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public VistaDetalleCompra2Row FindByID(int ID) {
+                return ((VistaDetalleCompra2Row)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6834,6 +6852,7 @@ namespace La_Buena_Farmacia {
                 this.columnPrecio_unitario = base.Columns["Precio unitario"];
                 this.columnCantidad = base.Columns["Cantidad"];
                 this.columnTotal = base.Columns["Total"];
+                this.columnID_de_Compra = base.Columns["ID de Compra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6851,7 +6870,12 @@ namespace La_Buena_Farmacia {
                 base.Columns.Add(this.columnCantidad);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.columnID_de_Compra = new global::System.Data.DataColumn("ID de Compra", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_de_Compra);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnProducto.AllowDBNull = false;
                 this.columnProducto.MaxLength = 255;
                 this.columnCategoria.AllowDBNull = false;
@@ -6859,6 +6883,7 @@ namespace La_Buena_Farmacia {
                 this.columnPrecio_unitario.AllowDBNull = false;
                 this.columnCantidad.AllowDBNull = false;
                 this.columnTotal.AllowDBNull = false;
+                this.columnID_de_Compra.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8471,6 +8496,17 @@ namespace La_Buena_Farmacia {
                 }
                 set {
                     this[this.tableVistaDetalleCompra2.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_de_Compra {
+                get {
+                    return ((int)(this[this.tableVistaDetalleCompra2.ID_de_CompraColumn]));
+                }
+                set {
+                    this[this.tableVistaDetalleCompra2.ID_de_CompraColumn] = value;
                 }
             }
         }
@@ -14284,6 +14320,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             tableMapping.ColumnMappings.Add("Precio unitario", "Precio unitario");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("ID de Compra", "ID de Compra");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -14300,8 +14337,8 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Producto, Categoria, [Precio unitario], Cantidad, Total FROM dbo.Vista" +
-                "DetalleCompra2";
+            this._commandCollection[0].CommandText = "SELECT ID, Producto, Categoria, [Precio unitario], Cantidad, Total, [ID de Compra" +
+                "] FROM VistaDetalleCompra2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -20,5 +20,6 @@ namespace La_Buena_Farmacia
         public decimal Precio_unitario { get; set; }
         public int Cantidad { get; set; }
         public decimal Total { get; set; }
+        public int ID_de_Compra { get; set; }
     }
 }
