@@ -23,3 +23,4 @@ C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Ven
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Compras.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.InicioSesion.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.MenuPrincipal.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Clientes.resources

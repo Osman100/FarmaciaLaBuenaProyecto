@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaDetalleCompra2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.TotalCompra = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,6 +68,12 @@
             this.tipoCompras = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaCompraBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.IDCompras = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -96,28 +108,17 @@
             this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farmaciA_BUENA__SALUDDataSet1 = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.vistaCompraBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vistaDetalleCompra2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vistaCompraBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDeCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaDetalleCompra2BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).BeginInit();
@@ -127,8 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.farmaciA_BUENA__SALUDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -180,20 +180,58 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDeCompraDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn3,
             this.productoDataGridViewTextBoxColumn1,
             this.categoriaDataGridViewTextBoxColumn1,
-            this.precioUnitarioDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.vistaDetalleCompra2BindingSource;
+            this.dataGridView2.DataSource = this.vistaDetalleCompra2BindingSource2;
             this.dataGridView2.Location = new System.Drawing.Point(316, 361);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(442, 150);
             this.dataGridView2.TabIndex = 47;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_2);
+            // 
+            // iDDataGridViewTextBoxColumn3
+            // 
+            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
+            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // productoDataGridViewTextBoxColumn1
+            // 
+            this.productoDataGridViewTextBoxColumn1.DataPropertyName = "Producto";
+            this.productoDataGridViewTextBoxColumn1.HeaderText = "Producto";
+            this.productoDataGridViewTextBoxColumn1.Name = "productoDataGridViewTextBoxColumn1";
+            this.productoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn1
+            // 
+            this.categoriaDataGridViewTextBoxColumn1.DataPropertyName = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn1.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn1.Name = "categoriaDataGridViewTextBoxColumn1";
+            this.categoriaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vistaDetalleCompra2BindingSource
+            // 
+            this.vistaDetalleCompra2BindingSource.DataMember = "VistaDetalleCompra2";
+            this.vistaDetalleCompra2BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // fARMACIA_BUENA__SALUDDataSet
             // 
@@ -548,6 +586,46 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // proveedorDataGridViewTextBoxColumn
+            // 
+            this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
+            this.proveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn1
+            // 
+            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
+            this.totalDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // vistaCompraBindingSource4
+            // 
+            this.vistaCompraBindingSource4.DataMember = "VistaCompra";
+            this.vistaCompraBindingSource4.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Menu;
@@ -796,101 +874,10 @@
             this.vistaCompraBindingSource2.DataMember = "VistaCompra";
             this.vistaCompraBindingSource2.DataSource = this.fARMACIABUENASALUDDataSetBindingSource;
             // 
-            // totalDataGridViewTextBoxColumn1
+            // vistaDetalleCompra2BindingSource2
             // 
-            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
-            this.totalDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // proveedorDataGridViewTextBoxColumn
-            // 
-            this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
-            this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
-            this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
-            this.proveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // vistaDetalleCompra2BindingSource
-            // 
-            this.vistaDetalleCompra2BindingSource.DataMember = "VistaDetalleCompra2";
-            this.vistaDetalleCompra2BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
-            // vistaCompraBindingSource4
-            // 
-            this.vistaCompraBindingSource4.DataMember = "VistaCompra";
-            this.vistaCompraBindingSource4.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
-            // iDDeCompraDataGridViewTextBoxColumn
-            // 
-            this.iDDeCompraDataGridViewTextBoxColumn.DataPropertyName = "ID_de_Compra";
-            this.iDDeCompraDataGridViewTextBoxColumn.HeaderText = "ID de Compra";
-            this.iDDeCompraDataGridViewTextBoxColumn.Name = "iDDeCompraDataGridViewTextBoxColumn";
-            this.iDDeCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDeCompraDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDDataGridViewTextBoxColumn3
-            // 
-            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
-            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // productoDataGridViewTextBoxColumn1
-            // 
-            this.productoDataGridViewTextBoxColumn1.DataPropertyName = "Producto";
-            this.productoDataGridViewTextBoxColumn1.HeaderText = "Producto";
-            this.productoDataGridViewTextBoxColumn1.Name = "productoDataGridViewTextBoxColumn1";
-            this.productoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // categoriaDataGridViewTextBoxColumn1
-            // 
-            this.categoriaDataGridViewTextBoxColumn1.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn1.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn1.Name = "categoriaDataGridViewTextBoxColumn1";
-            this.categoriaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // precioUnitarioDataGridViewTextBoxColumn
-            // 
-            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "Precio_unitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.MaxInputLength = 40000;
-            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
-            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vistaDetalleCompra2BindingSource2.DataMember = "VistaDetalleCompra2";
+            this.vistaDetalleCompra2BindingSource2.DataSource = this.fARMACIABUENASALUDDataSetBindingSource;
             // 
             // Compras
             // 
@@ -909,12 +896,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).EndInit();
@@ -924,8 +913,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.farmaciA_BUENA__SALUDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleCompra2BindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1013,5 +1001,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vistaDetalleCompra2BindingSource2;
     }
 }

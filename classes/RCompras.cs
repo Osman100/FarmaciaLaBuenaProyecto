@@ -120,7 +120,6 @@ namespace La_Buena_Farmacia.classes
                 
             }
         }
-
         public int ObtenerIdProveedorPorNombre(string nombreProveedor)
         {
             // Realiza la consulta a la base de datos para obtener el ID del proveedor en base al nombre
@@ -129,7 +128,6 @@ namespace La_Buena_Farmacia.classes
             // Devuelve el ID del proveedor si se encuentra, de lo contrario, devuelve -1
             return proveedor != null ? proveedor.idProveedor : -1;
         }
-
 
     }
 }

@@ -75,9 +75,6 @@ namespace La_Buena_Farmacia.classes
             }
         }
 
-
-
-
         
     }
 }

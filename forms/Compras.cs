@@ -111,7 +111,7 @@ namespace La_Buena_Farmacia.forms
             if (resultado != -1)
             {
 
-                dataGridView2.DataSource = db.VistaDetalleCompra.ToList();
+                dataGridView2.DataSource = db.VistaDetalleCompra2.ToList();
                 dataGridView1.DataSource = db.VistaCompra.ToList();
                 decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
                 rCompra.ActualizarTotalCompra(idCompra,totalCompra);
@@ -120,8 +120,9 @@ namespace La_Buena_Farmacia.forms
                 List<VistaDetalleCompra2> detalleCompra = db.VistaDetalleCompra2.Where(c => c.ID == idCompraSeleccionada).ToList();
                 dataGridView2.DataSource = detalleCompra;
                 dataGridView1.DataSource = db.VistaCompra.ToList();
-
+                db.increaseStock(idProducto, nuevaCantidad);
                 MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 
             }
             else

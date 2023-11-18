@@ -87,12 +87,15 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="classes\BaseInterface.cs" />
+    <Compile Include="classes\RCliente.cs" />
     <Compile Include="classes\RDetalleCompra.cs" />
     <Compile Include="classes\RCategorias.cs" />
     <Compile Include="classes\RCompras.cs" />
+    <Compile Include="classes\RDetalleVenta.cs" />
     <Compile Include="classes\REmpleado.cs" />
     <Compile Include="classes\RProductos.cs" />
     <Compile Include="classes\RProveedores.cs" />
+    <Compile Include="classes\RTarjetaCredito.cs" />
     <Compile Include="classes\RVentas.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
@@ -116,6 +119,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FARMACIA_BUENA__SALUDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Compras.cs">
       <SubType>Form</SubType>
@@ -221,6 +230,9 @@
     <Compile Include="VistaVenta.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
