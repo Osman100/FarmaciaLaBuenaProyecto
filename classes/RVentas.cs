@@ -30,7 +30,10 @@ namespace La_Buena_Farmacia.classes
                 venta.idCliente = model.idCliente;
                 venta.idEmpleado = model.idEmpleado;
                 venta.fechaVenta = model.fechaVenta;
+                venta.tipoVenta = model.tipoVenta;
                 venta.total = model.total;
+
+                Console.WriteLine(venta);
 
                 db.Venta.Add(venta);
                 db.SaveChanges();
@@ -39,7 +42,7 @@ namespace La_Buena_Farmacia.classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.InnerException.Message);
+
                 return -1;
             }
         }

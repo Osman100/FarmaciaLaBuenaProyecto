@@ -184,6 +184,36 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta' does 
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaDetalleVenta3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaDetalleVenta4">
+          <Key>
+            <PropertyRef Name="ID de venta" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID de venta" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VistaEmpleados">
           <Key>
@@ -247,6 +277,24 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Cliente" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Empleado" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaVenta3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Cliente" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -478,6 +526,23 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
     [VistaDetalleVenta].[Total] AS [Total]
     FROM [dbo].[VistaDetalleVenta] AS [VistaDetalleVenta]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VistaDetalleVenta3" EntityType="Self.VistaDetalleVenta3" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaDetalleVenta3].[ID] AS [ID], 
+    [VistaDetalleVenta3].[Producto] AS [Producto], 
+    [VistaDetalleVenta3].[Cantidad] AS [Cantidad], 
+    [VistaDetalleVenta3].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleVenta3] AS [VistaDetalleVenta3]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaDetalleVenta4" EntityType="Self.VistaDetalleVenta4" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaDetalleVenta4].[ID de venta] AS [ID de venta], 
+    [VistaDetalleVenta4].[ID] AS [ID], 
+    [VistaDetalleVenta4].[Producto] AS [Producto], 
+    [VistaDetalleVenta4].[Cantidad] AS [Cantidad], 
+    [VistaDetalleVenta4].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleVenta4] AS [VistaDetalleVenta4]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VistaEmpleados" EntityType="Self.VistaEmpleados" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VistaEmpleados].[ID de empleado] AS [ID de empleado], 
@@ -515,6 +580,16 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
     [VistaVenta].[Fecha] AS [Fecha], 
     [VistaVenta].[Total] AS [Total]
     FROM [dbo].[VistaVenta] AS [VistaVenta]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaVenta3" EntityType="Self.VistaVenta3" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaVenta3].[ID] AS [ID], 
+    [VistaVenta3].[Cliente] AS [Cliente], 
+    [VistaVenta3].[Empleado] AS [Empleado], 
+    [VistaVenta3].[Tipo] AS [Tipo], 
+    [VistaVenta3].[Fecha] AS [Fecha], 
+    [VistaVenta3].[Total] AS [Total]
+    FROM [dbo].[VistaVenta3] AS [VistaVenta3]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Compra__idProvee__1EA48E88" Association="Self.FK__Compra__idProvee__1EA48E88">
             <End Role="Proveedor" EntitySet="Proveedor" />
@@ -930,6 +1005,9 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           </FunctionImport>
           <EntitySet Name="VistaCompra" EntityType="FARMACIA_BUENA__SALUDModel.VistaCompra" />
           <EntitySet Name="VistaDetalleCompra2" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleCompra2" />
+          <EntitySet Name="VistaDetalleVenta3" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta3" />
+          <EntitySet Name="VistaVenta3" EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta3" />
+          <EntitySet Name="VistaDetalleVenta4" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4" />
         </EntityContainer>
         <EntityType Name="VistaDetalleVenta">
           <Key>
@@ -1059,6 +1137,48 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="ID_de_Compra" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VistaDetalleVenta3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="VistaVenta3">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Tipo" />
+            <PropertyRef Name="Fecha" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Empleado" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="VistaDetalleVenta4">
+          <Key>
+            <PropertyRef Name="ID_de_venta" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="ID_de_venta" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1306,6 +1426,39 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta' does not hav
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
                 <ScalarProperty Name="Producto" ColumnName="Producto" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaDetalleVenta3">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta3">
+              <MappingFragment StoreEntitySet="VistaDetalleVenta3">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaVenta3">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta3">
+              <MappingFragment StoreEntitySet="VistaVenta3">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VistaDetalleVenta4">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4">
+              <MappingFragment StoreEntitySet="VistaDetalleVenta4">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_de_venta" ColumnName="ID de venta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -244,5 +244,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VistaDetalleVenta3">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta3">
+        <MappingFragment StoreEntitySet="VistaDetalleVenta3">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaVenta3">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta3">
+        <MappingFragment StoreEntitySet="VistaVenta3">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaDetalleVenta4">
+      <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4">
+        <MappingFragment StoreEntitySet="VistaDetalleVenta4">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_de_venta" ColumnName="ID de venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -218,6 +218,12 @@
     <Compile Include="VistaDetalleVenta.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaDetalleVenta3.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaDetalleVenta4.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="VistaEmpleados.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VistaVenta.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VistaVenta3.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="forms\Clientes.resx">
