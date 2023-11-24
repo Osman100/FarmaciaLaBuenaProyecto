@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.vistaVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaVentaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVentaTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tarjeta = new System.Windows.Forms.ComboBox();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fARMACIA_BUENA__SALUDDataSet1 = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
+            this.label15 = new System.Windows.Forms.Label();
             this.idVendedor = new System.Windows.Forms.ComboBox();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -47,11 +45,18 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaVenta3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
@@ -67,13 +72,19 @@
             this.tipoVenta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vistaDetalleVenta3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IDDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaDetalleVenta4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button12 = new System.Windows.Forms.Button();
-            this.IDCompras = new System.Windows.Forms.TextBox();
+            this.IDVenta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.vistaDetalleVenta3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaCompraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vistaDetalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ClienteTableAdapter();
@@ -82,106 +93,26 @@
             this.vistaDetalleVentaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaDetalleVentaTableAdapter();
             this.vistaVenta3TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVenta3TableAdapter();
             this.vistaDetalleVenta3TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaDetalleVenta3TableAdapter();
-            this.vistaDetalleVenta4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaDetalleVenta4TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaDetalleVenta4TableAdapter();
-            this.IDDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fARMACIA_BUENA__SALUDDataSet1 = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadoTableAdapter();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarjetaCreditoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tarjetaCreditoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.TarjetaCreditoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaVentaBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetaCreditoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Location = new System.Drawing.Point(3, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 33);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Categorías";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(3, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 33);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Empleados";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(3, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button8.Location = new System.Drawing.Point(3, 224);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 33);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Proveedores";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button9.Location = new System.Drawing.Point(3, 256);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 33);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "Compras";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // fARMACIA_BUENA__SALUDDataSet
             // 
@@ -200,6 +131,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.tarjeta);
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.idVendedor);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.button13);
@@ -228,15 +161,49 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.IDCompras);
+            this.panel1.Controls.Add(this.IDVenta);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(121, 0);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 530);
+            this.panel1.Size = new System.Drawing.Size(891, 530);
             this.panel1.TabIndex = 24;
+            // 
+            // tarjeta
+            // 
+            this.tarjeta.DataSource = this.tarjetaCreditoBindingSource;
+            this.tarjeta.DisplayMember = "numeroTarjeta";
+            this.tarjeta.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tarjeta.FormattingEnabled = true;
+            this.tarjeta.Location = new System.Drawing.Point(362, 99);
+            this.tarjeta.Name = "tarjeta";
+            this.tarjeta.Size = new System.Drawing.Size(117, 26);
+            this.tarjeta.TabIndex = 47;
+            this.tarjeta.ValueMember = "idTarjeta";
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet1;
+            // 
+            // fARMACIA_BUENA__SALUDDataSet1
+            // 
+            this.fARMACIA_BUENA__SALUDDataSet1.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
+            this.fARMACIA_BUENA__SALUDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label15.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label15.Location = new System.Drawing.Point(290, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 18);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Tarjeta:";
             // 
             // idVendedor
             // 
@@ -244,16 +211,11 @@
             this.idVendedor.DisplayMember = "nombreEmpleado";
             this.idVendedor.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idVendedor.FormattingEnabled = true;
-            this.idVendedor.Location = new System.Drawing.Point(374, 96);
+            this.idVendedor.Location = new System.Drawing.Point(585, 98);
             this.idVendedor.Name = "idVendedor";
             this.idVendedor.Size = new System.Drawing.Size(162, 26);
             this.idVendedor.TabIndex = 45;
-            this.idVendedor.ValueMember = "idCliente";
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            this.idVendedor.ValueMember = "idEmpleado";
             // 
             // label14
             // 
@@ -261,7 +223,7 @@
             this.label14.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label14.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label14.Location = new System.Drawing.Point(290, 100);
+            this.label14.Location = new System.Drawing.Point(501, 102);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 18);
             this.label14.TabIndex = 44;
@@ -273,7 +235,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button13.Location = new System.Drawing.Point(674, 8);
+            this.button13.Location = new System.Drawing.Point(793, 11);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(84, 28);
             this.button13.TabIndex = 43;
@@ -342,6 +304,12 @@
             this.comboBoxCliente.Size = new System.Drawing.Size(162, 26);
             this.comboBoxCliente.TabIndex = 37;
             this.comboBoxCliente.ValueMember = "idCliente";
+            this.comboBoxCliente.SelectedIndexChanged += new System.EventHandler(this.comboBoxCliente_SelectedIndexChanged);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // button5
             // 
@@ -381,6 +349,7 @@
             this.button4.TabIndex = 34;
             this.button4.Text = "Editar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label12
             // 
@@ -409,8 +378,45 @@
             this.dataGridView2.DataSource = this.vistaVenta3BindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(314, 150);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(442, 159);
+            this.dataGridView2.Size = new System.Drawing.Size(563, 159);
             this.dataGridView2.TabIndex = 29;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // Cliente
+            // 
+            this.Cliente.DataPropertyName = "Cliente";
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // Empleado
+            // 
+            this.Empleado.DataPropertyName = "Empleado";
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn1
+            // 
+            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
             // 
             // vistaVenta3BindingSource
             // 
@@ -560,7 +566,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(259, 9);
+            this.label6.Location = new System.Drawing.Point(370, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 23);
             this.label6.TabIndex = 14;
@@ -580,13 +586,43 @@
             this.dataGridView1.DataSource = this.vistaDetalleVenta4BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(316, 337);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 153);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 153);
             this.dataGridView1.TabIndex = 13;
             // 
-            // vistaDetalleVenta3BindingSource
+            // IDDeVenta
             // 
-            this.vistaDetalleVenta3BindingSource.DataMember = "VistaDetalleVenta3";
-            this.vistaDetalleVenta3BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            this.IDDeVenta.DataPropertyName = "ID de venta";
+            this.IDDeVenta.HeaderText = "ID de venta";
+            this.IDDeVenta.Name = "IDDeVenta";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // Producto
+            // 
+            this.Producto.DataPropertyName = "Producto";
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // vistaDetalleVenta4BindingSource
+            // 
+            this.vistaDetalleVenta4BindingSource.DataMember = "VistaDetalleVenta4";
+            this.vistaDetalleVenta4BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // button12
             // 
@@ -601,15 +637,15 @@
             this.button12.Text = "Añadir";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // IDCompras
+            // IDVenta
             // 
-            this.IDCompras.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDCompras.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.IDCompras.Location = new System.Drawing.Point(58, 50);
-            this.IDCompras.Name = "IDCompras";
-            this.IDCompras.ReadOnly = true;
-            this.IDCompras.Size = new System.Drawing.Size(98, 26);
-            this.IDCompras.TabIndex = 5;
+            this.IDVenta.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDVenta.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.IDVenta.Location = new System.Drawing.Point(58, 50);
+            this.IDVenta.Name = "IDVenta";
+            this.IDVenta.ReadOnly = true;
+            this.IDVenta.Size = new System.Drawing.Size(98, 26);
+            this.IDVenta.TabIndex = 5;
             // 
             // label5
             // 
@@ -659,6 +695,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // vistaDetalleVenta3BindingSource
+            // 
+            this.vistaDetalleVenta3BindingSource.DataMember = "VistaDetalleVenta3";
+            this.vistaDetalleVenta3BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
             // vistaCompraBindingSource1
             // 
             this.vistaCompraBindingSource1.DataMember = "VistaCompra";
@@ -694,94 +735,22 @@
             // 
             this.vistaDetalleVenta3TableAdapter.ClearBeforeFill = true;
             // 
-            // vistaDetalleVenta4BindingSource
-            // 
-            this.vistaDetalleVenta4BindingSource.DataMember = "VistaDetalleVenta4";
-            this.vistaDetalleVenta4BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
             // vistaDetalleVenta4TableAdapter
             // 
             this.vistaDetalleVenta4TableAdapter.ClearBeforeFill = true;
-            // 
-            // IDDeVenta
-            // 
-            this.IDDeVenta.DataPropertyName = "ID de venta";
-            this.IDDeVenta.HeaderText = "ID de venta";
-            this.IDDeVenta.Name = "IDDeVenta";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // Producto
-            // 
-            this.Producto.DataPropertyName = "Producto";
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            // 
-            // fARMACIA_BUENA__SALUDDataSet1
-            // 
-            this.fARMACIA_BUENA__SALUDDataSet1.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
-            this.fARMACIA_BUENA__SALUDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadoBindingSource
-            // 
-            this.empleadoBindingSource.DataMember = "Empleado";
-            this.empleadoBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet1;
             // 
             // empleadoTableAdapter
             // 
             this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn1
+            // tarjetaCreditoBindingSource
             // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.tarjetaCreditoBindingSource.DataMember = "TarjetaCredito";
+            this.tarjetaCreditoBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
-            // Cliente
+            // tarjetaCreditoTableAdapter
             // 
-            this.Cliente.DataPropertyName = "Cliente";
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // Empleado
-            // 
-            this.Empleado.DataPropertyName = "Empleado";
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.Name = "Empleado";
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn1
-            // 
-            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
+            this.tarjetaCreditoTableAdapter.ClearBeforeFill = true;
             // 
             // Ventas
             // 
@@ -789,11 +758,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 502);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "Ventas";
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);
@@ -801,27 +765,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaVentaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetaCreditoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private FARMACIA_BUENA__SALUDDataSet fARMACIA_BUENA__SALUDDataSet;
         private System.Windows.Forms.BindingSource vistaVentaBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVentaTableAdapter vistaVentaTableAdapter;
@@ -851,7 +811,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox IDCompras;
+        private System.Windows.Forms.TextBox IDVenta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -886,5 +846,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ComboBox tarjeta;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.BindingSource tarjetaCreditoBindingSource;
+        private FARMACIA_BUENA__SALUDDataSetTableAdapters.TarjetaCreditoTableAdapter tarjetaCreditoTableAdapter;
     }
 }

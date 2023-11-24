@@ -26,10 +26,12 @@ namespace La_Buena_Farmacia
         public string tipoVenta { get; set; }
         public System.DateTime fechaVenta { get; set; }
         public decimal total { get; set; }
+        public Nullable<int> idTarjetaCredito { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
         public virtual Empleado Empleado { get; set; }
+        public virtual TarjetaCredito TarjetaCredito { get; set; }
     }
 }

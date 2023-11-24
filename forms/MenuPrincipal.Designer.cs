@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(802, 452);
             this.panel1.TabIndex = 3;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.SystemColors.Menu;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button9.Location = new System.Drawing.Point(556, 383);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(201, 28);
+            this.button9.TabIndex = 24;
+            this.button9.Text = "Reportes";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.Menu;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button8.Location = new System.Drawing.Point(301, 383);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(201, 28);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "Tarjetas de credito";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button7.Location = new System.Drawing.Point(53, 383);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(201, 28);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Clientes";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -183,46 +225,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 0;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(53, 383);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(201, 28);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Clientes";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.Menu;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button8.Location = new System.Drawing.Point(301, 383);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(201, 28);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "Tarjetas de credito";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.Menu;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button9.Location = new System.Drawing.Point(556, 383);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(201, 28);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "Reportes";
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // MenuPrincipal
             // 

@@ -14,11 +14,18 @@ namespace La_Buena_Farmacia
     
     public partial class TarjetaCredito
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TarjetaCredito()
+        {
+            this.Venta = new HashSet<Venta>();
+        }
+    
         public int idTarjeta { get; set; }
         public int idCliente { get; set; }
         public string numeroTarjeta { get; set; }
-        public string nombrePropietario { get; set; }
     
         public virtual Cliente Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Venta { get; set; }
     }
 }

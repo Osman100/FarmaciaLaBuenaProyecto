@@ -86,6 +86,24 @@ namespace La_Buena_Farmacia.classes
                 return -1;
             }
         }
+
+        public int obtenerIDClientePorNombre(string nombreCliente)
+        {
+            Cliente cliente = db.Cliente.FirstOrDefault(p => p.nombreCliente == nombreCliente);
+
+            // Devuelve el ID del proveedor si se encuentra, de lo contrario, devuelve -1
+            return cliente != null ? cliente.idCliente : -1;
+
+        }
+
+        public int obtenerIDVendedorPorNombre(string nombreVendedor)
+        {
+            Empleado empleado = db.Empleado.FirstOrDefault(p => p.nombreEmpleado == nombreVendedor);
+
+            // Devuelve el ID del proveedor si se encuentra, de lo contrario, devuelve -1
+            return empleado != null ? empleado.idEmpleado : -1;
+
+        }
       
         
     }

@@ -115,8 +115,8 @@
     <Property Name="idTarjeta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="idCliente" Type="Int32" Nullable="false" />
     <Property Name="numeroTarjeta" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="nombrePropietario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="Self.FK__TarjetaCr__idCli__04E4BC85" FromRole="TarjetaCredito" ToRole="Cliente" />
+    <NavigationProperty Name="Venta" Relationship="FARMACIA_BUENA__SALUDModel.idTarjetaDeCredito" FromRole="TarjetaCredito" ToRole="Venta" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>
@@ -131,6 +131,8 @@
     <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta__idCliente__32AB8735" FromRole="Venta" ToRole="Cliente" />
     <NavigationProperty Name="DetalleVenta" Relationship="Self.FK__DetalleVe__idVen__367C1819" FromRole="Venta" ToRole="DetalleVenta" />
     <NavigationProperty Name="Empleado" Relationship="Self.FK__Venta__idEmplead__339FAB6E" FromRole="Venta" ToRole="Empleado" />
+    <Property Name="idTarjetaCredito" Type="Int32" />
+    <NavigationProperty Name="TarjetaCredito" Relationship="FARMACIA_BUENA__SALUDModel.idTarjetaDeCredito" FromRole="Venta" ToRole="TarjetaCredito" />
   </EntityType>
   <Association Name="FK__Producto__idCate__123EB7A3">
     <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
@@ -372,6 +374,11 @@
     <EntitySet Name="VistaDetalleVenta3" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta3" />
     <EntitySet Name="VistaVenta3" EntityType="FARMACIA_BUENA__SALUDModel.VistaVenta3" />
     <EntitySet Name="VistaDetalleVenta4" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4" />
+    <EntitySet Name="VistaTarjetas" EntityType="FARMACIA_BUENA__SALUDModel.VistaTarjetas" />
+    <AssociationSet Name="idTarjetaDeCredito" Association="FARMACIA_BUENA__SALUDModel.idTarjetaDeCredito">
+      <End Role="TarjetaCredito" EntitySet="TarjetaCredito" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="VistaDetalleVenta">
     <Key>
@@ -544,4 +551,28 @@
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
+  <EntityType Name="VistaTarjetas">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Nombre_titular" />
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nombre_titular" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="idTarjetaDeCredito">
+    <End Type="FARMACIA_BUENA__SALUDModel.TarjetaCredito" Role="TarjetaCredito" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="FARMACIA_BUENA__SALUDModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TarjetaCredito">
+        <PropertyRef Name="idTarjeta" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idTarjetaCredito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

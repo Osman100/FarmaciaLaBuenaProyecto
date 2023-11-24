@@ -23,6 +23,7 @@ namespace La_Buena_Farmacia.forms
         public Ventas()
         {
             InitializeComponent();
+            dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -34,6 +35,8 @@ namespace La_Buena_Farmacia.forms
 
         private void Ventas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.TarjetaCredito' table. You can move, or remove it, as needed.
+            this.tarjetaCreditoTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.TarjetaCredito);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet1.Empleado' table. You can move, or remove it, as needed.
             this.empleadoTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet1.Empleado);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaDetalleVenta4' table. You can move, or remove it, as needed.
@@ -124,6 +127,83 @@ namespace La_Buena_Farmacia.forms
             {
                 MessageBox.Show("Ocurrió un error al agregar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            
+
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                string nombreCliente = (string)dataGridView2.SelectedRows[0].Cells[1].Value;
+                int idCliente = rVenta.obtenerIDClientePorNombre(nombreCliente);
+                string nombreEmpleado = (string)dataGridView2.SelectedRows[0].Cells[2].Value;
+                int idEmpleado = rVenta.obtenerIDVendedorPorNombre(nombreEmpleado);
+
+                IDVenta.Text = Convert.ToString(dataGridView2.SelectedRows[0].Cells[0].Value);
+                comboBoxCliente.SelectedValue = idCliente;
+                idVendedor.SelectedValue = idEmpleado;
+                tipoVenta.Text = (string)dataGridView2.SelectedRows[0].Cells[3].Value;
+                FechaCompras.Text = Convert.ToString(dataGridView2.SelectedRows[0].Cells[4].Value);
+
+                
+
+                
+                
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(dataGridView2.SelectedRows.Count > 0)
+            {
+                int idVenta = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
+                int idCliente = (int)comboBoxCliente.SelectedValue;
+                int idEmpleado = (int)idVendedor.SelectedValue;
+                string tipo = (string)tipoVenta.SelectedItem;
+                DateTime fecha = DateTime.Parse(FechaCompras.Text);
+
+                venta.idVenta = idVenta;
+                venta.idCliente = idCliente;
+                venta.idEmpleado = idEmpleado;
+                venta.tipoVenta = tipo;
+                venta.fechaVenta = fecha;
+                venta.total = 0;
+                int resultado = rVenta.update(venta);
+
+                if (resultado != -1)
+                {
+                    dataGridView2.DataSource = db.VistaVenta3.ToList();
+                    MessageBox.Show(Text = "Compra actualizada correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al actualizar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna compra seleccionada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBoxCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxCliente.SelectedValue != null)
+            {
+                int idCliente = (int)comboBoxCliente.SelectedValue;
+                var tarjetas = db.TarjetaCredito.Where(t => t.idCliente == idCliente).ToList();
+                foreach (var tarjeta in tarjetas)
+                {
+                    this.tarjeta.Items.Add(tarjeta.numeroTarjeta);
+                }
+            }
+            
         }
     }
 }

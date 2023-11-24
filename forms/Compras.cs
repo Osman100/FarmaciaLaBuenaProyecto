@@ -111,13 +111,12 @@ namespace La_Buena_Farmacia.forms
             if (resultado != -1)
             {
 
-                dataGridView2.DataSource = db.VistaDetalleCompra2.ToList();
                 dataGridView1.DataSource = db.VistaCompra.ToList();
                 decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
                 rCompra.ActualizarTotalCompra(idCompra,totalCompra);
 
                 int idCompraSeleccionada = (int)comboBox3.SelectedValue;
-                List<VistaDetalleCompra2> detalleCompra = db.VistaDetalleCompra2.Where(c => c.ID == idCompraSeleccionada).ToList();
+                List<VistaDetalleCompra2> detalleCompra = db.VistaDetalleCompra2.Where(c => c.ID_de_Compra == idCompra).ToList();
                 dataGridView2.DataSource = detalleCompra;
                 dataGridView1.DataSource = db.VistaCompra.ToList();
                 db.increaseStock(idProducto, nuevaCantidad);
@@ -398,7 +397,7 @@ namespace La_Buena_Farmacia.forms
                     .Select(p => p.idCategoria)
                     .FirstOrDefault();
                 decimal precio = Convert.ToDecimal(dataGridView2.CurrentRow.Cells[4].Value);
-                int cantidad = Convert.ToInt32(dataGridView2.CurrentRow.Cells[5].Value);
+                int cantidad = Convert.ToInt32(CantidadCompras.Text);
                 decimal subtotal = Convert.ToDecimal(dataGridView2.CurrentRow.Cells[6].Value);
 
                 detalleCompra.idDetalleCompra = idDetalleCompra;

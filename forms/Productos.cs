@@ -28,7 +28,7 @@ namespace La_Buena_Farmacia.forms
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaProductos1' table. You can move, or remove it, as needed.
             this.vistaProductos1TableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.VistaProductos1);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaVenta' table. You can move, or remove it, as needed.
-            this.vistaVentaTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.VistaVenta);
+
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaProductos' table. You can move, or remove it, as needed.
 
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Producto' table. You can move, or remove it, as needed.
