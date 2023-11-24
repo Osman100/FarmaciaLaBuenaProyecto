@@ -832,7 +832,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaVenta3" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Cliente, Empleado, Tipo, Fecha, Total FROM dbo.VistaVenta3</CommandText>
+                    <CommandText>SELECT ID, Cliente, Empleado, Tipo, Fecha, Total, Tarjeta FROM VistaVenta3</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -845,6 +845,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
               <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Tarjeta" DataSetColumn="Tarjeta" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -853,7 +854,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <DbSource ConnectionRef="FARMACIA_BUENA__SALUDConnectionString (Settings)" DbObjectName="FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta4" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [ID de venta], ID, Producto, Cantidad, Total FROM dbo.VistaDetalleVenta4</CommandText>
+                    <CommandText>SELECT [ID de venta], ID, Producto, Cantidad, Total, [Precio unitario] FROM VistaDetalleVenta4</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -865,6 +866,7 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
               <Mapping SourceColumn="Producto" DataSetColumn="Producto" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Precio unitario" DataSetColumn="Precio unitario" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1329,81 +1331,89 @@ SELECT idVenta, idCliente, idEmpleado, tipoVenta, fechaVenta, total FROM Venta W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaDetalleVenta3" msprop:Generator_RowClassName="VistaDetalleVenta3Row" msprop:Generator_RowEvHandlerName="VistaDetalleVenta3RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleVenta3RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleVenta3RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleVenta3RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleVenta3" msprop:Generator_RowChangedName="VistaDetalleVenta3RowChanged" msprop:Generator_UserTableName="VistaDetalleVenta3" msprop:Generator_RowChangingName="VistaDetalleVenta3RowChanging" msprop:Generator_TableClassName="VistaDetalleVenta3DataTable" msprop:Generator_TableVarName="tableVistaDetalleVenta3">
+        <xs:element name="VistaDetalleVenta3" msprop:Generator_RowEvHandlerName="VistaDetalleVenta3RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleVenta3RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleVenta3RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleVenta3RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleVenta3" msprop:Generator_RowChangedName="VistaDetalleVenta3RowChanged" msprop:Generator_UserTableName="VistaDetalleVenta3" msprop:Generator_RowChangingName="VistaDetalleVenta3RowChanging" msprop:Generator_RowClassName="VistaDetalleVenta3Row" msprop:Generator_TableClassName="VistaDetalleVenta3DataTable" msprop:Generator_TableVarName="tableVistaDetalleVenta3">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
-              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaVenta3" msprop:Generator_RowClassName="VistaVenta3Row" msprop:Generator_RowEvHandlerName="VistaVenta3RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaVenta3RowDeleted" msprop:Generator_RowDeletingName="VistaVenta3RowDeleting" msprop:Generator_RowEvArgName="VistaVenta3RowChangeEvent" msprop:Generator_TablePropName="VistaVenta3" msprop:Generator_RowChangedName="VistaVenta3RowChanged" msprop:Generator_UserTableName="VistaVenta3" msprop:Generator_RowChangingName="VistaVenta3RowChanging" msprop:Generator_TableClassName="VistaVenta3DataTable" msprop:Generator_TableVarName="tableVistaVenta3">
+        <xs:element name="VistaVenta3" msprop:Generator_RowEvHandlerName="VistaVenta3RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaVenta3RowDeleted" msprop:Generator_RowDeletingName="VistaVenta3RowDeleting" msprop:Generator_RowEvArgName="VistaVenta3RowChangeEvent" msprop:Generator_TablePropName="VistaVenta3" msprop:Generator_RowChangedName="VistaVenta3RowChanged" msprop:Generator_UserTableName="VistaVenta3" msprop:Generator_RowChangingName="VistaVenta3RowChanging" msprop:Generator_RowClassName="VistaVenta3Row" msprop:Generator_TableClassName="VistaVenta3DataTable" msprop:Generator_TableVarName="tableVistaVenta3">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Cliente" msprop:Generator_UserColumnName="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente">
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_UserColumnName="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Empleado" msprop:Generator_UserColumnName="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado">
+              <xs:element name="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_UserColumnName="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
+              <xs:element name="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
-              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Tarjeta" msprop:Generator_UserColumnName="Tarjeta" msprop:Generator_ColumnPropNameInTable="TarjetaColumn" msprop:Generator_ColumnPropNameInRow="Tarjeta" msprop:Generator_ColumnVarNameInTable="columnTarjeta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaDetalleVenta4" msprop:Generator_RowClassName="VistaDetalleVenta4Row" msprop:Generator_RowEvHandlerName="VistaDetalleVenta4RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleVenta4RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleVenta4RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleVenta4RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleVenta4" msprop:Generator_RowChangedName="VistaDetalleVenta4RowChanged" msprop:Generator_UserTableName="VistaDetalleVenta4" msprop:Generator_RowChangingName="VistaDetalleVenta4RowChanging" msprop:Generator_TableClassName="VistaDetalleVenta4DataTable" msprop:Generator_TableVarName="tableVistaDetalleVenta4">
+        <xs:element name="VistaDetalleVenta4" msprop:Generator_RowEvHandlerName="VistaDetalleVenta4RowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleVenta4RowDeleted" msprop:Generator_RowDeletingName="VistaDetalleVenta4RowDeleting" msprop:Generator_RowEvArgName="VistaDetalleVenta4RowChangeEvent" msprop:Generator_TablePropName="VistaDetalleVenta4" msprop:Generator_RowChangedName="VistaDetalleVenta4RowChanged" msprop:Generator_UserTableName="VistaDetalleVenta4" msprop:Generator_RowChangingName="VistaDetalleVenta4RowChanging" msprop:Generator_RowClassName="VistaDetalleVenta4Row" msprop:Generator_TableClassName="VistaDetalleVenta4DataTable" msprop:Generator_TableVarName="tableVistaDetalleVenta4">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_x0020_de_x0020_venta" msprop:Generator_UserColumnName="ID de venta" msprop:Generator_ColumnPropNameInTable="ID_de_ventaColumn" msprop:Generator_ColumnPropNameInRow="ID_de_venta" msprop:Generator_ColumnVarNameInTable="columnID_de_venta" type="xs:int" />
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
+              <xs:element name="ID_x0020_de_x0020_venta" msprop:Generator_ColumnPropNameInTable="ID_de_ventaColumn" msprop:Generator_ColumnPropNameInRow="ID_de_venta" msprop:Generator_UserColumnName="ID de venta" msprop:Generator_ColumnVarNameInTable="columnID_de_venta" type="xs:int" />
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
-              <xs:element name="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" />
+              <xs:element name="Precio_x0020_unitario" msprop:Generator_ColumnPropNameInRow="Precio_unitario" msprop:Generator_ColumnPropNameInTable="Precio_unitarioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_unitario" msprop:Generator_UserColumnName="Precio unitario" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VistaTarjetas" msprop:Generator_RowEvHandlerName="VistaTarjetasRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaTarjetasRowDeleted" msprop:Generator_RowDeletingName="VistaTarjetasRowDeleting" msprop:Generator_RowEvArgName="VistaTarjetasRowChangeEvent" msprop:Generator_TablePropName="VistaTarjetas" msprop:Generator_RowChangedName="VistaTarjetasRowChanged" msprop:Generator_RowChangingName="VistaTarjetasRowChanging" msprop:Generator_TableClassName="VistaTarjetasDataTable" msprop:Generator_RowClassName="VistaTarjetasRow" msprop:Generator_TableVarName="tableVistaTarjetas" msprop:Generator_UserTableName="VistaTarjetas">
+        <xs:element name="VistaTarjetas" msprop:Generator_RowEvHandlerName="VistaTarjetasRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaTarjetasRowDeleted" msprop:Generator_RowDeletingName="VistaTarjetasRowDeleting" msprop:Generator_RowEvArgName="VistaTarjetasRowChangeEvent" msprop:Generator_TablePropName="VistaTarjetas" msprop:Generator_RowChangedName="VistaTarjetasRowChanged" msprop:Generator_UserTableName="VistaTarjetas" msprop:Generator_RowChangingName="VistaTarjetasRowChanging" msprop:Generator_RowClassName="VistaTarjetasRow" msprop:Generator_TableClassName="VistaTarjetasDataTable" msprop:Generator_TableVarName="tableVistaTarjetas">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Nombre_x0020_titular" msprop:Generator_ColumnPropNameInRow="Nombre_titular" msprop:Generator_ColumnPropNameInTable="Nombre_titularColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_titular" msprop:Generator_UserColumnName="Nombre titular">
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Nombre_x0020_titular" msprop:Generator_ColumnPropNameInTable="Nombre_titularColumn" msprop:Generator_ColumnPropNameInRow="Nombre_titular" msprop:Generator_UserColumnName="Nombre titular" msprop:Generator_ColumnVarNameInTable="columnNombre_titular">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Numero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_UserColumnName="Numero">
+              <xs:element name="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_UserColumnName="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="16" />

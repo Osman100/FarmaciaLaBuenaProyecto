@@ -204,12 +204,14 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta4' does
             <PropertyRef Name="ID de venta" />
             <PropertyRef Name="ID" />
             <PropertyRef Name="Producto" />
+            <PropertyRef Name="Precio unitario" />
             <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Total" />
           </Key>
           <Property Name="ID de venta" Type="int" Nullable="false" />
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Precio unitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
@@ -299,6 +301,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="Cliente" />
+            <PropertyRef Name="Tarjeta" />
             <PropertyRef Name="Empleado" />
             <PropertyRef Name="Tipo" />
             <PropertyRef Name="Fecha" />
@@ -306,6 +309,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Cliente" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Tarjeta" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="Empleado" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Tipo" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
@@ -565,6 +569,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
     [VistaDetalleVenta4].[ID de venta] AS [ID de venta], 
     [VistaDetalleVenta4].[ID] AS [ID], 
     [VistaDetalleVenta4].[Producto] AS [Producto], 
+    [VistaDetalleVenta4].[Precio unitario] AS [Precio unitario], 
     [VistaDetalleVenta4].[Cantidad] AS [Cantidad], 
     [VistaDetalleVenta4].[Total] AS [Total]
     FROM [dbo].[VistaDetalleVenta4] AS [VistaDetalleVenta4]</DefiningQuery>
@@ -618,6 +623,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
             <DefiningQuery>SELECT 
     [VistaVenta3].[ID] AS [ID], 
     [VistaVenta3].[Cliente] AS [Cliente], 
+    [VistaVenta3].[Tarjeta] AS [Tarjeta], 
     [VistaVenta3].[Empleado] AS [Empleado], 
     [VistaVenta3].[Tipo] AS [Tipo], 
     [VistaVenta3].[Fecha] AS [Fecha], 
@@ -1202,6 +1208,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
             <PropertyRef Name="Tipo" />
             <PropertyRef Name="Fecha" />
             <PropertyRef Name="Total" />
+            <PropertyRef Name="Tarjeta" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Cliente" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -1209,6 +1216,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <Property Name="Tipo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Tarjeta" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="VistaDetalleVenta4">
           <Key>
@@ -1217,12 +1225,14 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
             <PropertyRef Name="Producto" />
             <PropertyRef Name="Cantidad" />
             <PropertyRef Name="Total" />
+            <PropertyRef Name="Precio_unitario" />
           </Key>
           <Property Name="ID_de_venta" Type="Int32" Nullable="false" />
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Precio_unitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="VistaTarjetas">
           <Key>
@@ -1510,6 +1520,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <EntitySetMapping Name="VistaVenta3">
             <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaVenta3">
               <MappingFragment StoreEntitySet="VistaVenta3">
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -1522,6 +1533,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <EntitySetMapping Name="VistaDetalleVenta4">
             <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4">
               <MappingFragment StoreEntitySet="VistaDetalleVenta4">
+                <ScalarProperty Name="Precio_unitario" ColumnName="Precio unitario" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Producto" ColumnName="Producto" />

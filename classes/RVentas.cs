@@ -31,6 +31,7 @@ namespace La_Buena_Farmacia.classes
                 venta.idEmpleado = model.idEmpleado;
                 venta.fechaVenta = model.fechaVenta;
                 venta.tipoVenta = model.tipoVenta;
+                venta.idTarjetaCredito = model.idTarjetaCredito;
                 venta.total = model.total;
 
                 Console.WriteLine(venta);
@@ -42,6 +43,7 @@ namespace La_Buena_Farmacia.classes
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.InnerException.Message);
 
                 return -1;
             }
@@ -53,6 +55,8 @@ namespace La_Buena_Farmacia.classes
             {
                 Venta venta = db.Venta.Find(model.idVenta);
                 venta.idVenta = model.idVenta;
+                venta.tipoVenta = model.tipoVenta;
+                venta.idTarjetaCredito = model.idTarjetaCredito;
                 venta.idCliente = model.idCliente;
                 venta.idEmpleado = model.idEmpleado;
                 venta.fechaVenta = model.fechaVenta;
@@ -104,7 +108,39 @@ namespace La_Buena_Farmacia.classes
             return empleado != null ? empleado.idEmpleado : -1;
 
         }
-      
-        
+
+        public int encontrarIDTarjetaPorNumero(string numeroTarjeta)
+        {
+            try
+            {
+                var tarjetaCredito = db.TarjetaCredito.FirstOrDefault(p => p.numeroTarjeta == numeroTarjeta);
+                
+                return tarjetaCredito.idTarjeta;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+
+        public void actualizarTotalVenta(int idVenta, decimal total)
+        {
+            try
+            {
+                Venta venta = db.Venta.Find(idVenta);
+                venta.total = total;
+
+                db.Entry(venta).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+
     }
 }

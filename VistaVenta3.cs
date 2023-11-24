@@ -20,5 +20,6 @@ namespace La_Buena_Farmacia
         public string Tipo { get; set; }
         public System.DateTime Fecha { get; set; }
         public decimal Total { get; set; }
+        public string Tarjeta { get; set; }
     }
 }

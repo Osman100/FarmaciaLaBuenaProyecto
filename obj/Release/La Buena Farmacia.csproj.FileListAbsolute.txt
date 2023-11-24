@@ -1,0 +1,80 @@
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\La Buena Farmacia.exe.config
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\La Buena Farmacia.exe
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\La Buena Farmacia.pdb
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\EntityFramework.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\MetroFramework.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\MetroFramework.Fonts.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.ReportViewer.Common.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.ReportViewer.Design.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\EnvDTE.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\stdole.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\EntityFramework.xml
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.AssemblyReference.cache
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Clientes.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Compras.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.InicioSesion.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Categorias.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.MenuPrincipal.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Productos.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Proveedores.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Reportes.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Splash.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.TarjetasCredito.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Vendedores.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.Ventas.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.Properties.Resources.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.GenerateResource.cache
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.CoreCompileInputs.cache
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.CopyComplete
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.exe
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.pdb

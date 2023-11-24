@@ -81,7 +81,16 @@ namespace La_Buena_Farmacia.classes
             }
         }
 
-
+        public decimal CalcularTotal(int idVenta)
+        {
+            decimal total = 0;
+            List<DetalleVenta> detalleVentas = db.DetalleVenta.Where(dv => dv.idVenta == idVenta).ToList();
+            foreach (DetalleVenta detalleVenta in detalleVentas)
+            {
+                total += detalleVenta.subtotal;
+            }
+            return total;
+        }
 
     }
 }
