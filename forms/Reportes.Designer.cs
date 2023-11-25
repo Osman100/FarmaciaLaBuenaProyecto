@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
             this.vistaProductos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -76,11 +77,14 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button5.Location = new System.Drawing.Point(496, 218);
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.Location = new System.Drawing.Point(674, 133);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 28);
+            this.button5.Size = new System.Drawing.Size(115, 63);
             this.button5.TabIndex = 29;
             this.button5.Text = "Ventas";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -90,11 +94,14 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button4.Location = new System.Drawing.Point(195, 218);
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.Location = new System.Drawing.Point(375, 133);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 28);
+            this.button4.Size = new System.Drawing.Size(115, 63);
             this.button4.TabIndex = 28;
             this.button4.Text = "Proveedores";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -104,11 +111,14 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Location = new System.Drawing.Point(585, 110);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.Location = new System.Drawing.Point(525, 229);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 28);
+            this.button3.Size = new System.Drawing.Size(115, 67);
             this.button3.TabIndex = 27;
             this.button3.Text = "Empleados";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -118,11 +128,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(342, 110);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.Location = new System.Drawing.Point(223, 229);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 28);
+            this.button2.Size = new System.Drawing.Size(115, 67);
             this.button2.TabIndex = 26;
             this.button2.Text = "Compras";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -132,11 +145,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(107, 110);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.Location = new System.Drawing.Point(50, 133);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 28);
+            this.button1.Size = new System.Drawing.Size(115, 63);
             this.button1.TabIndex = 25;
             this.button1.Text = "Productos";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -146,11 +162,14 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.Location = new System.Drawing.Point(50, 22);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(84, 28);
+            this.button10.Size = new System.Drawing.Size(97, 28);
             this.button10.TabIndex = 24;
             this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 

@@ -16,6 +16,9 @@ namespace La_Buena_Farmacia.forms
 
         Empleado empleado = new Empleado();
         REmpleado rEmpleado = new REmpleado();
+        Rol rol = new Rol();
+        RRoles rRoles = new RRoles();
+        private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
         public Vendedores()
         {
 
@@ -79,6 +82,8 @@ namespace La_Buena_Farmacia.forms
 
         private void Vendedores_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Empleados' table. You can move, or remove it, as needed.
+            this.empleadosTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.Empleados);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Rol' table. You can move, or remove it, as needed.
             this.rolTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.Rol);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Empleado' table. You can move, or remove it, as needed.
@@ -95,17 +100,20 @@ namespace La_Buena_Farmacia.forms
                 
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0]; // Selecciona la primera fila seleccionada
 
-                string nombreEmpleado = selectedRow.Cells["nombreEmpleado"].Value.ToString();
-                string estadoLaboral = selectedRow.Cells["estadoLaboral"].Value.ToString();
-                string salario = selectedRow.Cells["salario"].Value.ToString();
-                string empleadoPassword = selectedRow.Cells["empleadoPassword"].Value.ToString();
-                string idRol = selectedRow.Cells["idRol"].Value.ToString();
+                int idEmpleado = Convert.ToInt32(selectedRow.Cells[0].Value);
+                string nombreEmpleado = selectedRow.Cells[1].Value.ToString();
+                string nombreRol = selectedRow.Cells[2].Value.ToString();
+                string estadoLaboral = selectedRow.Cells[3].Value.ToString();
+                string salario = selectedRow.Cells[4].Value.ToString();
+                List<Rol> roles = rRoles.getAll();
+                int idRol = roles.Where(rol => rol.nombreRol == nombreRol).FirstOrDefault().idRol;
+
 
                 NombreVendedores.Text = nombreEmpleado;
                 EstadoVendedores.Text = estadoLaboral;
                 SalarioVendedores.Text = salario;
-                PasswordVendedores.Text = empleadoPassword;
-                RolVendedores.Text = idRol;
+                PasswordVendedores.Text = string.Empty;
+                RolVendedores.SelectedValue = idRol;
 
 
 
@@ -127,20 +135,20 @@ namespace La_Buena_Farmacia.forms
                 // Obtiene la fila seleccionada
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                // Obtén los valores de las celdas de la fila seleccionada
-                string id = selectedRow.Cells["idEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
-                string nombre = selectedRow.Cells["nombreEmpleadoDataGridViewTextBoxColumn"].Value.ToString();
-                string rol = selectedRow.Cells["idRolDataGridViewTextBoxColumn"].Value.ToString(); // Ajusta la columna al nombre real
-                string password = selectedRow.Cells["empleadoPasswordDataGridViewTextBoxColumn"].Value.ToString();
-                string estado = selectedRow.Cells["estadoLaboralDataGridViewTextBoxColumn"].Value.ToString();
-                decimal salario = Convert.ToDecimal(selectedRow.Cells["salarioDataGridViewTextBoxColumn"].Value);
+                int idEmpleado = Convert.ToInt32(selectedRow.Cells[0].Value);
+                string nombreEmpleado = selectedRow.Cells[1].Value.ToString();
+                string nombreRol = selectedRow.Cells[2].Value.ToString();
+                string estadoLaboral = selectedRow.Cells[3].Value.ToString();
+                string salario = selectedRow.Cells[4].Value.ToString();
+                List<Rol> roles = rRoles.getAll();
+                int idRol = roles.Where(rol => rol.nombreRol == nombreRol).FirstOrDefault().idRol;
 
                 // Asigna los valores a los campos del formulario
-                IDVendedores.Text = id;
-                NombreVendedores.Text = nombre;
-                RolVendedores.Text = rol; // Dependiendo de cómo se cargan los roles en el ComboBox
-                PasswordVendedores.Text = password;
-                EstadoVendedores.Text = estado;
+                IDVendedores.Text = Convert.ToString(idEmpleado);
+                NombreVendedores.Text = nombreEmpleado;
+                PasswordVendedores.Text = string.Empty;
+                EstadoVendedores.Text = estadoLaboral;
+                RolVendedores.SelectedValue = idRol;
                 SalarioVendedores.Text = salario.ToString();
             }
         }
@@ -157,10 +165,10 @@ namespace La_Buena_Farmacia.forms
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                int id = Convert.ToInt32(selectedRow.Cells["idEmpleadoDataGridViewTextBoxColumn"].Value);
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
 
                 string nuevoNombre = NombreVendedores.Text;
-                string nuevoRol = RolVendedores.Text;
+                int nuevoRol = (int)RolVendedores.SelectedValue;
                 string nuevoPassword = rEmpleado.MD5Hash(PasswordVendedores.Text);
                 string nuevoEstado = EstadoVendedores.Text;
                 decimal nuevoSalario = Convert.ToDecimal(SalarioVendedores.Text);
@@ -172,7 +180,7 @@ namespace La_Buena_Farmacia.forms
                 empleado.estadoLaboral = nuevoEstado;
                 empleado.salario = nuevoSalario;
 
-                List<Empleado> empleados = rEmpleado.getAll();
+                List<Empleados> empleados = db.Empleados.ToList();
 
                 // Asigna la lista de empleados al DataGridView
                 dataGridView1.DataSource = empleados;
@@ -202,7 +210,7 @@ namespace La_Buena_Farmacia.forms
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 // Acceder al valor de la clave primaria (ID) de la fila seleccionada
-                int idEmpleado = Convert.ToInt32(selectedRow.Cells["idEmpleadoDataGridViewTextBoxColumn"].Value);
+                int idEmpleado = Convert.ToInt32(selectedRow.Cells[0].Value);
 
                 // Eliminar la fila de la base de datos utilizando el método delete
                 int resultado = rEmpleado.delete(idEmpleado);
@@ -213,7 +221,7 @@ namespace La_Buena_Farmacia.forms
                 {
                     // La fila se eliminó correctamente de la base de datos
                     MessageBox.Show("Fila eliminada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    List<Empleado> empleados = rEmpleado.getAll();
+                    List<Empleados> empleados = db.Empleados.ToList();
 
                     // Asigna la lista de empleados al DataGridView
                     dataGridView1.DataSource = empleados;
@@ -248,6 +256,13 @@ namespace La_Buena_Farmacia.forms
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             MenuPrincipal menuPrincipal = new MenuPrincipal();
             menuPrincipal.Show();

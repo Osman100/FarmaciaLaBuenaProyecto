@@ -86,5 +86,12 @@ namespace La_Buena_Farmacia.forms
             tarjetaCredito.Show();
             this.Hide();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            InicioSesion inicioSesion = new InicioSesion();
+            inicioSesion.Show();
+            this.Hide();
+        }
     }
 }

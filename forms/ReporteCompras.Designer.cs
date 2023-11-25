@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.vistaCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button2 = new System.Windows.Forms.Button();
             this.FinalCompras = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,14 +43,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
-            this.vistaCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaCompraTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaCompraTableAdapter();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // vistaCompraBindingSource
+            // 
+            this.vistaCompraBindingSource.DataMember = "VistaCompra";
+            this.vistaCompraBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
+            // fARMACIA_BUENA__SALUDDataSet
+            // 
+            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
+            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -66,6 +76,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 452);
             this.panel1.TabIndex = 7;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            reportDataSource1.Name = "Compras";
+            reportDataSource1.Value = this.vistaCompraBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Compras.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(75, 158);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(656, 281);
+            this.reportViewer1.TabIndex = 32;
             // 
             // button2
             // 
@@ -180,28 +203,6 @@
             this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 0;
             // 
-            // reportViewer1
-            // 
-            reportDataSource3.Name = "Compras";
-            reportDataSource3.Value = this.vistaCompraBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Compras.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(75, 158);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(656, 281);
-            this.reportViewer1.TabIndex = 32;
-            // 
-            // fARMACIA_BUENA__SALUDDataSet
-            // 
-            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
-            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vistaCompraBindingSource
-            // 
-            this.vistaCompraBindingSource.DataMember = "VistaCompra";
-            this.vistaCompraBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
             // vistaCompraTableAdapter
             // 
             this.vistaCompraTableAdapter.ClearBeforeFill = true;
@@ -215,10 +216,10 @@
             this.Name = "ReporteCompras";
             this.Text = "ReporteCompras";
             this.Load += new System.EventHandler(this.ReporteCompras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

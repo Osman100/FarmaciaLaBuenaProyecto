@@ -15,6 +15,8 @@ namespace La_Buena_Farmacia
     public partial class InicioSesion : Form
     {
         REmpleado empleado = new REmpleado();
+        RRoles rRoles = new RRoles();
+        private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
 
 
         public InicioSesion()
@@ -27,12 +29,36 @@ namespace La_Buena_Farmacia
             REmpleado nuevoEmpleado = new REmpleado();
             nuevoEmpleado.nombreEmpleado = nombreUsuario.Text;
             nuevoEmpleado.EmpleadoPassword = passwordUsuario.Text;
+
+            
+
+
+
+
             bool respuesta = empleado.login(nuevoEmpleado);
+
             if (respuesta)
             {
-                forms.MenuPrincipal menu = new forms.MenuPrincipal();
-                menu.Show();
-                this.Hide();
+                List<Empleado> empleados = db.Empleado.ToList();
+                var empleadoFiltrado = empleados.Where(empleado => empleado.nombreEmpleado == nuevoEmpleado.nombreEmpleado).FirstOrDefault();
+                int idRol = empleadoFiltrado.idRol;
+
+                
+
+
+                if (idRol == 1)
+                {
+                    forms.MenuPrincipal menu = new forms.MenuPrincipal();
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    forms.MenuVendedores menu = new forms.MenuVendedores();
+                    menu.Show();
+                    this.Hide();
+                }
+                
             }
             else
             {

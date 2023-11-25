@@ -29,25 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.vistaVenta3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.button2 = new System.Windows.Forms.Button();
+            this.FinalVentas = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.InicioVentas = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.InicioVentas = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FinalVentas = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
-            this.vistaVenta3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaVenta3TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVenta3TableAdapter();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // vistaVenta3BindingSource
+            // 
+            this.vistaVenta3BindingSource.DataMember = "VistaVenta3";
+            this.vistaVenta3BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
+            // fARMACIA_BUENA__SALUDDataSet
+            // 
+            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
+            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -66,6 +76,69 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 452);
             this.panel1.TabIndex = 6;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            reportDataSource1.Name = "Ventas";
+            reportDataSource1.Value = this.vistaVenta3BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Ventas.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(96, 182);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(636, 246);
+            this.reportViewer1.TabIndex = 32;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Menu;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.Location = new System.Drawing.Point(522, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 28);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // FinalVentas
+            // 
+            this.FinalVentas.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalVentas.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FinalVentas.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
+            this.FinalVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinalVentas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FinalVentas.Location = new System.Drawing.Point(373, 101);
+            this.FinalVentas.Name = "FinalVentas";
+            this.FinalVentas.Size = new System.Drawing.Size(109, 21);
+            this.FinalVentas.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label2.Location = new System.Drawing.Point(260, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 18);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Fecha final:";
+            // 
+            // InicioVentas
+            // 
+            this.InicioVentas.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InicioVentas.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
+            this.InicioVentas.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
+            this.InicioVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InicioVentas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.InicioVentas.Location = new System.Drawing.Point(127, 101);
+            this.InicioVentas.Name = "InicioVentas";
+            this.InicioVentas.Size = new System.Drawing.Size(116, 21);
+            this.InicioVentas.TabIndex = 28;
             // 
             // button1
             // 
@@ -130,78 +203,6 @@
             this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 0;
             // 
-            // InicioVentas
-            // 
-            this.InicioVentas.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InicioVentas.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
-            this.InicioVentas.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
-            this.InicioVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InicioVentas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.InicioVentas.Location = new System.Drawing.Point(127, 101);
-            this.InicioVentas.Name = "InicioVentas";
-            this.InicioVentas.Size = new System.Drawing.Size(116, 21);
-            this.InicioVentas.TabIndex = 28;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(260, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 18);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Fecha final:";
-            // 
-            // FinalVentas
-            // 
-            this.FinalVentas.CalendarFont = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinalVentas.CalendarForeColor = System.Drawing.SystemColors.HotTrack;
-            this.FinalVentas.CalendarTitleForeColor = System.Drawing.SystemColors.HotTrack;
-            this.FinalVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FinalVentas.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FinalVentas.Location = new System.Drawing.Point(373, 101);
-            this.FinalVentas.Name = "FinalVentas";
-            this.FinalVentas.Size = new System.Drawing.Size(109, 21);
-            this.FinalVentas.TabIndex = 30;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Menu;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(522, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 28);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // reportViewer1
-            // 
-            reportDataSource3.Name = "Ventas";
-            reportDataSource3.Value = this.vistaVenta3BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Ventas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(96, 182);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(636, 246);
-            this.reportViewer1.TabIndex = 32;
-            // 
-            // fARMACIA_BUENA__SALUDDataSet
-            // 
-            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
-            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vistaVenta3BindingSource
-            // 
-            this.vistaVenta3BindingSource.DataMember = "VistaVenta3";
-            this.vistaVenta3BindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
             // vistaVenta3TableAdapter
             // 
             this.vistaVenta3TableAdapter.ClearBeforeFill = true;
@@ -215,10 +216,10 @@
             this.Name = "ReportesVentas";
             this.Text = "ReportesVentas";
             this.Load += new System.EventHandler(this.ReportesVentas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

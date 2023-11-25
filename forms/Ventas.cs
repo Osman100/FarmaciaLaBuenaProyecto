@@ -1,4 +1,5 @@
 ﻿using La_Buena_Farmacia.classes;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,7 @@ namespace La_Buena_Farmacia.forms
             this.tarjetaCreditoTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.TarjetaCredito);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet1.Empleado' table. You can move, or remove it, as needed.
             this.empleadoTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet1.Empleado);
+
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaDetalleVenta4' table. You can move, or remove it, as needed.
             this.vistaDetalleVenta4TableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.VistaDetalleVenta4);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaDetalleVenta3' table. You can move, or remove it, as needed.
@@ -166,6 +168,7 @@ namespace La_Buena_Farmacia.forms
             if (resultado != -1)
             {
                 dataGridView2.DataSource = db.VistaVenta3.ToList();
+                comboBox3.DataSource = db.VistaVenta3.ToList();
                 //comboBox3.DataSource = db.VistaCompra.ToList();
                 //comboBox3.DisplayMember = "ID";
                 //comboBox3.ValueMember = "ID";
@@ -341,12 +344,21 @@ namespace La_Buena_Farmacia.forms
         {
             if(dataGridView2.SelectedRows.Count > 0)
             {
+                List<DetalleVenta> detalleVenta = db.DetalleVenta.ToList();
+                var detalleVentaFiltrado = detalleVenta.Where(c => c.idVenta == (int)dataGridView2.SelectedRows[0].Cells[0].Value).ToList();
+
+                db.DetalleVenta.RemoveRange(detalleVentaFiltrado);
+                db.SaveChanges();
+
+
                 int idVenta = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
                 int resultado = rVenta.delete(idVenta);
 
                 if (resultado != -1)
                 {
                     dataGridView2.DataSource = db.VistaVenta3.ToList();
+                    comboBox3.DataSource = db.VistaVenta3.ToList();
+                    comboBox3.SelectedIndex = -1;
                     MessageBox.Show(Text = "Compra eliminada correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -522,6 +534,90 @@ namespace La_Buena_Farmacia.forms
                     MessageBox.Show("Ocurrió un error al eliminar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+
+
+
+        
+
+            if(dataGridView2.SelectedRows.Count > 0 )
+            {
+                PantallaFactura pantallaFactura = new PantallaFactura();
+                pantallaFactura.ShowDialog();
+                List<VistaDetalleVenta5> vistaDetalleVenta5s = db.VistaDetalleVenta5.ToList();
+                var vistaDetalleVenta5Filtrado = vistaDetalleVenta5s.Where(c => c.IDDeVenta == (int)dataGridView2.SelectedRows[0].Cells[0].Value).ToList();
+                List<VistaVenta3> vistaVenta3s = db.VistaVenta3.ToList();
+                var vistaVenta3Filtrado = vistaVenta3s.Where(c => c.ID == (int)dataGridView2.SelectedRows[0].Cells[0].Value).ToList();
+
+                DataTable venta = ConvertirListaADatatable(vistaVenta3Filtrado);
+                DataTable detalleVenta = ConvertirListaADatatable(vistaDetalleVenta5Filtrado);
+
+                ReportDataSource fuente1 = new ReportDataSource("Venta", venta);
+                ReportDataSource fuente2 = new ReportDataSource("DetalleVenta", detalleVenta);
+
+                PantallaFactura pantallaFactura1 = new PantallaFactura();
+
+                Microsoft.Reporting.WinForms.ReportViewer reportViewer = pantallaFactura1.ObtenerReportViewer();
+                reportViewer.LocalReport.DataSources.Add(fuente1);
+                reportViewer.LocalReport.DataSources.Add(fuente2);
+                reportViewer.RefreshReport();
+
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna compra seleccionada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+
+
+        // Método para convertir una lista a un DataTable
+        static DataTable ConvertirListaADatatable<T>(List<T> lista)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Obtén las propiedades de la clase (los nombres de las columnas)
+            var propiedades = typeof(T).GetProperties();
+
+            // Agrega las columnas al DataTable
+            foreach (var propiedad in propiedades)
+            {
+                dataTable.Columns.Add(propiedad.Name, propiedad.PropertyType);
+            }
+
+            // Agrega las filas al DataTable
+            foreach (var elemento in lista)
+            {
+                DataRow fila = dataTable.NewRow();
+
+                foreach (var propiedad in propiedades)
+                {
+                    fila[propiedad.Name] = propiedad.GetValue(elemento);
+                }
+
+                dataTable.Rows.Add(fila);
+            }
+
+            return dataTable;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TarjetasCredito));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cliente = new System.Windows.Forms.ComboBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.numeroTarjeta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaTarjetasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -50,9 +55,7 @@
             this.vistaTarjetasTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaTarjetasTableAdapter();
             this.clienteTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ClienteTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreTitularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
@@ -64,10 +67,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.cliente);
             this.panel1.Controls.Add(this.numeroTarjeta);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -87,6 +90,7 @@
             this.cliente.DataSource = this.clienteBindingSource;
             this.cliente.DisplayMember = "nombreCliente";
             this.cliente.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cliente.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cliente.FormattingEnabled = true;
             this.cliente.Location = new System.Drawing.Point(105, 172);
             this.cliente.Name = "cliente";
@@ -125,20 +129,6 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Número:";
             // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.Menu;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Location = new System.Drawing.Point(17, 22);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(84, 28);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "Home";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Menu;
@@ -171,17 +161,53 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
-            this.nombreTitularDataGridViewTextBoxColumn,
             this.numeroDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vistaTarjetasBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(393, 124);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(393, 296);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
             // 
             // vistaTarjetasBindingSource1
             // 
@@ -284,25 +310,22 @@
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
-            // iDDataGridViewTextBoxColumn1
+            // button10
             // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.Width = 80;
-            // 
-            // nombreTitularDataGridViewTextBoxColumn
-            // 
-            this.nombreTitularDataGridViewTextBoxColumn.DataPropertyName = "Nombre_titular";
-            this.nombreTitularDataGridViewTextBoxColumn.HeaderText = "Nombre titular";
-            this.nombreTitularDataGridViewTextBoxColumn.Name = "nombreTitularDataGridViewTextBoxColumn";
-            this.nombreTitularDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(33, 27);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 28);
+            this.button10.TabIndex = 49;
+            this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // TarjetasCredito
             // 
@@ -327,7 +350,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -350,5 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreTitularDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button10;
     }
 }

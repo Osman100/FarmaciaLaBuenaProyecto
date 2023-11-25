@@ -29,19 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button7 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ProveedorTableAdapter();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataMember = "Proveedor";
+            this.proveedorBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
+            // fARMACIA_BUENA__SALUDDataSet
+            // 
+            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
+            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -54,6 +64,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 452);
             this.panel1.TabIndex = 6;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            reportDataSource1.Name = "Proveedores";
+            reportDataSource1.Value = this.proveedorBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Proveedores.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(83, 127);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(648, 246);
+            this.reportViewer1.TabIndex = 26;
             // 
             // button7
             // 
@@ -92,31 +115,9 @@
             this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 0;
             // 
-            // fARMACIA_BUENA__SALUDDataSet
-            // 
-            this.fARMACIA_BUENA__SALUDDataSet.DataSetName = "FARMACIA_BUENA__SALUDDataSet";
-            this.fARMACIA_BUENA__SALUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataMember = "Proveedor";
-            this.proveedorBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
             // proveedorTableAdapter
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // reportViewer1
-            // 
-            reportDataSource2.Name = "Proveedores";
-            reportDataSource2.Value = this.proveedorBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Proveedores.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(83, 127);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(648, 246);
-            this.reportViewer1.TabIndex = 26;
             // 
             // ReportesProveedores
             // 
@@ -127,10 +128,10 @@
             this.Name = "ReportesProveedores";
             this.Text = "ReportesProveedores";
             this.Load += new System.EventHandler(this.ReportesProveedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

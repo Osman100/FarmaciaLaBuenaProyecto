@@ -53,6 +53,7 @@ namespace La_Buena_Farmacia
         public virtual DbSet<VistaTarjetas> VistaTarjetas { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<VistaProductosMasVendidos> VistaProductosMasVendidos { get; set; }
+        public virtual DbSet<VistaDetalleVenta5> VistaDetalleVenta5 { get; set; }
     
         public virtual int decreaseStock(Nullable<int> idProducto, Nullable<int> cantidad)
         {
@@ -247,6 +248,11 @@ namespace La_Buena_Farmacia
                 new ObjectParameter("subtotalParam", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CompraYDetalle", idProveedorParamParameter, tipoCompraParamParameter, fechaCompraParamParameter, totalCompraParamParameter, idProductoParamParameter, cantidadProductoParamParameter, subtotalParamParameter);
+        }
+    
+        public virtual ObjectResult<GetMostSoldProduct_Result> GetMostSoldProduct()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMostSoldProduct_Result>("GetMostSoldProduct");
         }
     }
 }

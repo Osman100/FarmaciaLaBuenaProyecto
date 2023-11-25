@@ -16,6 +16,11 @@ namespace La_Buena_Farmacia.forms
 
         Proveedor proveedor = new Proveedor();
         classes.RProveedores rProveedor = new classes.RProveedores();
+        Compras compras = new Compras();
+        RCompras rCompras = new RCompras();
+        DetalleCompra detalleCompra = new DetalleCompra();
+        RDetalleCompra rDetalleCompra = new RDetalleCompra();
+
         public Proveedores()
         {
             InitializeComponent();
@@ -118,6 +123,17 @@ namespace La_Buena_Farmacia.forms
                 // Acceder al valor de la clave primaria (ID) de la fila seleccionada
                 int idProveedor = Convert.ToInt32(selectedRow.Cells["idProveedorDataGridViewTextBoxColumn"].Value);
 
+
+                List<Compra> compras = rCompras.getAll();
+
+                List<DetalleCompra> detalleCompras = rDetalleCompra.getAll();
+
+                var comprasFiltradas = compras.Where(compra => compra.idProveedor == idProveedor).ToList();
+                var detalleComprasFiltradas = detalleCompras.Where(detalleCompra => detalleCompra.idCompra == comprasFiltradas[0].idCompra).ToList();
+
+                detalleComprasFiltradas.ForEach(detalleCompra => rDetalleCompra.delete(detalleCompra.idDetalleCompra));
+                comprasFiltradas.ForEach(compra => rCompras.delete(compra.idCompra));
+
                 // Eliminar la fila de la base de datos utilizando el método delete
                 int resultado = rProveedor.delete(idProveedor);
 
@@ -187,6 +203,18 @@ namespace La_Buena_Farmacia.forms
             Compras compras = new Compras();
             compras.Show();
             this.Hide();
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void NombreProveedores_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

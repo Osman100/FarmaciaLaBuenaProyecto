@@ -466,5 +466,31 @@ namespace La_Buena_Farmacia.forms
                 MessageBox.Show("Por favor, selecciona un detalle de compra para eliminar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Deseleccionar fila seleccionada en venta
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                IDCompras.Text = string.Empty;
+                comboBoxProveedor.SelectedIndex = -1;
+                tipoCompras.SelectedIndex = -1;
+                FechaCompras.Text = string.Empty;
+                TotalCompra.Text = string.Empty;
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
+
+            }
+        }
     }
 }

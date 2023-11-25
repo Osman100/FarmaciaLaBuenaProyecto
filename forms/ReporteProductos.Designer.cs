@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.vistaProductos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,12 +39,12 @@
             this.cmbPrecios = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.vistaProductos1TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaProductos1TableAdapter();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.CategoriaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProductos1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
@@ -126,6 +126,7 @@
             this.cmbPrecios.DataSource = this.vistaProductos1BindingSource;
             this.cmbPrecios.DisplayMember = "Precio";
             this.cmbPrecios.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPrecios.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmbPrecios.FormattingEnabled = true;
             this.cmbPrecios.Location = new System.Drawing.Point(468, 117);
             this.cmbPrecios.Name = "cmbPrecios";
@@ -151,6 +152,7 @@
             this.cmbCategorias.DataSource = this.categoriaBindingSource;
             this.cmbCategorias.DisplayMember = "nombreCategoria";
             this.cmbCategorias.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategorias.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.Location = new System.Drawing.Point(170, 117);
             this.cmbCategorias.Name = "cmbCategorias";
@@ -158,6 +160,11 @@
             this.cmbCategorias.TabIndex = 21;
             this.cmbCategorias.ValueMember = "nombreCategoria";
             this.cmbCategorias.SelectedIndexChanged += new System.EventHandler(this.cmbCategorias_SelectedIndexChanged);
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // label3
             // 
@@ -185,9 +192,10 @@
             // 
             // reportViewer1
             // 
-            reportDataSource6.Name = "Productos";
-            reportDataSource6.Value = this.vistaProductos1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            reportDataSource1.Name = "Productos";
+            reportDataSource1.Value = this.vistaProductos1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Productos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(79, 168);
             this.reportViewer1.Name = "reportViewer1";
@@ -210,11 +218,6 @@
             // vistaProductos1TableAdapter
             // 
             this.vistaProductos1TableAdapter.ClearBeforeFill = true;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // categoriaTableAdapter
             // 

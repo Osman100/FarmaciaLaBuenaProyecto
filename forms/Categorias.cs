@@ -202,5 +202,12 @@ namespace La_Buena_Farmacia.forms
             compras.Show();
             this.Hide();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proveedores));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +50,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ProveedorTableAdapter();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource1)).BeginInit();
@@ -76,24 +75,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(123, 0);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(677, 452);
+            this.panel1.Size = new System.Drawing.Size(801, 452);
             this.panel1.TabIndex = 2;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.Menu;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Location = new System.Drawing.Point(17, 18);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(84, 28);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "Home";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label6
             // 
@@ -111,14 +96,38 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProveedorDataGridViewTextBoxColumn,
             this.nombreProveedorDataGridViewTextBoxColumn,
             this.telefonoProveedorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.proveedorBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(337, 121);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(328, 292);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -211,6 +220,7 @@
             this.NombreProveedores.Name = "NombreProveedores";
             this.NombreProveedores.Size = new System.Drawing.Size(208, 26);
             this.NombreProveedores.TabIndex = 6;
+            this.NombreProveedores.TextChanged += new System.EventHandler(this.NombreProveedores_TextChanged);
             // 
             // IDProveedores
             // 
@@ -218,6 +228,7 @@
             this.IDProveedores.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.IDProveedores.Location = new System.Drawing.Point(105, 124);
             this.IDProveedores.Name = "IDProveedores";
+            this.IDProveedores.ReadOnly = true;
             this.IDProveedores.Size = new System.Drawing.Size(208, 26);
             this.IDProveedores.TabIndex = 5;
             // 
@@ -257,76 +268,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button8.Location = new System.Drawing.Point(2, 222);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 33);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Categorías";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Location = new System.Drawing.Point(2, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 33);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Ventas";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(2, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 33);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Empleados";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(2, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button9.Location = new System.Drawing.Point(2, 252);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 33);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Compras";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // proveedorBindingSource
             // 
             this.proveedorBindingSource.DataMember = "Proveedor";
@@ -336,16 +277,28 @@
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(17, 23);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 28);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
@@ -374,11 +327,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button9;
         private FARMACIA_BUENA__SALUDDataSet fARMACIA_BUENA__SALUDDataSet;
         private System.Windows.Forms.BindingSource proveedorBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.ProveedorTableAdapter proveedorTableAdapter;

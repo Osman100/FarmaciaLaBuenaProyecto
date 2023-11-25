@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,9 +80,10 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "Empleados1";
-            reportDataSource3.Value = this.empleadosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            reportDataSource1.Name = "Empleados1";
+            reportDataSource1.Value = this.empleadosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Empleados.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(97, 172);
             this.reportViewer1.Name = "reportViewer1";

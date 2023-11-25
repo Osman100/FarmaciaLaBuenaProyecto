@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
@@ -72,6 +74,8 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.Location = new System.Drawing.Point(556, 383);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(201, 28);
@@ -86,6 +90,8 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(301, 383);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(201, 28);
@@ -100,6 +106,8 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(53, 383);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(201, 28);
@@ -114,6 +122,8 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(301, 323);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(201, 28);
@@ -128,6 +138,8 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(556, 323);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(201, 28);
@@ -142,6 +154,8 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(53, 323);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(201, 28);
@@ -156,6 +170,8 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(556, 268);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(201, 28);
@@ -170,6 +186,8 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(301, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(201, 28);
@@ -181,9 +199,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(53, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 28);
@@ -226,6 +247,20 @@
             this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 0;
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Location = new System.Drawing.Point(14, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(129, 28);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "Cerrar sesión";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,5 +291,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }

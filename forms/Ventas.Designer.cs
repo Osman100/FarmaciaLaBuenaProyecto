@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.vistaVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaVentaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVentaTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.total = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tarjeta = new System.Windows.Forms.ComboBox();
@@ -43,7 +48,6 @@
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet1 = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.label14 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.vistaVenta3BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -79,6 +83,11 @@
             this.tipoVenta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IDDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaDetalleVenta4BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button12 = new System.Windows.Forms.Button();
             this.IDVenta = new System.Windows.Forms.TextBox();
@@ -102,12 +111,7 @@
             this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ventaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VentaTableAdapter();
             this.categoriaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.CategoriaTableAdapter();
-            this.IDDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaVentaBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -146,13 +150,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.total);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.tarjeta);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.idVendedor);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.label13);
@@ -183,10 +189,42 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(920, 530);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Location = new System.Drawing.Point(807, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 47);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Generar \r\nfactura";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(19, 8);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 28);
+            this.button10.TabIndex = 50;
+            this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // total
             // 
@@ -244,6 +282,7 @@
             this.idVendedor.DataSource = this.empleadoBindingSource;
             this.idVendedor.DisplayMember = "nombreEmpleado";
             this.idVendedor.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idVendedor.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.idVendedor.FormattingEnabled = true;
             this.idVendedor.Location = new System.Drawing.Point(573, 100);
             this.idVendedor.Name = "idVendedor";
@@ -272,20 +311,6 @@
             this.label14.Size = new System.Drawing.Size(78, 18);
             this.label14.TabIndex = 44;
             this.label14.Text = "Vendedor";
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.SystemColors.Menu;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button13.Location = new System.Drawing.Point(793, 11);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(84, 28);
-            this.button13.TabIndex = 43;
-            this.button13.Text = "Home";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button7
             // 
@@ -421,6 +446,14 @@
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
@@ -431,8 +464,24 @@
             this.fechaDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.vistaVenta3BindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Location = new System.Drawing.Point(312, 168);
             this.dataGridView2.Name = "dataGridView2";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.Size = new System.Drawing.Size(589, 159);
             this.dataGridView2.TabIndex = 29;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
@@ -458,8 +507,6 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Tarjeta";
-            dataGridViewCellStyle1.NullValue = "No aplica";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "Tarjeta";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
@@ -653,7 +700,6 @@
             this.IDDeVenta,
             this.ID,
             this.Producto,
-            this.precioUnitarioDataGridViewTextBoxColumn,
             this.Cantidad,
             this.totalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vistaDetalleVenta4BindingSource1;
@@ -662,6 +708,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(587, 153);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // IDDeVenta
+            // 
+            this.IDDeVenta.DataPropertyName = "ID_de_venta";
+            this.IDDeVenta.HeaderText = "ID de venta";
+            this.IDDeVenta.Name = "IDDeVenta";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Producto
+            // 
+            this.Producto.DataPropertyName = "Producto";
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
             // vistaDetalleVenta4BindingSource1
             // 
@@ -810,41 +886,18 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
-            // IDDeVenta
+            // button2
             // 
-            this.IDDeVenta.DataPropertyName = "ID_de_venta";
-            this.IDDeVenta.HeaderText = "ID de venta";
-            this.IDDeVenta.Name = "IDDeVenta";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Producto
-            // 
-            this.Producto.DataPropertyName = "Producto";
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // precioUnitarioDataGridViewTextBoxColumn
-            // 
-            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "Precio_unitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.button2.BackColor = System.Drawing.SystemColors.Menu;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.Location = new System.Drawing.Point(86, 188);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 28);
+            this.button2.TabIndex = 52;
+            this.button2.Text = "Deseleccionar";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Ventas
             // 
@@ -884,7 +937,6 @@
         private System.Windows.Forms.BindingSource vistaVentaBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVentaTableAdapter vistaVentaTableAdapter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label13;
@@ -939,13 +991,6 @@
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.TarjetaCreditoTableAdapter tarjetaCreditoTableAdapter;
         private System.Windows.Forms.TextBox total;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource ventaBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.VentaTableAdapter ventaTableAdapter;
         private System.Windows.Forms.BindingSource vistaVenta3BindingSource1;
@@ -958,5 +1003,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -381,6 +381,8 @@
     </AssociationSet>
     <EntitySet Name="Empleados" EntityType="FARMACIA_BUENA__SALUDModel.Empleados" />
     <EntitySet Name="VistaProductosMasVendidos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductosMasVendidos" />
+    <EntitySet Name="VistaDetalleVenta5" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta5" />
+    <FunctionImport Name="GetMostSoldProduct" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.GetMostSoldProduct_Result)" />
   </EntityContainer>
   <EntityType Name="VistaDetalleVenta">
     <Key>
@@ -604,4 +606,25 @@
     <Property Name="Nombre" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="CantidadVendida" Type="Int32" />
   </EntityType>
+  <EntityType Name="VistaDetalleVenta5">
+    <Key>
+      <PropertyRef Name="IDDeVenta" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="PrecioUnitario" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="IDDeVenta" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <ComplexType Name="GetMostSoldProduct_Result">
+    <Property Type="Int32" Name="idProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="CantidadVendida" Nullable="true" />
+  </ComplexType>
 </Schema>

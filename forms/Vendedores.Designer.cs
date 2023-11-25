@@ -32,6 +32,10 @@ namespace La_Buena_Farmacia.forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendedores));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.SalarioVendedores = new System.Windows.Forms.TextBox();
@@ -40,12 +44,6 @@ namespace La_Buena_Farmacia.forms
             this.RolVendedores = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoLaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empleadoPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIABUENASALUDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
@@ -60,29 +58,33 @@ namespace La_Buena_Farmacia.forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.empleadoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadoTableAdapter();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.RolTableAdapter();
-            this.button7 = new System.Windows.Forms.Button();
+            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadosTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadosTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.SalarioVendedores);
             this.panel1.Controls.Add(this.PasswordVendedores);
@@ -101,9 +103,9 @@ namespace La_Buena_Farmacia.forms
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(123, 0);
+            this.panel1.Location = new System.Drawing.Point(3, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 450);
+            this.panel1.Size = new System.Drawing.Size(797, 450);
             this.panel1.TabIndex = 1;
             // 
             // button10
@@ -152,16 +154,16 @@ namespace La_Buena_Farmacia.forms
             // 
             // RolVendedores
             // 
+            this.RolVendedores.DataSource = this.rolBindingSource1;
+            this.RolVendedores.DisplayMember = "nombreRol";
             this.RolVendedores.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RolVendedores.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.RolVendedores.FormattingEnabled = true;
-            this.RolVendedores.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.RolVendedores.Location = new System.Drawing.Point(112, 251);
             this.RolVendedores.Name = "RolVendedores";
             this.RolVendedores.Size = new System.Drawing.Size(206, 26);
             this.RolVendedores.TabIndex = 17;
+            this.RolVendedores.ValueMember = "idRol";
             // 
             // label6
             // 
@@ -179,57 +181,43 @@ namespace La_Buena_Farmacia.forms
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEmpleadoDataGridViewTextBoxColumn,
-            this.idRolDataGridViewTextBoxColumn,
-            this.nombreEmpleadoDataGridViewTextBoxColumn,
-            this.estadoLaboralDataGridViewTextBoxColumn,
-            this.salarioDataGridViewTextBoxColumn,
-            this.empleadoPasswordDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.empleadoBindingSource;
+            this.iDDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.rolDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.salarioDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.empleadosBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(337, 124);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(328, 292);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Size = new System.Drawing.Size(457, 292);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.idEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.Name = "idEmpleadoDataGridViewTextBoxColumn";
-            this.idEmpleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idRolDataGridViewTextBoxColumn
-            // 
-            this.idRolDataGridViewTextBoxColumn.DataPropertyName = "idRol";
-            this.idRolDataGridViewTextBoxColumn.HeaderText = "idRol";
-            this.idRolDataGridViewTextBoxColumn.Name = "idRolDataGridViewTextBoxColumn";
-            // 
-            // nombreEmpleadoDataGridViewTextBoxColumn
-            // 
-            this.nombreEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "nombreEmpleado";
-            this.nombreEmpleadoDataGridViewTextBoxColumn.HeaderText = "nombreEmpleado";
-            this.nombreEmpleadoDataGridViewTextBoxColumn.Name = "nombreEmpleadoDataGridViewTextBoxColumn";
-            // 
-            // estadoLaboralDataGridViewTextBoxColumn
-            // 
-            this.estadoLaboralDataGridViewTextBoxColumn.DataPropertyName = "estadoLaboral";
-            this.estadoLaboralDataGridViewTextBoxColumn.HeaderText = "estadoLaboral";
-            this.estadoLaboralDataGridViewTextBoxColumn.Name = "estadoLaboralDataGridViewTextBoxColumn";
-            // 
-            // salarioDataGridViewTextBoxColumn
-            // 
-            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "salario";
-            this.salarioDataGridViewTextBoxColumn.HeaderText = "salario";
-            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
-            // 
-            // empleadoPasswordDataGridViewTextBoxColumn
-            // 
-            this.empleadoPasswordDataGridViewTextBoxColumn.DataPropertyName = "empleadoPassword";
-            this.empleadoPasswordDataGridViewTextBoxColumn.HeaderText = "empleadoPassword";
-            this.empleadoPasswordDataGridViewTextBoxColumn.Name = "empleadoPasswordDataGridViewTextBoxColumn";
             // 
             // empleadoBindingSource
             // 
@@ -379,71 +367,6 @@ namespace La_Buena_Farmacia.forms
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Location = new System.Drawing.Point(3, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 33);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Ventas";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(3, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 33);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Categorías";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(3, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button8.Location = new System.Drawing.Point(3, 219);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 33);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "Proveedores";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button9.Location = new System.Drawing.Point(3, 251);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 33);
-            this.button9.TabIndex = 21;
-            this.button9.Text = "Compras";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // empleadoTableAdapter
             // 
             this.empleadoTableAdapter.ClearBeforeFill = true;
@@ -457,30 +380,72 @@ namespace La_Buena_Farmacia.forms
             // 
             this.rolTableAdapter.ClearBeforeFill = true;
             // 
-            // button7
+            // empleadosBindingSource
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(15, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 28);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Home";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.empleadosBindingSource.DataMember = "Empleados";
+            this.empleadosBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
+            // empleadosTableAdapter
+            // 
+            this.empleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // rolDataGridViewTextBoxColumn
+            // 
+            this.rolDataGridViewTextBoxColumn.DataPropertyName = "Rol";
+            this.rolDataGridViewTextBoxColumn.HeaderText = "Rol";
+            this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // salarioDataGridViewTextBoxColumn
+            // 
+            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "Salario";
+            this.salarioDataGridViewTextBoxColumn.HeaderText = "Salario";
+            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
+            // 
+            // rolBindingSource1
+            // 
+            this.rolBindingSource1.DataMember = "Rol";
+            this.rolBindingSource1.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(17, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 28);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Home";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Vendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 459);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -495,8 +460,9 @@ namespace La_Buena_Farmacia.forms
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIABUENASALUDDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -521,12 +487,7 @@ namespace La_Buena_Farmacia.forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox RolVendedores;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox PasswordVendedores;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox SalarioVendedores;
@@ -534,15 +495,17 @@ namespace La_Buena_Farmacia.forms
         private System.Windows.Forms.BindingSource fARMACIABUENASALUDDataSetBindingSource;
         private System.Windows.Forms.BindingSource empleadoBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRolDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoLaboralDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empleadoPasswordDataGridViewTextBoxColumn;
         private Button button10;
         private BindingSource rolBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.RolTableAdapter rolTableAdapter;
-        private Button button7;
+        private BindingSource empleadosBindingSource;
+        private FARMACIA_BUENA__SALUDDataSetTableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn rolDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
+        private BindingSource rolBindingSource1;
+        private Button button1;
     }
 }

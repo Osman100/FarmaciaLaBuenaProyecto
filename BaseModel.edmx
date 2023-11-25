@@ -232,6 +232,24 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta4' does
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaDetalleVenta5' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VistaDetalleVenta5">
+          <Key>
+            <PropertyRef Name="IDDeVenta" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="PrecioUnitario" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="IDDeVenta" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Producto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PrecioUnitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VistaEmpleados">
           <Key>
@@ -499,6 +517,7 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <Parameter Name="cantidad" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="GetMostSoldProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="increaseStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idProducto" Type="int" Mode="In" />
           <Parameter Name="cantidad" Type="int" Mode="In" />
@@ -609,6 +628,16 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
     [VistaDetalleVenta4].[Cantidad] AS [Cantidad], 
     [VistaDetalleVenta4].[Total] AS [Total]
     FROM [dbo].[VistaDetalleVenta4] AS [VistaDetalleVenta4]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VistaDetalleVenta5" EntityType="Self.VistaDetalleVenta5" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VistaDetalleVenta5].[IDDeVenta] AS [IDDeVenta], 
+    [VistaDetalleVenta5].[ID] AS [ID], 
+    [VistaDetalleVenta5].[Producto] AS [Producto], 
+    [VistaDetalleVenta5].[PrecioUnitario] AS [PrecioUnitario], 
+    [VistaDetalleVenta5].[Cantidad] AS [Cantidad], 
+    [VistaDetalleVenta5].[Total] AS [Total]
+    FROM [dbo].[VistaDetalleVenta5] AS [VistaDetalleVenta5]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VistaEmpleados" EntityType="Self.VistaEmpleados" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1103,6 +1132,8 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           </AssociationSet>
           <EntitySet Name="Empleados" EntityType="FARMACIA_BUENA__SALUDModel.Empleados" />
           <EntitySet Name="VistaProductosMasVendidos" EntityType="FARMACIA_BUENA__SALUDModel.VistaProductosMasVendidos" />
+          <EntitySet Name="VistaDetalleVenta5" EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta5" />
+          <FunctionImport Name="GetMostSoldProduct" ReturnType="Collection(FARMACIA_BUENA__SALUDModel.GetMostSoldProduct_Result)" />
         </EntityContainer>
         <EntityType Name="VistaDetalleVenta">
           <Key>
@@ -1326,6 +1357,27 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="CantidadVendida" Type="Int32" />
         </EntityType>
+        <EntityType Name="VistaDetalleVenta5">
+          <Key>
+            <PropertyRef Name="IDDeVenta" />
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Producto" />
+            <PropertyRef Name="PrecioUnitario" />
+            <PropertyRef Name="Cantidad" />
+            <PropertyRef Name="Total" />
+          </Key>
+          <Property Name="IDDeVenta" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PrecioUnitario" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <ComplexType Name="GetMostSoldProduct_Result">
+          <Property Type="Int32" Name="idProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="CantidadVendida" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1639,6 +1691,27 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="VistaDetalleVenta5">
+            <EntityTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta5">
+              <MappingFragment StoreEntitySet="VistaDetalleVenta5">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDDeVenta" ColumnName="IDDeVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetMostSoldProduct" FunctionName="FARMACIA_BUENA__SALUDModel.Store.GetMostSoldProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FARMACIA_BUENA__SALUDModel.GetMostSoldProduct_Result">
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CantidadVendida" ColumnName="CantidadVendida" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
