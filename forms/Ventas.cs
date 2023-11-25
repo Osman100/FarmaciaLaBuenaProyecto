@@ -498,7 +498,29 @@ namespace La_Buena_Farmacia.forms
             //Eliminar el producto de la lista de productos
             if(dataGridView1.SelectedRows.Count > 0)
             {
+                int idDetalleVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                int idVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
+                int resultado = rDetalleVenta.delete(idDetalleVenta);
+                if(resultado != -1)
+                {
+                    decimal totalVenta = rDetalle.CalcularTotal(idVenta);
+                    rVenta.actualizarTotalVenta(idVenta, totalVenta);
+                    if (comboBox3.Items.Count > 0 && comboBox3.SelectedValue != null)
+                    {
+                        int idVentaSeleccionada = (int)comboBox3.SelectedValue;
+                        List<VistaDetalleVenta4> detalleVenta = db.VistaDetalleVenta4.Where(c => c.ID_de_venta == idVentaSeleccionada).ToList();
+                        dataGridView1.DataSource = detalleVenta;
+
+                    }
+                    dataGridView2.DataSource = db.VistaVenta3.ToList();
+
+                    MessageBox.Show(Text = "Producto eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al eliminar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

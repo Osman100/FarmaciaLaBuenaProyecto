@@ -78,3 +78,8 @@ C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\zh-CHS\Microsoft.ReportView
 C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Reportes.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.TarjetasCredito.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReporteProductos.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReporteEmpleados.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReportesProveedores.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReportesVentas.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReporteCompras.resources

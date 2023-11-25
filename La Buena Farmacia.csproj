@@ -130,6 +130,9 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Empleados.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="FARMACIA_BUENA__SALUDDataSet.cs">
       <DependentUpon>FARMACIA_BUENA__SALUDDataSet.xsd</DependentUpon>
     </Compile>
@@ -180,11 +183,41 @@
     <Compile Include="forms\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReporteCompras.Designer.cs">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReporteEmpleados.Designer.cs">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReporteProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReporteProductos.Designer.cs">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Reportes.Designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReportesProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReportesProveedores.Designer.cs">
+      <DependentUpon>ReportesProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ReportesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ReportesVentas.Designer.cs">
+      <DependentUpon>ReportesVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Splash.cs">
       <SubType>Form</SubType>
@@ -264,6 +297,9 @@
     <Compile Include="VistaProductos1.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VistaProductosMasVendidos.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="VistaTarjetas.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -294,8 +330,23 @@
     <EmbeddedResource Include="forms\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReporteCompras.resx">
+      <DependentUpon>ReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReportesProveedores.resx">
+      <DependentUpon>ReportesProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ReportesVentas.resx">
+      <DependentUpon>ReportesVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -318,7 +369,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reports\Compras.rdlc" />
     <EmbeddedResource Include="reports\Productos.rdlc" />
+    <EmbeddedResource Include="reports\Empleados.rdlc" />
+    <EmbeddedResource Include="reports\Proveedores.rdlc" />
+    <EmbeddedResource Include="reports\Ventas.rdlc" />
     <EntityDeploy Include="BaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BaseModel.Designer.cs</LastGenOutput>
@@ -339,6 +394,8 @@
       <DependentUpon>FARMACIA_BUENA__SALUDDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.GetMostSoldProductTableAdapter1.datasource" />
+    <None Include="Properties\DataSources\La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.QueriesTableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -384,6 +441,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

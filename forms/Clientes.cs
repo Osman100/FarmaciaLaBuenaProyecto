@@ -132,6 +132,11 @@ namespace La_Buena_Farmacia.forms
                 if (resultado != -1)
                 {
                     dataGridView1.DataSource = rcliente.getAll();
+                    IDCliente.Text = string.Empty;
+                    NombreCliente.Text = string.Empty;
+                    EmailCliente.Text = string.Empty;
+                    TelefonoCliente.Text = string.Empty;
+                    dataGridView1.ClearSelection();
                     MessageBox.Show(Text = "Cliente eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

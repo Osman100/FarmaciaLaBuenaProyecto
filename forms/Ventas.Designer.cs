@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.vistaVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaVentaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaVentaTableAdapter();
@@ -79,6 +79,7 @@
             this.tipoVenta = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vistaDetalleVenta4BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button12 = new System.Windows.Forms.Button();
             this.IDVenta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -101,7 +102,6 @@
             this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ventaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VentaTableAdapter();
             this.categoriaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.CategoriaTableAdapter();
-            this.vistaDetalleVenta4BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.IDDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,13 +120,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // fARMACIA_BUENA__SALUDDataSet
@@ -458,8 +458,8 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Tarjeta";
-            dataGridViewCellStyle7.NullValue = "No aplica";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.NullValue = "No aplica";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "Tarjeta";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
@@ -663,6 +663,11 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // vistaDetalleVenta4BindingSource1
+            // 
+            this.vistaDetalleVenta4BindingSource1.DataMember = "VistaDetalleVenta4";
+            this.vistaDetalleVenta4BindingSource1.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
+            // 
             // button12
             // 
             this.button12.BackColor = System.Drawing.SystemColors.Menu;
@@ -805,11 +810,6 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
-            // vistaDetalleVenta4BindingSource1
-            // 
-            this.vistaDetalleVenta4BindingSource1.DataMember = "VistaDetalleVenta4";
-            this.vistaDetalleVenta4BindingSource1.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
-            // 
             // IDDeVenta
             // 
             this.IDDeVenta.DataPropertyName = "ID_de_venta";
@@ -830,7 +830,7 @@
             // 
             // precioUnitarioDataGridViewTextBoxColumn
             // 
-            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "Precio unitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "Precio_unitario";
             this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
             this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
             // 
@@ -868,13 +868,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaVenta3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCompraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaDetalleVenta4BindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -9,6 +9,7 @@ namespace La_Buena_Farmacia.classes
     internal class RCliente: BaseInterface<Cliente>
     {
         private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
+        private RTarjetaCredito rTarjetaCredito = new RTarjetaCredito();
         public int idCliente { get; set; }
         public string nombreCliente { get; set; }
 
@@ -71,7 +72,11 @@ namespace La_Buena_Farmacia.classes
         {
             try
             {
+
+
                 Cliente cliente = db.Cliente.Find(recordID);
+                var tarjetas = db.TarjetaCredito.Where(x => x.idCliente == recordID).ToList();
+                db.TarjetaCredito.RemoveRange(tarjetas);
                 db.Cliente.Remove(cliente);
                 db.SaveChanges();
 
@@ -79,7 +84,7 @@ namespace La_Buena_Farmacia.classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+
                 return -1;
             }
         }

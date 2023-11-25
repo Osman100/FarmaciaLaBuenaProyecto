@@ -157,7 +157,7 @@ namespace La_Buena_Farmacia.forms
             if (dataGridView2.SelectedRows.Count > 0)
             {
                 int idDetalleCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
-                VistaDetalleCompra detalleCompra = db.VistaDetalleCompra.FirstOrDefault(c => c.ID == idDetalleCompra);
+                VistaDetalleCompra2 detalleCompra = db.VistaDetalleCompra2.FirstOrDefault(c => c.ID == idDetalleCompra);
                 string nombreProducto = dataGridView2.CurrentRow.Cells["productoDataGridViewTextBoxColumn1"].Value.ToString();
 
                 if(detalleCompra != null)

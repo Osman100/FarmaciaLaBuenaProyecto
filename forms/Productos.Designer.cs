@@ -274,6 +274,7 @@
             this.IDProductos.ReadOnly = true;
             this.IDProductos.Size = new System.Drawing.Size(208, 26);
             this.IDProductos.TabIndex = 5;
+            this.IDProductos.TextChanged += new System.EventHandler(this.IDProductos_TextChanged);
             // 
             // label5
             // 

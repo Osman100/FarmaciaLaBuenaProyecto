@@ -799,7 +799,7 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Precio unitario";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Precio_unitario";
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio unitario";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;

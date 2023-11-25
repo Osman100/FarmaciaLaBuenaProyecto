@@ -40,6 +40,8 @@
         <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaDetalleVenta4" Width="1.5" PointX="13.375" PointY="13.75" />
         <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaTarjetas" Width="1.5" PointX="14.375" PointY="6.75" />
         <AssociationConnector Association="FARMACIA_BUENA__SALUDModel.idTarjetaDeCredito" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.Empleados" Width="1.5" PointX="14.375" PointY="9.75" />
+        <EntityTypeShape EntityType="FARMACIA_BUENA__SALUDModel.VistaProductosMasVendidos" Width="1.5" PointX="15.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -113,6 +113,22 @@
     <Property Name="idTarjetaCredito" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.Empleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Rol" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Estado" />
+      <PropertyRef Name="Salario" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Rol" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Salario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaCompra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VistaCompra">
     <Key>
@@ -259,6 +275,17 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductos1' does no
     <Property Name="Categoria" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
     <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaProductosMasVendidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaProductosMasVendidos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="idProducto" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CantidadVendida" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaTarjetas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -514,6 +541,15 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TarjetaCredito" EntityType="Self.TarjetaCredito" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Empleados].[ID] AS [ID], 
+    [Empleados].[Rol] AS [Rol], 
+    [Empleados].[Nombre] AS [Nombre], 
+    [Empleados].[Estado] AS [Estado], 
+    [Empleados].[Salario] AS [Salario]
+    FROM [dbo].[Empleados] AS [Empleados]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="VistaCompra" EntityType="Self.VistaCompra" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [VistaCompra].[ID] AS [ID], 
@@ -596,6 +632,13 @@ warning 6002: The table/view 'FARMACIA_BUENA__SALUD.dbo.VistaVenta3' does not ha
     [VistaProductos1].[Cantidad] AS [Cantidad], 
     [VistaProductos1].[Precio] AS [Precio]
     FROM [dbo].[VistaProductos1] AS [VistaProductos1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaProductosMasVendidos" EntityType="Self.VistaProductosMasVendidos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaProductosMasVendidos].[idProducto] AS [idProducto], 
+    [VistaProductosMasVendidos].[Nombre] AS [Nombre], 
+    [VistaProductosMasVendidos].[CantidadVendida] AS [CantidadVendida]
+    FROM [dbo].[VistaProductosMasVendidos] AS [VistaProductosMasVendidos]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VistaTarjetas" EntityType="Self.VistaTarjetas" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

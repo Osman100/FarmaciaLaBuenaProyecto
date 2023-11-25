@@ -152,5 +152,10 @@ namespace La_Buena_Farmacia.forms
             compras.Show();
             this.Hide();
         }
+
+        private void IDProductos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

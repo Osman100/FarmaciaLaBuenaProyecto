@@ -51,6 +51,8 @@ namespace La_Buena_Farmacia
         public virtual DbSet<VistaVenta3> VistaVenta3 { get; set; }
         public virtual DbSet<VistaDetalleVenta4> VistaDetalleVenta4 { get; set; }
         public virtual DbSet<VistaTarjetas> VistaTarjetas { get; set; }
+        public virtual DbSet<Empleados> Empleados { get; set; }
+        public virtual DbSet<VistaProductosMasVendidos> VistaProductosMasVendidos { get; set; }
     
         public virtual int decreaseStock(Nullable<int> idProducto, Nullable<int> cantidad)
         {
