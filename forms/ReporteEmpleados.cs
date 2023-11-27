@@ -16,6 +16,7 @@ namespace La_Buena_Farmacia.forms
         public ReporteEmpleados()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void ReporteEmpleados_Load(object sender, EventArgs e)

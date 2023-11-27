@@ -17,6 +17,7 @@ namespace La_Buena_Farmacia.forms
         public ReportesVentas()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             ActualizarValorTextBoxInforme();
             
         }

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.TelefonoCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.EmailCliente = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.clienteTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ClienteTableAdapter();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -82,6 +82,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(804, 452);
             this.panel1.TabIndex = 3;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(17, 22);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 28);
+            this.button10.TabIndex = 29;
+            this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // TelefonoCliente
             // 
@@ -145,7 +162,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(225, 23);
+            this.label6.Location = new System.Drawing.Point(333, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(217, 23);
             this.label6.TabIndex = 14;
@@ -174,6 +191,7 @@
             this.dataGridView1.DataSource = this.clienteBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(337, 121);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(451, 292);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -190,18 +208,21 @@
             this.nombreClienteDataGridViewTextBoxColumn.DataPropertyName = "nombreCliente";
             this.nombreClienteDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreClienteDataGridViewTextBoxColumn.Name = "nombreClienteDataGridViewTextBoxColumn";
+            this.nombreClienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // correoElectronicoDataGridViewTextBoxColumn
             // 
             this.correoElectronicoDataGridViewTextBoxColumn.DataPropertyName = "correoElectronico";
             this.correoElectronicoDataGridViewTextBoxColumn.HeaderText = "Email";
             this.correoElectronicoDataGridViewTextBoxColumn.Name = "correoElectronicoDataGridViewTextBoxColumn";
+            this.correoElectronicoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // númeroTelefónicoDataGridViewTextBoxColumn
             // 
             this.númeroTelefónicoDataGridViewTextBoxColumn.DataPropertyName = "númeroTelefónico";
             this.númeroTelefónicoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.númeroTelefónicoDataGridViewTextBoxColumn.Name = "númeroTelefónicoDataGridViewTextBoxColumn";
+            this.númeroTelefónicoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clienteBindingSource
             // 
@@ -301,23 +322,6 @@
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.Menu;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(17, 22);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(97, 28);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "Home";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // Clientes
             // 

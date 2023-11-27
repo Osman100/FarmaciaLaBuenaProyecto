@@ -32,6 +32,12 @@ ALTER VIEW VistaDetalleVenta4 AS
 SELECT vdv.idVenta AS 'ID de venta',vdv.idDetalle AS 'ID', pr.nombreProducto AS 'Producto',pr.precioProducto AS 'Precio unitario', vdv.cantidadProducto AS 'Cantidad', vdv.subtotal AS 'Total'
 FROM DetalleVenta vdv
 INNER JOIN Producto pr ON pr.idProducto = vdv.idProducto
+GO 
+
+CREATE VIEW VistaDetalleVenta5 AS 
+SELECT vdv.idVenta AS 'IDDeVenta',vdv.idDetalle AS 'ID', pr.nombreProducto AS 'Producto',pr.precioProducto AS 'PrecioUnitario', vdv.cantidadProducto AS 'Cantidad', vdv.subtotal AS 'Total'
+FROM DetalleVenta vdv
+INNER JOIN Producto pr ON pr.idProducto = vdv.idProducto
 
 GO
 ALTER VIEW VistaVenta3 AS 

@@ -15,6 +15,7 @@ namespace La_Buena_Farmacia.forms
         public MenuPrincipal()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

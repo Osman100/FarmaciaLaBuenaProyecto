@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@
             this.panel1.Controls.Add(this.reportViewer1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbRol);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
@@ -81,9 +79,9 @@
             // reportViewer1
             // 
             this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            reportDataSource1.Name = "Empleados1";
-            reportDataSource1.Value = this.empleadosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "Empleados1";
+            reportDataSource2.Value = this.empleadosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Empleados.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(97, 172);
             this.reportViewer1.Name = "reportViewer1";
@@ -113,23 +111,11 @@
             this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button7.Location = new System.Drawing.Point(32, 21);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 28);
+            this.button7.Size = new System.Drawing.Size(89, 28);
             this.button7.TabIndex = 25;
             this.button7.Text = "Reportes";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(46, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 18);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Filtros";
             // 
             // cmbRol
             // 
@@ -221,7 +207,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;

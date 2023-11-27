@@ -162,7 +162,7 @@
             this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button7.Location = new System.Drawing.Point(32, 21);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 28);
+            this.button7.Size = new System.Drawing.Size(89, 28);
             this.button7.TabIndex = 25;
             this.button7.Text = "Reportes";
             this.button7.UseVisualStyleBackColor = false;

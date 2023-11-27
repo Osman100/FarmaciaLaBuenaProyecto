@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,7 @@
             this.vistaProductos1TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaProductos1TableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProductos1BindingSource)).BeginInit();
@@ -74,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label6);
@@ -95,8 +97,27 @@
             this.panel1.Size = new System.Drawing.Size(801, 452);
             this.panel1.TabIndex = 0;
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.Menu;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(17, 23);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 28);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "Home";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -125,6 +146,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(337, 124);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,36 +157,42 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(452, 292);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // iDDataGridViewTextBoxColumn1
             // 
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // productoDataGridViewTextBoxColumn
             // 
             this.productoDataGridViewTextBoxColumn.DataPropertyName = "Producto";
             this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
             this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
+            this.productoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // categoriaDataGridViewTextBoxColumn
             // 
             this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
             this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
             this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // precioDataGridViewTextBoxColumn
             // 
             this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vistaProductos1BindingSource
             // 
@@ -182,7 +210,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label6.Location = new System.Drawing.Point(225, 23);
+            this.label6.Location = new System.Drawing.Point(310, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(238, 23);
             this.label6.TabIndex = 14;
@@ -200,6 +228,7 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -373,22 +402,19 @@
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             // 
-            // button10
+            // button7
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.Menu;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.button10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(17, 23);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(97, 28);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "Home";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button7.Location = new System.Drawing.Point(105, 411);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(129, 28);
+            this.button7.TabIndex = 26;
+            this.button7.Text = "Deseleccionar";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // Productos
             // 
@@ -448,5 +474,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vistaProductos1BindingSource;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button7;
     }
 }

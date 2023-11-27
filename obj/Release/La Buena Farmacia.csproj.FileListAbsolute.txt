@@ -78,3 +78,14 @@ C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.csproj.CopyComplete
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.exe
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.pdb
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.MenuVendedores.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.PantallaFactura.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.ReporteCompras.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.ReporteEmpleados.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.ReporteProductos.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.ReportesProveedores.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La_Buena_Farmacia.forms.ReportesVentas.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\La Buena Farmacia.exe.manifest
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Release\La Buena Farmacia.application
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.exe.manifest
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Release\La Buena Farmacia.application

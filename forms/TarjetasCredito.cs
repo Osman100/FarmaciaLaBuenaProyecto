@@ -19,6 +19,7 @@ namespace La_Buena_Farmacia.forms
         public TarjetasCredito()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             dataGridView1.DataSource = db.VistaTarjetas.ToList();
         }
@@ -150,9 +151,19 @@ namespace La_Buena_Farmacia.forms
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
-            menuPrincipal.Show();
-            this.Hide();
+            if(Program.AppContext.UsuarioActual.idRol == 1)
+            {
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MenuVendedores menuVendedores = new MenuVendedores();
+                menuVendedores.Show();
+                this.Hide();
+            }
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace La_Buena_Farmacia.forms
         public PantallaFactura()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void PantallaFactura_Load(object sender, EventArgs e)
@@ -35,6 +36,16 @@ namespace La_Buena_Farmacia.forms
         public Microsoft.Reporting.WinForms.ReportViewer ObtenerReportViewer()
         {
             return reportViewer1;
+        }
+
+        public void EditarSources(DataTable fuente1, DataTable fuente2)
+        {
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("Venta", fuente1));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DetalleVenta", fuente2));
+            reportViewer1.RefreshReport();
+
+
         }
     }
 }

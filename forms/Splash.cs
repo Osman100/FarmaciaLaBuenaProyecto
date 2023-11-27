@@ -15,6 +15,7 @@ namespace La_Buena_Farmacia.forms
         public Splash()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         int startpoint = 0;
@@ -44,6 +45,11 @@ namespace La_Buena_Farmacia.forms
         private void metroProgressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

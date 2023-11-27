@@ -31,7 +31,9 @@ namespace La_Buena_Farmacia.forms
         public Compras()
         {
             InitializeComponent();
-            
+
+            this.MaximizeBox = false;
+
         }
 
         
@@ -72,6 +74,7 @@ namespace La_Buena_Farmacia.forms
                 dataGridView2.DataSource = detalleCompra;
             }
 
+
             dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
@@ -95,39 +98,47 @@ namespace La_Buena_Farmacia.forms
             Producto productoSeleccionado = (Producto)comboBox2.SelectedItem;
             int idProducto = productoSeleccionado.idProducto;
             decimal nuevoPrecio = decimal.Parse(textBoxPrecio.Text);
-            int nuevaCantidad = int.Parse(CantidadCompras.Text);
-            decimal subtotal = nuevaCantidad * nuevoPrecio;
-            
-
-            detalleCompra.idCompra = idCompra;
-            detalleCompra.idProducto = idProducto;
-            detalleCompra.cantidadProducto = nuevaCantidad;
-            detalleCompra.subtotal = subtotal;
-            
-
-            int resultado = rDetalleCompra.create(detalleCompra);
-
-
-            if (resultado != -1)
+            if(CantidadCompras != null)
             {
+                int nuevaCantidad = int.Parse(CantidadCompras.Text);
+                decimal subtotal = nuevaCantidad * nuevoPrecio;
 
-                dataGridView1.DataSource = db.VistaCompra.ToList();
-                decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
-                rCompra.ActualizarTotalCompra(idCompra,totalCompra);
 
-                int idCompraSeleccionada = (int)comboBox3.SelectedValue;
-                List<VistaDetalleCompra2> detalleCompra = db.VistaDetalleCompra2.Where(c => c.ID_de_Compra == idCompra).ToList();
-                dataGridView2.DataSource = detalleCompra;
-                dataGridView1.DataSource = db.VistaCompra.ToList();
-                db.increaseStock(idProducto, nuevaCantidad);
-                MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                detalleCompra.idCompra = idCompra;
+                detalleCompra.idProducto = idProducto;
+                detalleCompra.cantidadProducto = nuevaCantidad;
+                detalleCompra.subtotal = subtotal;
 
-                
+
+                int resultado = rDetalleCompra.create(detalleCompra);
+
+
+                if (resultado != -1)
+                {
+
+                    dataGridView1.DataSource = db.VistaCompra.ToList();
+                    decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
+                    rCompra.ActualizarTotalCompra(idCompra, totalCompra);
+
+                    int idCompraSeleccionada = (int)comboBox3.SelectedValue;
+                    List<VistaDetalleCompra2> detalleCompra = db.VistaDetalleCompra2.Where(c => c.ID_de_Compra == idCompra).ToList();
+                    dataGridView2.DataSource = detalleCompra;
+                    dataGridView1.DataSource = db.VistaCompra.ToList();
+                    db.increaseStock(idProducto, nuevaCantidad);
+                    MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                }
+                else
+                {
+                    // Ocurrió un error al agregar el empleado
+                    MessageBox.Show("Ocurrió un error al agregar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
             else
             {
-                // Ocurrió un error al agregar el empleado
-                MessageBox.Show("Ocurrió un error al agregar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese una cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -156,8 +167,9 @@ namespace La_Buena_Farmacia.forms
             Console.WriteLine("SelectionChanged event fired.");
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                int idDetalleCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
+                int idDetalleCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value);
                 VistaDetalleCompra2 detalleCompra = db.VistaDetalleCompra2.FirstOrDefault(c => c.ID == idDetalleCompra);
+
                 string nombreProducto = dataGridView2.CurrentRow.Cells["productoDataGridViewTextBoxColumn1"].Value.ToString();
 
                 if(detalleCompra != null)
@@ -167,12 +179,14 @@ namespace La_Buena_Farmacia.forms
                     // Luego puedes usar idCategoria en tu lógica
                     List<Producto> producto = rProducto.getAll();
                     List<Producto> productosFiltrados = producto.Where(c => c.nombreProducto == nombreProducto).ToList();
+                    
                    
 
                     // Configura el ComboBox de Productos con los productos filtrados
         
 
-                    comboBox3.SelectedValue = detalleCompra.ID;
+                    
+                    comboBox3.SelectedValue = detalleCompra.ID_de_Compra;
                     comboBox1.SelectedValue = productosFiltrados[0].idCategoria;
                     comboBox2.DataSource = productosFiltrados;
                     comboBox2.DisplayMember = "nombreProducto";
@@ -382,8 +396,11 @@ namespace La_Buena_Farmacia.forms
             //Edicion de datos
             if(dataGridView2.SelectedRows.Count > 0 )
             {
-                int idCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
+            
                 int idDetalleCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value);
+                List<VistaDetalleCompra2> detalleCompra2 = db.VistaDetalleCompra2.Where(c => c.ID == idDetalleCompra).ToList();
+                int idCompra = detalleCompra2[0].ID_de_Compra;
+                int cantidadInicial = Convert.ToInt32(dataGridView2.CurrentRow.Cells[4].Value);
 
                 string producto = dataGridView2.CurrentRow.Cells[2].Value.ToString();
                 int idProducto = rProducto.getAll()
@@ -398,7 +415,7 @@ namespace La_Buena_Farmacia.forms
                     .FirstOrDefault();
                 decimal precio = Convert.ToDecimal(dataGridView2.CurrentRow.Cells[4].Value);
                 int cantidad = Convert.ToInt32(CantidadCompras.Text);
-                decimal subtotal = Convert.ToDecimal(dataGridView2.CurrentRow.Cells[6].Value);
+                decimal subtotal = cantidad * precio;
 
                 detalleCompra.idDetalleCompra = idDetalleCompra;
                 detalleCompra.idCompra = idCompra;
@@ -409,7 +426,13 @@ namespace La_Buena_Farmacia.forms
                 int resultado = rDetalleCompra.update(detalleCompra);
                 if(resultado != -1)
                 {
+                
+                    db.decreaseStock(idProducto, cantidadInicial);
+                    db.increaseStock(idProducto, cantidad);
+                    decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
+                    rCompra.ActualizarTotalCompra(idCompra, totalCompra);
                     dataGridView1.DataSource = db.VistaCompra.ToList();
+
                     if (comboBox3.Items.Count > 0 && comboBox3.SelectedValue != null)
                     {
                         int idCompraSeleccionada = (int)comboBox3.SelectedValue;
@@ -438,6 +461,8 @@ namespace La_Buena_Farmacia.forms
             {
                 // Obtiene el ID del detalle de compra seleccionado
                 int idDetalleCompra = Convert.ToInt32(dataGridView2.CurrentRow.Cells["iDDataGridViewTextBoxColumn3"].Value);
+                List<VistaDetalleCompra2> detalleCompra2 = db.VistaDetalleCompra2.Where(c => c.ID == idDetalleCompra).ToList();
+                int idCompra = detalleCompra2[0].ID_de_Compra;
 
                 // Realiza la lógica para eliminar el detalle de compra
                 int resultado = rDetalleCompra.delete(idDetalleCompra);
@@ -445,6 +470,9 @@ namespace La_Buena_Farmacia.forms
                 if (resultado != -1)
                 {
                     // Actualiza el DataGridView con los datos actualizados
+
+                    decimal totalCompra = rDetalleCompra.CalcularTotalCompra(idCompra);
+                    rCompra.ActualizarTotalCompra(idCompra, totalCompra);
                     dataGridView1.DataSource = db.VistaCompra.ToList();
                     if (comboBox3.Items.Count > 0 && comboBox3.SelectedValue != null)
                     {
@@ -485,6 +513,30 @@ namespace La_Buena_Farmacia.forms
                 FechaCompras.Text = string.Empty;
                 TotalCompra.Text = string.Empty;
                 dataGridView1.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
+
+            }
+        }
+
+        private void IDCompras_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Deseleccionar producto de lista de productos 
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                comboBox3.SelectedIndex = -1;
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+                textBoxPrecio.Text = string.Empty;
+                CantidadCompras.Text = string.Empty;
+                dataGridView2.ClearSelection();
             }
             else
             {

@@ -85,3 +85,7 @@ C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.Rep
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.ReporteCompras.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.MenuVendedores.resources
 C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La_Buena_Farmacia.forms.PantallaFactura.resources
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\La Buena Farmacia.exe.manifest
+C:\Users\Osman\Downloads\La Buena Farmacia\bin\Debug\La Buena Farmacia.application
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La Buena Farmacia.exe.manifest
+C:\Users\Osman\Downloads\La Buena Farmacia\obj\Debug\La Buena Farmacia.application

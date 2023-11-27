@@ -15,6 +15,7 @@ namespace La_Buena_Farmacia.forms
         public Reportes()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void label6_Click(object sender, EventArgs e)

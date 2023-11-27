@@ -18,11 +18,13 @@ namespace La_Buena_Farmacia.forms
         REmpleado rEmpleado = new REmpleado();
         Rol rol = new Rol();
         RRoles rRoles = new RRoles();
+
         private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
         public Vendedores()
         {
 
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
         }

@@ -16,9 +16,15 @@ namespace La_Buena_Farmacia.forms
 
         Cliente cliente = new Cliente();
         RCliente rcliente = new RCliente();
+        Venta ventas = new Venta();
+        RVentas rventa = new RVentas();
+        private FARMACIA_BUENA__SALUDEntities2 db = new FARMACIA_BUENA__SALUDEntities2();
+
+
         public Clientes()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
         }
 
@@ -117,7 +123,13 @@ namespace La_Buena_Farmacia.forms
         {
             if(dataGridView1.SelectedRows.Count > 0)
             {
+
                 int idCliente = int.Parse(IDCliente.Text);
+                List<Venta> ventas = rventa.getAll().Where(x => x.idCliente == idCliente).ToList();
+                //Eliminar ventas relacionadas con el cliente
+                db.Venta.RemoveRange(ventas);
+                db.SaveChanges();
+                
                 string nombreCliente = NombreCliente.Text;
                 string email = EmailCliente.Text;
                 string telefono = TelefonoCliente.Text;
@@ -205,9 +217,21 @@ namespace La_Buena_Farmacia.forms
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
-            menuPrincipal.Show();
-            this.Hide();
+            if(Program.AppContext.UsuarioActual.idRol == 1)
+            {
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MenuVendedores menuVendedores = new MenuVendedores();
+                menuVendedores.Show();
+                this.Hide();
+            }
+            
+            
+
         }
     }
 }

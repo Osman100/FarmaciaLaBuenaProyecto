@@ -21,10 +21,13 @@ namespace La_Buena_Farmacia.forms
         public ReporteProductos()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void ReporteProductos_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Producto' table. You can move, or remove it, as needed.
+            this.productoTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.Producto);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.Categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.Fill(this.fARMACIA_BUENA__SALUDDataSet.Categoria);
             // TODO: This line of code loads data into the 'fARMACIA_BUENA__SALUDDataSet.VistaProductos1' table. You can move, or remove it, as needed.
@@ -34,6 +37,11 @@ namespace La_Buena_Farmacia.forms
             this.reportViewer1.RefreshReport();
             cmbPrecios.SelectedIndex = -1;
             cmbCategorias.SelectedIndex = -1;
+
+            List<Producto> productos = db.Producto.ToList();
+            List<Producto> productosSinDuplicar = productos.GroupBy(producto => producto.precioProducto).Select(grupo => grupo.First()).ToList();
+            cmbPrecios.DataSource = productosSinDuplicar;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

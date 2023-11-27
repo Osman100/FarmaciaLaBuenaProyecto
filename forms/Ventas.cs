@@ -28,6 +28,7 @@ namespace La_Buena_Farmacia.forms
         public Ventas()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
@@ -420,35 +421,44 @@ namespace La_Buena_Farmacia.forms
             int IDVenta = Convert.ToInt32(comboBox3.SelectedValue);
             Producto productoSeleccionado = (Producto)comboBox2.SelectedItem;
             int idProducto = productoSeleccionado.idProducto;
-            int cantidad = Convert.ToInt32(CantidadVentas.Text);
-            decimal precio = Convert.ToDecimal(textBoxPrecio.Text);
-            decimal total = cantidad * precio;
-
-            detalleVenta.idVenta = IDVenta;
-            detalleVenta.idProducto = idProducto;
-            detalleVenta.cantidadProducto = cantidad;
-            detalleVenta.subtotal = total;
-
-            int resultado = rDetalleVenta.create(detalleVenta); 
-            if(resultado != -1)
+            if(CantidadVentas.Text != "")
             {
-                decimal totalVenta = rDetalle.CalcularTotal(IDVenta);
-                rVenta.actualizarTotalVenta(IDVenta, totalVenta);
-                if (comboBox3.Items.Count > 0 && comboBox3.SelectedValue != null)
-                {
-                    int idVentaSeleccionada = (int)comboBox3.SelectedValue;
-                    List<VistaDetalleVenta4> detalleVenta = db.VistaDetalleVenta4.Where(c => c.ID_de_venta == idVentaSeleccionada).ToList();
-                    dataGridView1.DataSource = detalleVenta;
-                    
-                }
-                dataGridView2.DataSource = db.VistaVenta3.ToList();
+                int cantidad = Convert.ToInt32(CantidadVentas.Text);
+                decimal precio = Convert.ToDecimal(textBoxPrecio.Text);
+                decimal total = cantidad * precio;
+                detalleVenta.idVenta = IDVenta;
+                detalleVenta.idProducto = idProducto;
+                detalleVenta.cantidadProducto = cantidad;
+                detalleVenta.subtotal = total;
 
-                MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int resultado = rDetalleVenta.create(detalleVenta);
+                if (resultado != -1)
+                {
+                    decimal totalVenta = rDetalle.CalcularTotal(IDVenta);
+                    rVenta.actualizarTotalVenta(IDVenta, totalVenta);
+                    if (comboBox3.Items.Count > 0 && comboBox3.SelectedValue != null)
+                    {
+                        int idVentaSeleccionada = (int)comboBox3.SelectedValue;
+                        List<VistaDetalleVenta4> detalleVenta = db.VistaDetalleVenta4.Where(c => c.ID_de_venta == idVentaSeleccionada).ToList();
+                        dataGridView1.DataSource = detalleVenta;
+
+                    }
+                    dataGridView2.DataSource = db.VistaVenta3.ToList();
+                    db.decreaseStock(idProducto, cantidad);
+
+                    MessageBox.Show(Text = "Producto agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al agregar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
             else
             {
-                MessageBox.Show("Ocurrió un error al agregar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese una cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
@@ -459,6 +469,7 @@ namespace La_Buena_Farmacia.forms
             {
                 int idVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 int idDetalleVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                int cantidadInicial = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
 
                 Producto productoSeleccionado = (Producto)comboBox2.SelectedItem;
                 int idProducto = productoSeleccionado.idProducto;
@@ -484,6 +495,8 @@ namespace La_Buena_Farmacia.forms
                         dataGridView1.DataSource = detalleVenta;
 
                     }
+                    db.increaseStock(idProducto, cantidadInicial);
+                    db.decreaseStock(idProducto, cantidad);
                     
                     dataGridView2.DataSource = db.VistaVenta3.ToList();
 
@@ -512,6 +525,9 @@ namespace La_Buena_Farmacia.forms
             {
                 int idDetalleVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
                 int idVenta = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                int cantidadInicial = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
+                Producto productoSeleccionado = (Producto)comboBox2.SelectedItem;
+                int idProducto = productoSeleccionado.idProducto;
 
                 int resultado = rDetalleVenta.delete(idDetalleVenta);
                 if(resultado != -1)
@@ -526,6 +542,7 @@ namespace La_Buena_Farmacia.forms
 
                     }
                     dataGridView2.DataSource = db.VistaVenta3.ToList();
+                    db.increaseStock(idProducto, cantidadInicial);
 
                     MessageBox.Show(Text = "Producto eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -538,25 +555,31 @@ namespace La_Buena_Farmacia.forms
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
-            menuPrincipal.Show();
-            this.Hide();
+            if (Program.AppContext.UsuarioActual.idRol == 1)
+            {
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MenuVendedores menuVendedores = new MenuVendedores();
+                menuVendedores.Show();
+                this.Hide();
+            }
+
         }
 
 
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-
-
-
-        
-
             if(dataGridView2.SelectedRows.Count > 0 )
             {
                 PantallaFactura pantallaFactura = new PantallaFactura();
-                pantallaFactura.ShowDialog();
+
+                int idVenta = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
+                Console.WriteLine("ID de Venta Seleccionado: " + idVenta);
                 List<VistaDetalleVenta5> vistaDetalleVenta5s = db.VistaDetalleVenta5.ToList();
                 var vistaDetalleVenta5Filtrado = vistaDetalleVenta5s.Where(c => c.IDDeVenta == (int)dataGridView2.SelectedRows[0].Cells[0].Value).ToList();
                 List<VistaVenta3> vistaVenta3s = db.VistaVenta3.ToList();
@@ -568,12 +591,13 @@ namespace La_Buena_Farmacia.forms
                 ReportDataSource fuente1 = new ReportDataSource("Venta", venta);
                 ReportDataSource fuente2 = new ReportDataSource("DetalleVenta", detalleVenta);
 
-                PantallaFactura pantallaFactura1 = new PantallaFactura();
 
-                Microsoft.Reporting.WinForms.ReportViewer reportViewer = pantallaFactura1.ObtenerReportViewer();
-                reportViewer.LocalReport.DataSources.Add(fuente1);
-                reportViewer.LocalReport.DataSources.Add(fuente2);
-                reportViewer.RefreshReport();
+
+                PantallaFactura pantallaFactura1 = new PantallaFactura();
+                pantallaFactura1.EditarSources(venta,detalleVenta);
+
+                pantallaFactura1.ShowDialog();
+
 
             }
             else
@@ -617,6 +641,47 @@ namespace La_Buena_Farmacia.forms
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //Deseleccionar venta
+            if(dataGridView2.SelectedRows.Count > 0)
+            {
+                dataGridView2.ClearSelection();
+
+                comboBoxCliente.SelectedIndex = -1;
+                idVendedor.SelectedIndex = -1;
+                tipoVenta.SelectedIndex = -1;
+                tarjeta.SelectedIndex = -1;
+                FechaCompras.Text = "";
+                total.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna compra seleccionada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            //Deseleccionar un producto de la lista de productos
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                dataGridView1.ClearSelection();
+                comboBox1.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
+
+
+                textBoxPrecio.Text = "";
+                CantidadVentas.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun producto seleccionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
     }

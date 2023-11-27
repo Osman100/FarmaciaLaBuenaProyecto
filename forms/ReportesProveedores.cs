@@ -15,6 +15,7 @@ namespace La_Buena_Farmacia.forms
         public ReportesProveedores()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void ReportesProveedores_Load(object sender, EventArgs e)

@@ -24,6 +24,7 @@ namespace La_Buena_Farmacia.forms
         public Proveedores()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
         }
@@ -121,7 +122,7 @@ namespace La_Buena_Farmacia.forms
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 // Acceder al valor de la clave primaria (ID) de la fila seleccionada
-                int idProveedor = Convert.ToInt32(selectedRow.Cells["idProveedorDataGridViewTextBoxColumn"].Value);
+                int idProveedor = Convert.ToInt32(selectedRow.Cells[0].Value);
 
 
                 List<Compra> compras = rCompras.getAll();
@@ -129,10 +130,15 @@ namespace La_Buena_Farmacia.forms
                 List<DetalleCompra> detalleCompras = rDetalleCompra.getAll();
 
                 var comprasFiltradas = compras.Where(compra => compra.idProveedor == idProveedor).ToList();
-                var detalleComprasFiltradas = detalleCompras.Where(detalleCompra => detalleCompra.idCompra == comprasFiltradas[0].idCompra).ToList();
+                if(comprasFiltradas.Count > 0)
+                {
+                    var detalleComprasFiltradas = detalleCompras.Where(detalleCompra => detalleCompra.idCompra == comprasFiltradas[0].idCompra).ToList();
 
-                detalleComprasFiltradas.ForEach(detalleCompra => rDetalleCompra.delete(detalleCompra.idDetalleCompra));
-                comprasFiltradas.ForEach(compra => rCompras.delete(compra.idCompra));
+                    detalleComprasFiltradas.ForEach(detalleCompra => rDetalleCompra.delete(detalleCompra.idDetalleCompra));
+                    comprasFiltradas.ForEach(compra => rCompras.delete(compra.idCompra));
+
+                }
+
 
                 // Eliminar la fila de la base de datos utilizando el método delete
                 int resultado = rProveedor.delete(idProveedor);
@@ -215,6 +221,19 @@ namespace La_Buena_Farmacia.forms
         private void NombreProveedores_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //Deseleccionar proveedor
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                dataGridView1.ClearSelection();
+                IDProveedores.Text = string.Empty;
+                NombreProveedores.Text = string.Empty;
+                TelefonoProveedores.Text = string.Empty;
+
+            }
         }
     }
 }

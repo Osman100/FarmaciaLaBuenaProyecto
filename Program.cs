@@ -17,7 +17,14 @@ namespace La_Buena_Farmacia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Clientes());
+            Application.Run(new Splash());
+
+
         }
+        public static class AppContext
+        {
+            public static Empleado UsuarioActual { get; set; }
+        }
+
     }
 }

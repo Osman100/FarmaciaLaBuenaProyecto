@@ -22,6 +22,7 @@ namespace La_Buena_Farmacia.forms
         public Categorias()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
         }
 

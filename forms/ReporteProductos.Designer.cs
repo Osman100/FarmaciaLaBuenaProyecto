@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.vistaProductos1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fARMACIA_BUENA__SALUDDataSet = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmbPrecios = new System.Windows.Forms.ComboBox();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,9 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.vistaProductos1TableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.VistaProductos1TableAdapter();
             this.categoriaTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.CategoriaTableAdapter();
+            this.productoTableAdapter = new La_Buena_Farmacia.FARMACIA_BUENA__SALUDDataSetTableAdapters.ProductoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vistaProductos1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbPrecios);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbCategorias);
@@ -103,28 +104,16 @@
             this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button7.Location = new System.Drawing.Point(32, 21);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 28);
+            this.button7.Size = new System.Drawing.Size(89, 28);
             this.button7.TabIndex = 25;
             this.button7.Text = "Reportes";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(46, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 18);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Filtros";
-            // 
             // cmbPrecios
             // 
-            this.cmbPrecios.DataSource = this.vistaProductos1BindingSource;
-            this.cmbPrecios.DisplayMember = "Precio";
+            this.cmbPrecios.DataSource = this.productoBindingSource;
+            this.cmbPrecios.DisplayMember = "precioProducto";
             this.cmbPrecios.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPrecios.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmbPrecios.FormattingEnabled = true;
@@ -132,8 +121,13 @@
             this.cmbPrecios.Name = "cmbPrecios";
             this.cmbPrecios.Size = new System.Drawing.Size(162, 26);
             this.cmbPrecios.TabIndex = 23;
-            this.cmbPrecios.ValueMember = "Precio";
+            this.cmbPrecios.ValueMember = "precioProducto";
             this.cmbPrecios.SelectedIndexChanged += new System.EventHandler(this.cmbPrecios_SelectedIndexChanged);
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "Producto";
+            this.productoBindingSource.DataSource = this.fARMACIA_BUENA__SALUDDataSet;
             // 
             // label2
             // 
@@ -193,9 +187,9 @@
             // reportViewer1
             // 
             this.reportViewer1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            reportDataSource1.Name = "Productos";
-            reportDataSource1.Value = this.vistaProductos1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "Productos";
+            reportDataSource2.Value = this.vistaProductos1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "La_Buena_Farmacia.reports.Productos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(79, 168);
             this.reportViewer1.Name = "reportViewer1";
@@ -223,6 +217,10 @@
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
+            // productoTableAdapter
+            // 
+            this.productoTableAdapter.ClearBeforeFill = true;
+            // 
             // ReporteProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +234,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fARMACIA_BUENA__SALUDDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -254,10 +253,11 @@
         private System.Windows.Forms.ComboBox cmbCategorias;
         private System.Windows.Forms.ComboBox cmbPrecios;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
         private FARMACIA_BUENA__SALUDDataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+        private FARMACIA_BUENA__SALUDDataSetTableAdapters.ProductoTableAdapter productoTableAdapter;
     }
 }
